@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float moveSpeed = 6f;
     [SerializeField] float jumpForce = 2f;
     [SerializeField] private Transform cam;
+    [SerializeField] private float pushPower = 2.0f;
 
     void Start()
     {
@@ -63,6 +64,23 @@ public class PlayerMovement : MonoBehaviour
         if (direction.magnitude > 0.1f)
         {
             transform.forward = direction;
+        }
+    }
+
+    // Function to push boxes
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("Box"))
+        {
+            Rigidbody boxRigidbody = collision.collider.attachedRigidbody;
+            if (boxRigidbody != null)
+            {
+                Vector3 forceDirection = collision.contacts[0].point - transform.position;
+                forceDirection.y = 0;
+                forceDirection.Normalize();
+
+                boxRigidbody.AddForceAtPosition(forceDirection * pushPower, collision.contacts[0].point, ForceMode.Impulse);
+            }
         }
     }
 }
