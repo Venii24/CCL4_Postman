@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +14,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpForce = 2f;
     [SerializeField] private Transform cam;
     [SerializeField] private float pushPower = 2.0f;
-
+    public bool letterDelivered = false;
+ 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -27,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
         MovePlayer();
         Jump();
         RotatePlayer();
+        
     }
 
     void MovePlayer()
@@ -92,6 +95,15 @@ public class PlayerMovement : MonoBehaviour
                 // Apply force to the box
                 boxRigidbody.AddForce(forceDirection * pushPower, ForceMode.Impulse);
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("NPC"))
+        {
+            letterDelivered = true;
+            Debug.Log("Letter delivered!");
         }
     }
 }

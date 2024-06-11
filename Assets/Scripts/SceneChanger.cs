@@ -1,32 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
     [SerializeField] private string sceneToEnter;
-    // Start is called before the first frame update
+    private PlayerMovement playerMovement;
+    private LevelLoader levelLoader;
+
     void Start()
     {
         GetComponent<MeshRenderer>().enabled = false;
+        playerMovement = FindObjectOfType<PlayerMovement>(); // Find the PlayerMovement component in the scene
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
-    
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Player entered the trigger");
-            // Change the scene
-            SceneManager.LoadScene(sceneToEnter);
+            Debug.Log("Player entered the scene changer");
+            Debug.Log("Letter delivered: " + playerMovement.letterDelivered);
+            // Check if the player has delivered the letter
+            if (playerMovement.letterDelivered)
+            {
+                // Load the next scene
+                SceneManager.LoadScene(sceneToEnter);
+            }
         }
-    
     }
-
 }
