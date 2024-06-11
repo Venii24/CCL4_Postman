@@ -75,11 +75,22 @@ public class PlayerMovement : MonoBehaviour
             Rigidbody boxRigidbody = collision.collider.attachedRigidbody;
             if (boxRigidbody != null)
             {
-                Vector3 forceDirection = collision.contacts[0].point - transform.position;
-                forceDirection.y = 0;
-                forceDirection.Normalize();
+                // Calculate the direction from player to the box
+                Vector3 forceDirection = (collision.transform.position - transform.position).normalized;
+                forceDirection.y = 0; // Ignore the y-axis
+            
+                // Ensure forceDirection is aligned to the closest axis (x or z)
+                if (Mathf.Abs(forceDirection.x) > Mathf.Abs(forceDirection.z))
+                {
+                    forceDirection = new Vector3(Mathf.Sign(forceDirection.x), 0, 0);
+                }
+                else
+                {
+                    forceDirection = new Vector3(0, 0, Mathf.Sign(forceDirection.z));
+                }
 
-                boxRigidbody.AddForceAtPosition(forceDirection * pushPower, collision.contacts[0].point, ForceMode.Impulse);
+                // Apply force to the box
+                boxRigidbody.AddForce(forceDirection * pushPower, ForceMode.Impulse);
             }
         }
     }
