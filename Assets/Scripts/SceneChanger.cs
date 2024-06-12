@@ -17,7 +17,7 @@ public class SceneChanger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && playerMovement.letterDelivered)
         {
             // Open the UI Overlay
             playerMovement.enabled = false;

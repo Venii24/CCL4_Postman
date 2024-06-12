@@ -62,4 +62,10 @@ public class GameManager : MonoBehaviour
         if (DialogueBox != null)
             DialogueBox.SetActive(true);
     }
+    
+    public void HideDialogueOverlay()
+    {
+            DialogueBox.SetActive(false);
+            winOverlay.SetActive(false);
+    }
 }

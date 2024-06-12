@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class SwitchCamera : MonoBehaviour
 {
-    [SerializeField] private float rotationSpeed = 1;
+    
     [SerializeField] private float transitionDuration = 0.5f; // Duration of the transition
     private Vector3 targetRot;
     private Coroutine rotationCoroutine;

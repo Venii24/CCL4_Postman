@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     private GameManager gameManager; 
+   
     private Rigidbody rb;
     private PlayerInput playerInput;
     private InputAction moveAction;
@@ -25,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
         // Find the GameManager instance in the scene
         gameManager = GameManager.Instance;
+        
     }
 
     void Update()
@@ -100,13 +102,14 @@ public class PlayerMovement : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Show the WinOverlay UI element
-        if (other.CompareTag("NPC"))
+        if (other.CompareTag("NPCArea") && !letterDelivered && Input.GetKeyDown(KeyCode.F))
         {
             letterDelivered = true;
             playerInput.enabled = false;
-            gameManager.ShowDialogueOverlay(); 
+            gameManager.ShowDialogueOverlay();
         }
     }
+
 
     private void PlayerDying()
     {
@@ -114,6 +117,7 @@ public class PlayerMovement : MonoBehaviour
         {
             letterDelivered = false;
             Die();
+            UnableOverlays();
         }
     }
 
@@ -121,5 +125,10 @@ public class PlayerMovement : MonoBehaviour
     {
         Debug.Log("Player died!");
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+    }
+    
+    private void UnableOverlays()
+    {
+        gameManager.HideDialogueOverlay();
     }
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Box
   - NPC
+  - NPCArea
   layers:
   - Default
   - TransparentFX
