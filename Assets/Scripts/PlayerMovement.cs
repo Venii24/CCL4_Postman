@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
         MovePlayer();
         Jump();
         RotatePlayer();
+        PlayerDying();
         
     }
 
@@ -105,5 +106,20 @@ public class PlayerMovement : MonoBehaviour
             letterDelivered = true;
             Debug.Log("Letter delivered!");
         }
+    }
+    
+    private void PlayerDying()
+    {
+        if (transform.position.y < -10)
+        {
+            Die();
+        }
+    }
+    
+    private void Die()
+    {
+        Debug.Log("Player died!");
+        // Reload the current scene
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
 }
