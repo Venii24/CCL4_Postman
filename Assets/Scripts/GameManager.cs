@@ -41,7 +41,10 @@ public class GameManager : MonoBehaviour
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
-
+//Menu = 0 (By Built Index)
+//Forest = 1
+//Desert = 2
+//Coast = 3
         if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
         {
             Debug.Log("Loading next scene: " + nextSceneIndex);
