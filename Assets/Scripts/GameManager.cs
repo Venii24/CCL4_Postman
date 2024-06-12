@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,16 +10,23 @@ public class GameManager : MonoBehaviour
     public Timer timer;
     private int score = 0;
     private LevelLoader levelLoader;
+    [SerializeField] public GameObject TimerBox;
     [SerializeField]
     public GameObject winOverlay;
+    [SerializeField]
+    public GameObject TimeOverOverlay;
     [SerializeField]
     public GameObject DialogueBox;
     [SerializeField]
     public GameObject Canvas;
 
+    [SerializeField] public TextMeshProUGUI ButtonLevelContinueText;
+
     void Awake()
     {
-        
+        TimerBox.SetActive(false);
+        timer = FindObjectOfType<Timer>();
+        timer.stopTimer = true;
         
         if (Instance == null)
         {
@@ -33,6 +41,9 @@ public class GameManager : MonoBehaviour
             
             if (DialogueBox != null)
                 DialogueBox.SetActive(false);
+            
+            if (TimeOverOverlay != null)
+                TimeOverOverlay.SetActive(false);
         }
         else
         {
@@ -53,12 +64,28 @@ public class GameManager : MonoBehaviour
             Debug.Log("Loading next scene: " + nextSceneIndex);
             SceneManager.LoadScene(nextSceneIndex);
             winOverlay.SetActive(false);
-            timer.CountdownTime = 120f;
+            timer.CountdownTime = 180f;
+            TimerBox.SetActive(true);
+            timer.stopTimer = false;
+        }
+        else if (nextSceneIndex == 4) //go back to menu
+        {
+            SceneManager.LoadScene(0);
+            winOverlay.SetActive(false);
+            TimeOverOverlay.SetActive(false);
+            DialogueBox.SetActive(false);
+            TimerBox.SetActive(false);
+            timer.CountdownTime = 180f;
+            timer.stopTimer = true;
         }
         else
         {
             Debug.Log("No more scenes to load.");
             // Optionally, you could reset to the first scene or show an end screen here
+        }
+        if (nextSceneIndex == 3)
+        {
+            ButtonLevelContinueText.text = "Back to Menu";
         }
     }
 
@@ -90,6 +117,25 @@ public class GameManager : MonoBehaviour
     {
         if (DialogueBox != null)
             DialogueBox.SetActive(false);
+    }
+    
+    public void ShowTimeOverOverlay()
+    {
+        if (TimeOverOverlay != null)
+            TimeOverOverlay.SetActive(true);
+    }
+    
+    public void HideTimeOverOverlay()
+    {
+        if (TimeOverOverlay != null)
+            TimeOverOverlay.SetActive(false);
+    }
+    
+    public void reloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        timer.CountdownTime = 120f;
+        timer.stopTimer = false;
     }
 
     public void HideWinOverlay()

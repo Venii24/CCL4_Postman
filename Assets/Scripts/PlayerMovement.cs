@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     private GameManager gameManager; 
-   
+    private Timer timer;
     private Rigidbody rb;
     private PlayerInput playerInput;
     private InputAction moveAction;
@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
 
         // Find the GameManager instance in the scene
         gameManager = GameManager.Instance;
+        timer = FindObjectOfType<Timer>();
     }
 
     void Update()
@@ -132,12 +133,14 @@ public class PlayerMovement : MonoBehaviour
             letterDelivered = true;
             playerInput.enabled = false;
             gameManager.ShowDialogueOverlay();
+            timer.stopTimer = true;
         }
         else if (inNPCArea && letterDelivered && Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("Letter delivered!");
             playerInput.enabled =true ;
             gameManager.HideDialogueOverlay();
+            timer.stopTimer = false;
         }
         
     }
