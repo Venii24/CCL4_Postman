@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform cam;
     [SerializeField] private float pushPower = 2.0f;
     public bool letterDelivered = false;
+    public bool inNPCArea = false;
 
     void Start()
     {
@@ -26,7 +28,6 @@ public class PlayerMovement : MonoBehaviour
 
         // Find the GameManager instance in the scene
         gameManager = GameManager.Instance;
-        
     }
 
     void Update()
@@ -35,6 +36,8 @@ public class PlayerMovement : MonoBehaviour
         Jump();
         RotatePlayer();
         PlayerDying();
+        // Check for letter delivery when in NPC area
+        DeliverLetter();
     }
 
     void MovePlayer()
@@ -101,15 +104,39 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Show the WinOverlay UI element
-        if (other.CompareTag("NPCArea") && !letterDelivered && Input.GetKeyDown(KeyCode.F))
+        if (other.CompareTag("NPCArea"))
         {
+            inNPCArea = true;
+            Debug.Log("Entered NPC area: " + other.name);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("NPCArea"))
+        {
+            inNPCArea = false;
+            Debug.Log("Exited NPC area: " + other.name);
+        }
+    }
+
+    private void DeliverLetter()
+    {
+        if (inNPCArea && !letterDelivered && Input.GetKeyDown(KeyCode.F))
+        {
+            Debug.Log("Letter delivered!");
             letterDelivered = true;
             playerInput.enabled = false;
             gameManager.ShowDialogueOverlay();
         }
+        else if (inNPCArea && letterDelivered && Input.GetKeyDown(KeyCode.E))
+        {
+            Debug.Log("Letter delivered!");
+            playerInput.enabled =true ;
+            gameManager.HideDialogueOverlay();
+        }
+        
     }
-
 
     private void PlayerDying()
     {
