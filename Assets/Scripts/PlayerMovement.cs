@@ -112,6 +112,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (transform.position.y < -10)
         {
+            letterDelivered = false;
             Die();
         }
     }
