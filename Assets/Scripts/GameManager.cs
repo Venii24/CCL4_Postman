@@ -1,13 +1,11 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 using UnityEngine;
- 
-class GameManager : MonoBehaviour
+
+public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-    private int _score = 0;
+    private int score = 0;
     private LevelLoader levelLoader;
 
     void Awake()
@@ -15,7 +13,7 @@ class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(this.gameObject); // This will make the GameManager persist between scenes
+            DontDestroyOnLoad(this.gameObject);
             levelLoader = FindObjectOfType<LevelLoader>(); // Find the LevelLoader in the scene
         }
         else
@@ -36,23 +34,15 @@ class GameManager : MonoBehaviour
         }
     }
 
-    public void AddScore(int score)
+    public void AddScore(int scoreToAdd)
     {
-        _score += score;
+        score += scoreToAdd;
     }
 
     public int GetScore()
     {
-        return _score;
+        return score;
     }
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        //  Debug.Log("Score: " + _score);
-    }
+   
 }

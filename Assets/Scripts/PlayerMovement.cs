@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform cam;
     [SerializeField] private float pushPower = 2.0f;
     public bool letterDelivered = false;
- 
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -30,7 +29,6 @@ public class PlayerMovement : MonoBehaviour
         Jump();
         RotatePlayer();
         PlayerDying();
-        
     }
 
     void MovePlayer()
@@ -71,7 +69,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    // Function to push boxes
     void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("Box"))
@@ -79,11 +76,9 @@ public class PlayerMovement : MonoBehaviour
             Rigidbody boxRigidbody = collision.collider.attachedRigidbody;
             if (boxRigidbody != null)
             {
-                // Calculate the direction from player to the box
                 Vector3 forceDirection = (collision.transform.position - transform.position).normalized;
                 forceDirection.y = 0; // Ignore the y-axis
-            
-                // Ensure forceDirection is aligned to the closest axis (x or z)
+
                 if (Mathf.Abs(forceDirection.x) > Mathf.Abs(forceDirection.z))
                 {
                     forceDirection = new Vector3(Mathf.Sign(forceDirection.x), 0, 0);
@@ -93,7 +88,6 @@ public class PlayerMovement : MonoBehaviour
                     forceDirection = new Vector3(0, 0, Mathf.Sign(forceDirection.z));
                 }
 
-                // Apply force to the box
                 boxRigidbody.AddForce(forceDirection * pushPower, ForceMode.Impulse);
             }
         }
@@ -103,11 +97,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.CompareTag("NPC"))
         {
+            string sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
             letterDelivered = true;
             Debug.Log("Letter delivered!");
         }
     }
-    
+
     private void PlayerDying()
     {
         if (transform.position.y < -10)
@@ -116,11 +111,10 @@ public class PlayerMovement : MonoBehaviour
             Die();
         }
     }
-    
+
     private void Die()
     {
         Debug.Log("Player died!");
-        // Reload the current scene
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
 }
