@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+    public Timer timer;
     private int score = 0;
     private LevelLoader levelLoader;
     [SerializeField]
@@ -17,6 +18,8 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        
+        
         if (Instance == null)
         {
             Instance = this;
@@ -50,6 +53,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Loading next scene: " + nextSceneIndex);
             SceneManager.LoadScene(nextSceneIndex);
             winOverlay.SetActive(false);
+            timer.CountdownTime = 120f;
         }
         else
         {
