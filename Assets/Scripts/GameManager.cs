@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class GameManager : MonoBehaviour
     public GameObject winOverlay;
     [SerializeField]
     public GameObject DialogueBox;
+    [SerializeField]
+    public GameObject Canvas;
 
     void Awake()
     {
@@ -18,13 +21,14 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(this.gameObject);
+            DontDestroyOnLoad(Canvas);
             levelLoader = FindObjectOfType<LevelLoader>(); // Find the LevelLoader in the scene
             
             // Disable the WinOverlay UI element at the start
-            if(winOverlay != null)
+            if (winOverlay != null)
                 winOverlay.SetActive(false);
             
-            if(DialogueBox != null)
+            if (DialogueBox != null)
                 DialogueBox.SetActive(false);
         }
         else
@@ -33,10 +37,22 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void LoadScene(string sceneName)
+    public void LoadScene()
     {
-        Debug.Log("Loading scene: " + sceneName);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            Debug.Log("Loading next scene: " + nextSceneIndex);
+            SceneManager.LoadScene(nextSceneIndex);
+            winOverlay.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("No more scenes to load.");
+            // Optionally, you could reset to the first scene or show an end screen here
+        }
     }
 
     public void AddScore(int scoreToAdd)
@@ -56,7 +72,7 @@ public class GameManager : MonoBehaviour
             winOverlay.SetActive(true);
     }
     
-    // Method to show the WinOverlay UI element
+    // Method to show the DialogueBox UI element
     public void ShowDialogueOverlay()
     {
         if (DialogueBox != null)
@@ -65,7 +81,13 @@ public class GameManager : MonoBehaviour
     
     public void HideDialogueOverlay()
     {
+        if (DialogueBox != null)
             DialogueBox.SetActive(false);
+    }
+
+    public void HideWinOverlay()
+    {
+        if (winOverlay != null)
             winOverlay.SetActive(false);
     }
 }

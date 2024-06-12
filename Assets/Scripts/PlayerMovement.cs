@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpForce = 2f;
     [SerializeField] private Transform cam;
     [SerializeField] private float pushPower = 2.0f;
-    public bool letterDelivered = false;
+    public bool letterDelivered = true;
     public bool inNPCArea = false;
 
     void Start()
@@ -38,6 +38,10 @@ public class PlayerMovement : MonoBehaviour
         PlayerDying();
         // Check for letter delivery when in NPC area
         DeliverLetter();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     void MovePlayer()
