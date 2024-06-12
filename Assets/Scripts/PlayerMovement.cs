@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private GameManager gameManager; 
     private Rigidbody rb;
     private PlayerInput playerInput;
     private InputAction moveAction;
@@ -21,6 +22,9 @@ public class PlayerMovement : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         moveAction = playerInput.actions["Move"];
         jumpAction = playerInput.actions["Jump"];
+
+        // Find the GameManager instance in the scene
+        gameManager = GameManager.Instance;
     }
 
     void Update()
@@ -95,11 +99,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        // Show the WinOverlay UI element
         if (other.CompareTag("NPC"))
         {
-            string sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
             letterDelivered = true;
-            Debug.Log("Letter delivered!");
+            playerInput.enabled = false;
+            gameManager.ShowDialogueOverlay(); 
         }
     }
 
