@@ -33,10 +33,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        /*
         if (DialogueManager.GetInstance().dialogueIsPlaying)
         {
             return;
         }
+        */
         
         MovePlayer();
         Jump();

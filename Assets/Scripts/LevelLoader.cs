@@ -7,7 +7,8 @@ public class LevelLoader : MonoBehaviour
 {
     public Animator transition;
     public float transitionTime = 2f;
-
+    
+    
     public void LoadNextLevel()
     {
         // StartCoroutine(LoadLevelAfterDelay(SceneManager.GetActiveScene().buildIndex + 1));

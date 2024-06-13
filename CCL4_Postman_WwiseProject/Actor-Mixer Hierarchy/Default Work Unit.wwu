@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{8915ADA6-F687-489C-912A-6EC804FA4AAB}" SchemaVersion="103">
+	<AudioObjects>
+		<WorkUnit Name="Default Work Unit" ID="{8915ADA6-F687-489C-912A-6EC804FA4AAB}" PersistMode="Standalone">
+			<ChildrenList>
+				<ActorMixer Name="ambience" ID="{25CCCC86-B4E4-4581-A245-AD402D7F9210}" ShortID="114569230">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4FCE439C-B699-4B62-B613-201B8E210364}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D30D6E47-BFB1-4B3B-85A5-5AE36881B2F2}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="desert_bg" ID="{2708EEC1-37B3-4562-8FA9-139DD6E6C669}" ShortID="1055024226">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="IsStreamingEnabled" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4FCE439C-B699-4B62-B613-201B8E210364}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D30D6E47-BFB1-4B3B-85A5-5AE36881B2F2}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="desert_bg" ID="{318066AA-2EE8-4C82-8107-03913B9A9BD7}">
+									<PropertyList>
+										<Property Name="VolumeOffset" Type="Real64">
+											<ValueList>
+												<Value>-18</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>desert_bg.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="450426651"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="desert_bg" ID="{318066AA-2EE8-4C82-8107-03913B9A9BD7}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="forest_bg" ID="{152FA6CD-657D-41BB-AF3D-5A4B62DB5505}" ShortID="143151058">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="IsStreamingEnabled" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4FCE439C-B699-4B62-B613-201B8E210364}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D30D6E47-BFB1-4B3B-85A5-5AE36881B2F2}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="forest_bg" ID="{DA05DCFB-086F-4B64-A003-18AC405F4197}">
+									<PropertyList>
+										<Property Name="VolumeOffset" Type="Real64">
+											<ValueList>
+												<Value>-23</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>forest_bg.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="326205617"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="forest_bg" ID="{DA05DCFB-086F-4B64-A003-18AC405F4197}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="coast_bg" ID="{5BF01B67-FA08-4EDE-988E-4F5F3BA5C37F}" ShortID="522456722">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="IsStreamingEnabled" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4FCE439C-B699-4B62-B613-201B8E210364}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D30D6E47-BFB1-4B3B-85A5-5AE36881B2F2}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="coast_bg" ID="{7EF2B494-9846-457B-BFC8-C8E6EA2173F4}">
+									<PropertyList>
+										<Property Name="VolumeOffset" Type="Real64">
+											<ValueList>
+												<Value>-16</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>coast_bg.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="667787863"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="coast_bg" ID="{7EF2B494-9846-457B-BFC8-C8E6EA2173F4}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<ObjectLists/>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>
