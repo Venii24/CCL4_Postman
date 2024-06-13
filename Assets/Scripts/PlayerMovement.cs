@@ -33,12 +33,17 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            return;
+        }
+        
         MovePlayer();
         Jump();
         RotatePlayer();
         PlayerDying();
         // Check for letter delivery when in NPC area
-        DeliverLetter();
+        // DeliverLetter();
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
@@ -125,25 +130,25 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void DeliverLetter()
-    {
-        if (inNPCArea && !letterDelivered && Input.GetKeyDown(KeyCode.F))
-        {
-            Debug.Log("Letter delivered!");
-            letterDelivered = true;
-            playerInput.enabled = false;
-            gameManager.ShowDialogueOverlay();
-            timer.stopTimer = true;
-        }
-        else if (inNPCArea && letterDelivered && Input.GetKeyDown(KeyCode.E))
-        {
-            Debug.Log("Letter delivered!");
-            playerInput.enabled =true ;
-            gameManager.HideDialogueOverlay();
-            timer.stopTimer = false;
-        }
-        
-    }
+    // private void DeliverLetter()
+    // {
+    //     if (inNPCArea && !letterDelivered && Input.GetKeyDown(KeyCode.F))
+    //     {
+    //         Debug.Log("Letter delivered!");
+    //         letterDelivered = true;
+    //         playerInput.enabled = false;
+    //         gameManager.ShowDialogueOverlay();
+    //         timer.stopTimer = true;
+    //     }
+    //     else if (inNPCArea && letterDelivered && Input.GetKeyDown(KeyCode.E))
+    //     {
+    //         Debug.Log("Letter delivered!");
+    //         playerInput.enabled =true ;
+    //         gameManager.HideDialogueOverlay();
+    //         timer.stopTimer = false;
+    //     }
+    //     
+    // }
 
     private void PlayerDying()
     {

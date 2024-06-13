@@ -14,7 +14,7 @@ public class DialogueManager : MonoBehaviour
     
     private Story currentStory;
 
-    private bool dialogueIsPlaying;
+    public bool dialogueIsPlaying { get; private set;}
     
     private static DialogueManager instance;
 
@@ -42,7 +42,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (!dialogueIsPlaying) return;
         
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.F))
         {
             ContinueStory();
         }
@@ -59,8 +59,9 @@ public class DialogueManager : MonoBehaviour
         
     }
     
-    private void ExitDialogueMode()
+    public IEnumerator ExitDialogueMode()
     {
+        yield return new WaitForSeconds(0.2f);
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
@@ -69,7 +70,7 @@ public class DialogueManager : MonoBehaviour
     private void ContinueStory()
     {
         if (currentStory.canContinue) dialogueText.text = currentStory.Continue();
-        else ExitDialogueMode();
+        else StartCoroutine(ExitDialogueMode());
                 
     }
   
