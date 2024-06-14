@@ -1,0 +1,7 @@
+Event	ID	Name			Wwise Object Path	Notes
+	144265609	Play_desert_bg			\Default Work Unit\Play_desert_bg	
+	985173527	Stop_desert_bg			\Default Work Unit\Stop_desert_bg	
+
+Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
+	450426651	desert_bg	C:\Users\laura\UnityLocalProjects\CCL4_UnityProject\CCL4_Postman\CCL4_Postman_WwiseProject\.cache\Mac\SFX\desert_bg_D79FB2B7.wem	450426651.wem	\Actor-Mixer Hierarchy\Default Work Unit\ambience\desert_bg	
+

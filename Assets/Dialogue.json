@@ -1,0 +1,71 @@
+{
+  "scenes": {
+    "Forest": {
+      "NPC": "Bruno",
+      "Dialogue": [
+        {
+          "CharacterName": "Bruno",
+          "Line": "Hi Charlie! Ah, thanks, I've been waiting for this! ..."
+        },
+        {
+          "CharacterName": "Bruno",
+          "Line": "Aha... mmm... so this is how he does it! ..."
+        },
+        {
+          "CharacterName": "Bruno",
+          "Line": "Ah! Before I forget, could you give this letter to Daisy? ..."
+        },
+        {
+          "CharacterName": "Bruno",
+          "Line": "Heh, that's a good one! I already have one in mind. ..."
+        }
+      ]
+    },
+    "Desert": {
+      "NPC": "Daisy",
+      "Dialogue": [
+        {
+          "CharacterName": "Daisy",
+          "Line": "Yoo-hoo, Charlie dear! How are you? Thanks for the letter! ..."
+        },
+        {
+          "CharacterName": "Daisy",
+          "Line": "Wow, that sounds amazing! ..."
+        },
+        {
+          "CharacterName": "Daisy",
+          "Line": "Whoa, he knows me well, I’m a romance girl through and through. ..."
+        },
+        {
+          "CharacterName": "Daisy",
+          "Line": "Eek, sounds scary. I love a good thriller! ..."
+        },
+        {
+          "CharacterName": "Daisy",
+          "Line": "I can’t wait to read it. Oh, by the way, could you bring a letter to Kai? ..."
+        }
+      ]
+    },
+    "Coast": {
+      "NPC": "Kai",
+      "Dialogue": [
+        {
+          "CharacterName": "Kai",
+          "Line": "Ahoy, Charlie! Thanks for visiting lil' ol' me. Did you give my letter to Bruno? ..."
+        },
+        {
+          "CharacterName": "Kai",
+          "Line": "Hee-hee, next time he should cook for me! ..."
+        },
+        {
+          "CharacterName": "Kai",
+          "Line": "Aye, that makes me glad! ..."
+        },
+        {
+          "CharacterName": "Kai",
+          "Line": "Mmm? What’s this? A letter from Daisy? ..."
+        }
+      ]
+    }
+  }
+}

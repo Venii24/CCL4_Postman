@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Forest.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Desert.unity
+    guid: 1da930e1852d580489d0a12d3219ddc9
+  - enabled: 1
+    path: Assets/Scenes/Coast.unity
+    guid: 738a5e240492a9b49a2564c6b70f7900
+  - enabled: 0
+    path: Assets/Scenes/LoadingScreen.unity
+    guid: 40947e13b1d611249a970730c0684d81
   m_configObjects: {}
