@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{47DC9B7E-B979-4D49-A955-782AD6A1C180}" SchemaVersion="103">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{47DC9B7E-B979-4D49-A955-782AD6A1C180}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_desert_bg" ID="{468F353E-6272-4B7A-8E46-46B15C81D3E0}">
+					<ChildrenList>
+						<Action Name="" ID="{4E03596D-860A-401E-B605-32F9B40E1E61}" ShortID="230573904">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="desert_bg" ID="{2708EEC1-37B3-4562-8FA9-139DD6E6C669}" WorkUnitID="{8915ADA6-F687-489C-912A-6EC804FA4AAB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_coast_bg" ID="{257D22E9-6204-4FD5-A1BB-BA1F59BDE5AF}">
+					<ChildrenList>
+						<Action Name="" ID="{13CE536D-3AED-463D-BDC8-07DAD54C0FC9}" ShortID="750434111">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="coast_bg" ID="{5BF01B67-FA08-4EDE-988E-4F5F3BA5C37F}" WorkUnitID="{8915ADA6-F687-489C-912A-6EC804FA4AAB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_forest_bg" ID="{DA091AB3-E471-4C3C-BC5D-32DA4D7038D4}">
+					<ChildrenList>
+						<Action Name="" ID="{9B4FCB59-D17D-4317-A7A9-DA49F46CD400}" ShortID="381816930">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="forest_bg" ID="{152FA6CD-657D-41BB-AF3D-5A4B62DB5505}" WorkUnitID="{8915ADA6-F687-489C-912A-6EC804FA4AAB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_coast_bg" ID="{EBD4D31E-C809-4E6E-8C9C-1406BA9A6C70}">
+					<ChildrenList>
+						<Action Name="" ID="{0F17C5B5-3F19-49E9-9A3B-9E6390220815}" ShortID="10621661">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="coast_bg" ID="{5BF01B67-FA08-4EDE-988E-4F5F3BA5C37F}" WorkUnitID="{8915ADA6-F687-489C-912A-6EC804FA4AAB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_desert_bg" ID="{EDAFCCA7-B2B1-4B4D-B9D9-ED4B77139387}">
+					<ChildrenList>
+						<Action Name="" ID="{E2F45DB8-0A59-4AA0-AA4B-A501A25F3BD7}" ShortID="180177780">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="desert_bg" ID="{2708EEC1-37B3-4562-8FA9-139DD6E6C669}" WorkUnitID="{8915ADA6-F687-489C-912A-6EC804FA4AAB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_forest_bg" ID="{35869AAB-EA7E-467A-B2C3-794F4880DAFC}">
+					<ChildrenList>
+						<Action Name="" ID="{5C704E40-CD00-4759-9077-9788F3DB2A01}" ShortID="798699596">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="forest_bg" ID="{152FA6CD-657D-41BB-AF3D-5A4B62DB5505}" WorkUnitID="{8915ADA6-F687-489C-912A-6EC804FA4AAB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

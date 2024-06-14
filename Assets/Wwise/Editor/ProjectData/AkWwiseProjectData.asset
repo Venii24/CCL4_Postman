@@ -9,17 +9,293 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 540da59efab448a4f9fe9809c0d9d40e, type: 3}
   m_Name: AkWwiseProjectData
-  m_EditorClassIdentifier: AK.Wwise.Unity.API.Editor::AkWwiseProjectData
-  AcousticTextureWwu: []
-  AuxBusWwu: []
-  BankWwu: []
-  EventWwu: []
-  RtpcWwu: []
-  StateWwu: []
-  SwitchWwu: []
-  TriggerWwu: []
+  m_EditorClassIdentifier: 
+  AcousticTextureWwu:
+  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Virtual Acoustics
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 6e6ec69ce130c64da33daa5c8a902f39
+    ParentPath: Virtual Acoustics\Default Work Unit
+    guid: 6e6ec69ce130c64da33daa5c8a902f39
+    GuidInternal: 
+    m_lastTime: -8584832389475345944
+    List: []
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Master-Mixer Hierarchy
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 476e0dd3b1bf3b4b85a55ae36881b2f2
+    ParentPath: Master-Mixer Hierarchy\Default Work Unit
+    guid: 476e0dd3b1bf3b4b85a55ae36881b2f2
+    GuidInternal: 
+    m_lastTime: -8584832389477880210
+    List:
+    - name: Master Audio Bus
+      guid: d8a41415a61d2a41a17e75ca0c2149f3
+      id: 3803692087
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 476e0dd3b1bf3b4b85a55ae36881b2f2
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus
+  BankWwu:
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: SoundBanks
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: c0befd82fcc50248b3722cf296c7bf4e
+    ParentPath: SoundBanks\Default Work Unit
+    guid: c0befd82fcc50248b3722cf296c7bf4e
+    GuidInternal: 
+    m_lastTime: -8584832389475392443
+    List:
+    - name: coast
+      guid: 78c4e52298703f4c9177731b23cd3141
+      id: 2482423965
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: c0befd82fcc50248b3722cf296c7bf4e
+      - ElementName: coast
+        ObjectType: 7
+        guid: 78c4e52298703f4c9177731b23cd3141
+      Path: SoundBanks\Default Work Unit\coast
+    - name: commonSounds
+      guid: 2a818bb92658b14cb2028a5743f55879
+      id: 1926594054
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: c0befd82fcc50248b3722cf296c7bf4e
+      - ElementName: commonSounds
+        ObjectType: 7
+        guid: 2a818bb92658b14cb2028a5743f55879
+      Path: SoundBanks\Default Work Unit\commonSounds
+    - name: desert
+      guid: b8650ef53e61344fa5e700bb17735e0d
+      id: 1850388778
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: c0befd82fcc50248b3722cf296c7bf4e
+      - ElementName: desert
+        ObjectType: 7
+        guid: b8650ef53e61344fa5e700bb17735e0d
+      Path: SoundBanks\Default Work Unit\desert
+    - name: forest
+      guid: 26108c1d044e0349b2d27d91d69238ac
+      id: 491961918
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: c0befd82fcc50248b3722cf296c7bf4e
+      - ElementName: forest
+        ObjectType: 7
+        guid: 26108c1d044e0349b2d27d91d69238ac
+      Path: SoundBanks\Default Work Unit\forest
+  EventWwu:
+  - PhysicalPath: Events\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Events
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 7e9bdc4779b9494da955782ad6a1c180
+    ParentPath: Events\Default Work Unit
+    guid: 7e9bdc4779b9494da955782ad6a1c180
+    GuidInternal: 
+    m_lastTime: -8584832389481433872
+    List:
+    - name: Play_coast_bg
+      guid: e9227d250462d54fa1bbba1f59bde5af
+      id: 3165135302
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 7e9bdc4779b9494da955782ad6a1c180
+      - ElementName: Play_coast_bg
+        ObjectType: 3
+        guid: e9227d250462d54fa1bbba1f59bde5af
+      Path: Events\Default Work Unit\Play_coast_bg
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_desert_bg
+      guid: 3e358f4672627a4b8e4646b15c81d3e0
+      id: 144265609
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 7e9bdc4779b9494da955782ad6a1c180
+      - ElementName: Play_desert_bg
+        ObjectType: 3
+        guid: 3e358f4672627a4b8e4646b15c81d3e0
+      Path: Events\Default Work Unit\Play_desert_bg
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_forest_bg
+      guid: b31a09da71e43c4cbc5d32da4d7038d4
+      id: 3161807649
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 7e9bdc4779b9494da955782ad6a1c180
+      - ElementName: Play_forest_bg
+        ObjectType: 3
+        guid: b31a09da71e43c4cbc5d32da4d7038d4
+      Path: Events\Default Work Unit\Play_forest_bg
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_coast_bg
+      guid: 1ed3d4eb09c86e4e8c9c1406ba9a6c70
+      id: 1006772764
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 7e9bdc4779b9494da955782ad6a1c180
+      - ElementName: Stop_coast_bg
+        ObjectType: 3
+        guid: 1ed3d4eb09c86e4e8c9c1406ba9a6c70
+      Path: Events\Default Work Unit\Stop_coast_bg
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Stop_desert_bg
+      guid: a7ccafedb1b24d4bb9d9ed4b77139387
+      id: 985173527
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 7e9bdc4779b9494da955782ad6a1c180
+      - ElementName: Stop_desert_bg
+        ObjectType: 3
+        guid: a7ccafedb1b24d4bb9d9ed4b77139387
+      Path: Events\Default Work Unit\Stop_desert_bg
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Stop_forest_bg
+      guid: ab9a86357eea7a46b2c3794f4880dafc
+      id: 1710369247
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 7e9bdc4779b9494da955782ad6a1c180
+      - ElementName: Stop_forest_bg
+        ObjectType: 3
+        guid: ab9a86357eea7a46b2c3794f4880dafc
+      Path: Events\Default Work Unit\Stop_forest_bg
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+  RtpcWwu:
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Game Parameters
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: b9ba61d762520349a8de5f9e5ef75b00
+    ParentPath: Game Parameters\Default Work Unit
+    guid: b9ba61d762520349a8de5f9e5ef75b00
+    GuidInternal: 
+    m_lastTime: -8584832389481418853
+    List: []
+  StateWwu:
+  - PhysicalPath: States\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: States
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 073dce96a5ffde4ab87b2d8c3492b09b
+    ParentPath: States\Default Work Unit
+    guid: 073dce96a5ffde4ab87b2d8c3492b09b
+    GuidInternal: 
+    m_lastTime: -8584832389475372223
+    List: []
+  SwitchWwu:
+  - PhysicalPath: Switches\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Switches
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: c06a897464b03f4597c958c043beb3d7
+    ParentPath: Switches\Default Work Unit
+    guid: c06a897464b03f4597c958c043beb3d7
+    GuidInternal: 
+    m_lastTime: -8584832389475361149
+    List: []
+  TriggerWwu:
+  - PhysicalPath: Triggers\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Triggers
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 12fae49577775b4794559434d60110b6
+    ParentPath: Triggers\Default Work Unit
+    guid: 12fae49577775b4794559434d60110b6
+    GuidInternal: 
+    m_lastTime: -8584832389475361149
+    List: []
   ExpandedFileSystemItemIds: 
   ExpandedWaapiItemIds: 
   AutoSyncSelection: 0
