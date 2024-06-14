@@ -4,18 +4,18 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using Ink.Runtime;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private TextMeshProUGUI nameText;
+    [SerializeField] private RawImage characterImage;
     
     private Story currentStory;
-
-    public bool dialogueIsPlaying { get; private set;}
+    public bool dialogueIsPlaying { get; private set; }
     
     private static DialogueManager instance;
 
@@ -24,43 +24,43 @@ public class DialogueManager : MonoBehaviour
         if (instance != null)
         {
             Debug.LogWarning("More than one instance of DialogueManager found!");
+            return;
         }
         instance = this;
     }
-    
+
     public static DialogueManager GetInstance()
     {
         return instance;
     }
-    
+
     void Start()
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
     }
-    
+
     private void Update()
     {
         if (!dialogueIsPlaying) return;
-        
+
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.F))
         {
             ContinueStory();
         }
     }
-    
 
-    public void EnterDialogueMode(TextAsset inkJSON)
+    public void EnterDialogueMode(TextAsset inkJSON, Texture characterImageTexture)
     {
         nameText.text = inkJSON.name;
+        characterImage.texture = characterImageTexture;
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
         
         ContinueStory();
-        
     }
-    
+
     public IEnumerator ExitDialogueMode()
     {
         yield return new WaitForSeconds(0.2f);
@@ -71,11 +71,13 @@ public class DialogueManager : MonoBehaviour
 
     private void ContinueStory()
     {
-        if (currentStory.canContinue) dialogueText.text = currentStory.Continue();
-        else StartCoroutine(ExitDialogueMode());
-                
+        if (currentStory.canContinue) 
+        {
+            dialogueText.text = currentStory.Continue();
+        }
+        else 
+        {
+            StartCoroutine(ExitDialogueMode());
+        }
     }
-  
-
-   
 }

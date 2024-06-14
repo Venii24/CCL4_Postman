@@ -7,16 +7,16 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-    public Timer timer;
+    private Timer timer;
     private int score = 0;
     private LevelLoader levelLoader;
-    [SerializeField] public GameObject TimerBox;
+   // [SerializeField] public GameObject TimerBox;
     [SerializeField]
     public GameObject winOverlay;
     [SerializeField]
     public GameObject TimeOverOverlay;
     [SerializeField]
-    public GameObject DialogueBox;
+    public GameObject DialogueManager;
     [SerializeField]
     public GameObject Canvas;
 
@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        TimerBox.SetActive(false);
+        //TimerBox.SetActive(false);
         timer = FindObjectOfType<Timer>();
         timer.stopTimer = true;
         
@@ -33,14 +33,12 @@ public class GameManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(this.gameObject);
             DontDestroyOnLoad(Canvas);
+            DontDestroyOnLoad(DialogueManager);
             levelLoader = FindObjectOfType<LevelLoader>(); // Find the LevelLoader in the scene
             
             // Disable the WinOverlay UI element at the start
             if (winOverlay != null)
                 winOverlay.SetActive(false);
-            
-            if (DialogueBox != null)
-                DialogueBox.SetActive(false);
             
             if (TimeOverOverlay != null)
                 TimeOverOverlay.SetActive(false);
@@ -65,7 +63,7 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(nextSceneIndex);
             winOverlay.SetActive(false);
             timer.CountdownTime = 180f;
-            TimerBox.SetActive(true);
+            //TimerBox.SetActive(true);
             timer.stopTimer = false;
         }
         else if (nextSceneIndex == 4) //go back to menu
@@ -73,8 +71,7 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(0);
             winOverlay.SetActive(false);
             TimeOverOverlay.SetActive(false);
-            DialogueBox.SetActive(false);
-            TimerBox.SetActive(false);
+           // TimerBox.SetActive(false);
             timer.CountdownTime = 180f;
             timer.stopTimer = true;
         }
@@ -107,17 +104,7 @@ public class GameManager : MonoBehaviour
     }
     
     // Method to show the DialogueBox UI element
-    public void ShowDialogueOverlay()
-    {
-        if (DialogueBox != null)
-            DialogueBox.SetActive(true);
-    }
-    
-    public void HideDialogueOverlay()
-    {
-        if (DialogueBox != null)
-            DialogueBox.SetActive(false);
-    }
+
     
     public void ShowTimeOverOverlay()
     {

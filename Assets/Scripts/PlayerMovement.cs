@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpForce = 2f;
     [SerializeField] private Transform cam;
     [SerializeField] private float pushPower = 2.0f;
-    public bool letterDelivered = true;
+    public bool letterDelivered = false;
     public bool inNPCArea = false;
 
     void Start()
@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         moveAction = playerInput.actions["Move"];
         jumpAction = playerInput.actions["Jump"];
+        letterDelivered = false;
 
         // Find the GameManager instance in the scene
         gameManager = GameManager.Instance;
@@ -158,7 +159,7 @@ public class PlayerMovement : MonoBehaviour
         {
             letterDelivered = false;
             Die();
-            UnableOverlays();
+           
         }
     }
 
@@ -168,8 +169,5 @@ public class PlayerMovement : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
     
-    private void UnableOverlays()
-    {
-        gameManager.HideDialogueOverlay();
-    }
+ 
 }
