@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject winOverlay;
     [SerializeField] public GameObject TimerBox;
     [SerializeField] public GameObject TimeOverOverlay;
+    [SerializeField] public GameObject FKeyAlert;
     
      [Header("Dont Destroy On Load")]
      [SerializeField] public GameObject DialogueManager;
@@ -20,7 +21,6 @@ public class GameManager : MonoBehaviour
      [Header("Buttons")]
      [SerializeField] public TextMeshProUGUI ButtonLevelContinueText;
     public static GameManager Instance { get; private set; }
-    public DialogueManager dialogueManager;
     private Timer timer;
     private int score = 0;
     private LevelLoader levelLoader;
@@ -34,7 +34,6 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         timer = FindObjectOfType<Timer>();
-        dialogueManager = FindObjectOfType<DialogueManager>();
         timer.stopTimer = true;
 
         if (Instance == null)
@@ -58,7 +57,7 @@ public class GameManager : MonoBehaviour
             {
                 Destroy(this.gameObject); // This will destroy the GameManager if another exists
             }
-            //BacktoMenu = false;
+            
 
         }
 
@@ -71,10 +70,15 @@ public class GameManager : MonoBehaviour
         {
             winOverlay.SetActive(false);
             TimeOverOverlay.SetActive(false);
-            dialogueManager.FKeyAlert.SetActive(false);
+            FKeyAlert.SetActive(false);
             TimerBox.SetActive(false);
             
         }
+        else if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            TimerBox.SetActive(true);
+        }
+       
     }
 
     public void LoadScene()
