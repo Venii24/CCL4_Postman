@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     [Header("Dialogue UI")]
+    [SerializeField] public GameObject FKeyAlert;
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private TextMeshProUGUI nameText;
@@ -27,6 +28,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
         instance = this;
+        FKeyAlert.SetActive(false);
     }
 
     public static DialogueManager GetInstance()

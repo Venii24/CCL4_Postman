@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour
 {
     public GameManager gameManager;
     [SerializeField] TextMeshProUGUI timerText;
-    public float CountdownTime = 120f;
+    public float CountdownTime = 180f;
     public bool stopTimer = false;
     // Start is called before the first frame update
     void Start()
@@ -28,6 +28,7 @@ public class Timer : MonoBehaviour
         if (CountdownTime <= 0)
         {
             gameManager.ShowTimeOverOverlay();
+            timerText.text = "00:00";
             stopTimer = true;
         }
         else

@@ -20,12 +20,22 @@ public class DialogueTrigger : MonoBehaviour
     }
 
     void Update()
-    {
+    { 
+        
         if (playerInRange && Input.GetKeyDown(KeyCode.F) && !DialogueManager.GetInstance().dialogueIsPlaying)
         {
             playerMovement.letterDelivered = true;
             DialogueManager.GetInstance().EnterDialogueMode(inkJSON, characterImagePNG);
         }
+        else if (playerInRange && DialogueManager.GetInstance().dialogueIsPlaying) // If player is in range but dialogue is playing
+        {
+            DialogueManager.GetInstance().FKeyAlert.SetActive(false);
+        }
+        else if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying) // If player is in range but dialogue is not playing
+        {
+            DialogueManager.GetInstance().FKeyAlert.SetActive(true);
+        }
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -35,6 +45,7 @@ public class DialogueTrigger : MonoBehaviour
             Debug.Log("Player in range");
             playerInRange = true;
         }
+        DialogueManager.GetInstance().FKeyAlert.SetActive(false);
     }
 
     private void OnTriggerExit(Collider other)
@@ -44,5 +55,6 @@ public class DialogueTrigger : MonoBehaviour
             Debug.Log("Player out of range");
             playerInRange = false;
         }
+        DialogueManager.GetInstance().FKeyAlert.SetActive(false);
     }
 }
