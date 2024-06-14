@@ -1,0 +1,7 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1710369247	Stop_forest_bg			\Default Work Unit\Stop_forest_bg	
+	3161807649	Play_forest_bg			\Default Work Unit\Play_forest_bg	
+
+Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
+	326205617	forest_bg	C:\Users\laura\UnityLocalProjects\CCL4_UnityProject\CCL4_Postman\CCL4_Postman_WwiseProject\.cache\Mac\SFX\forest_bg_D79FB2B7.wem	326205617.wem	\Actor-Mixer Hierarchy\Default Work Unit\ambience\forest_bg	
+

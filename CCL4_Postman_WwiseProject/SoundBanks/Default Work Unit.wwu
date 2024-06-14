@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{82FDBEC0-C5FC-4802-B372-2CF296C7BF4E}" SchemaVersion="103">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{82FDBEC0-C5FC-4802-B372-2CF296C7BF4E}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="commonSounds" ID="{B98B812A-5826-4CB1-B202-8A5743F55879}">
+					<ObjectInclusionList/>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+				<SoundBank Name="desert" ID="{F50E65B8-613E-4F34-A5E7-00BB17735E0D}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Stop_desert_bg" ID="{EDAFCCA7-B2B1-4B4D-B9D9-ED4B77139387}" WorkUnitID="{47DC9B7E-B979-4D49-A955-782AD6A1C180}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_desert_bg" ID="{468F353E-6272-4B7A-8E46-46B15C81D3E0}" WorkUnitID="{47DC9B7E-B979-4D49-A955-782AD6A1C180}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+				<SoundBank Name="forest" ID="{1D8C1026-4E04-4903-B2D2-7D91D69238AC}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Stop_forest_bg" ID="{35869AAB-EA7E-467A-B2C3-794F4880DAFC}" WorkUnitID="{47DC9B7E-B979-4D49-A955-782AD6A1C180}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_forest_bg" ID="{DA091AB3-E471-4C3C-BC5D-32DA4D7038D4}" WorkUnitID="{47DC9B7E-B979-4D49-A955-782AD6A1C180}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+				<SoundBank Name="coast" ID="{22E5C478-7098-4C3F-9177-731B23CD3141}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Stop_coast_bg" ID="{EBD4D31E-C809-4E6E-8C9C-1406BA9A6C70}" WorkUnitID="{47DC9B7E-B979-4D49-A955-782AD6A1C180}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_coast_bg" ID="{257D22E9-6204-4FD5-A1BB-BA1F59BDE5AF}" WorkUnitID="{47DC9B7E-B979-4D49-A955-782AD6A1C180}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>
