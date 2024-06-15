@@ -101,4 +101,11 @@ public class SwitchCamera : MonoBehaviour
         // Re-enable input after rotation is complete
         SetAcceptInput(true);
     }
+    
+    
+    public void ResetRotation()
+    {
+        //rotate object to 0,0,0
+        targetRot = Vector3.zero;
+    }
 }

@@ -22,7 +22,6 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     private Timer timer;
     private int score = 0;
-    private LevelLoader levelLoader;
     private bool backToMenu = false;
 
     private void Awake()
@@ -38,7 +37,6 @@ public class GameManager : MonoBehaviour
                 DontDestroyOnLoad(this.gameObject);
                 DontDestroyOnLoad(Canvas);
                 DontDestroyOnLoad(DialogueManager);
-                levelLoader = FindObjectOfType<LevelLoader>(); // Find the LevelLoader in the scene
 
                 // Disable the WinOverlay UI element at the start
                 if (winOverlay != null)

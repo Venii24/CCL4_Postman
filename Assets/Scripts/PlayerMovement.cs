@@ -3,19 +3,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
+
+    [Header("Game Objects")] 
+    [SerializeField]
+    private GameObject box1;
+    [SerializeField]
+    private GameObject box2;
+    [SerializeField] private Transform cam;
+    
+    
+    [Header("Variables")] 
+    [SerializeField] float moveSpeed = 6f;
+    [SerializeField] float jumpForce = 2f;
+    [SerializeField] private float pushPower = 2.0f;
+        
+        
     private GameManager gameManager; 
     private Timer timer;
     private Rigidbody rb;
+    private SwitchCamera camRotator;
     private PlayerInput playerInput;
     private InputAction moveAction;
     private InputAction jumpAction;
-    [SerializeField] float moveSpeed = 6f;
-    [SerializeField] float jumpForce = 2f;
-    [SerializeField] private Transform cam;
-    [SerializeField] private float pushPower = 2.0f;
+    private Vector3 box1StartPos;
+    private Vector3 box2StartPos;
+ 
     public bool letterDelivered = false;
     public bool inNPCArea = false;
 
@@ -23,10 +39,13 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         playerInput = GetComponent<PlayerInput>();
+        camRotator = FindObjectOfType<SwitchCamera>();
         moveAction = playerInput.actions["Move"];
         jumpAction = playerInput.actions["Jump"];
         letterDelivered = false;
-
+        box1StartPos = box1.transform.position;
+        box2StartPos = box2.transform.position;
+        
         // Find the GameManager instance in the scene
         gameManager = GameManager.Instance;
         timer = FindObjectOfType<Timer>();
@@ -132,26 +151,7 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Exited NPC area: " + other.name);
         }
     }
-
-    // private void DeliverLetter()
-    // {
-    //     if (inNPCArea && !letterDelivered && Input.GetKeyDown(KeyCode.F))
-    //     {
-    //         Debug.Log("Letter delivered!");
-    //         letterDelivered = true;
-    //         playerInput.enabled = false;
-    //         gameManager.ShowDialogueOverlay();
-    //         timer.stopTimer = true;
-    //     }
-    //     else if (inNPCArea && letterDelivered && Input.GetKeyDown(KeyCode.E))
-    //     {
-    //         Debug.Log("Letter delivered!");
-    //         playerInput.enabled =true ;
-    //         gameManager.HideDialogueOverlay();
-    //         timer.stopTimer = false;
-    //     }
-    //     
-    // }
+    
 
     private void PlayerDying()
     {
@@ -166,8 +166,15 @@ public class PlayerMovement : MonoBehaviour
     private void Die()
     {
         Debug.Log("Player died!");
-        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        //set player to start position
+        transform.position =  new Vector3(0, 1.7f, -14f);
+        //reset box positions
+        box1.transform.position = box1StartPos;
+        box2.transform.position = box2StartPos;
+        camRotator.ResetRotation();
     }
+    
+    
     
  
 }
