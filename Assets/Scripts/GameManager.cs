@@ -71,6 +71,10 @@ public class GameManager : MonoBehaviour
         {
             TimerBox.SetActive(true);
         }
+        else if (SceneManager.GetActiveScene().buildIndex == 3)
+        {
+            timer.stopTimer = false;
+        }
     }
 
     public void LoadScene()

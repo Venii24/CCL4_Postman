@@ -17,8 +17,11 @@ public class DialogueManager : MonoBehaviour
     
     private Story currentStory;
     public bool dialogueIsPlaying { get; private set; }
-    
+    private bool isTyping = false;
+    private string currentLine = "";
+
     private static DialogueManager instance;
+    private Timer timer;
 
     private void Awake()
     {
@@ -40,6 +43,7 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
+        timer = FindObjectOfType<Timer>();
     }
 
     private void Update()
@@ -48,7 +52,16 @@ public class DialogueManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.F))
         {
-            ContinueStory();
+            if (isTyping)
+            {
+                StopAllCoroutines();
+                dialogueText.text = currentLine;
+                isTyping = false;
+            }
+            else
+            {
+                ContinueStory();
+            }
         }
     }
 
@@ -59,7 +72,7 @@ public class DialogueManager : MonoBehaviour
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
-        
+        timer.stopTimer = true;
         ContinueStory();
     }
 
@@ -69,17 +82,31 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
+        timer.stopTimer = false;
     }
 
     private void ContinueStory()
     {
         if (currentStory.canContinue) 
         {
-            dialogueText.text = currentStory.Continue();
+            currentLine = currentStory.Continue();
+            StartCoroutine(TypeSentence(currentLine));
         }
         else 
         {
             StartCoroutine(ExitDialogueMode());
         }
+    }
+
+    private IEnumerator TypeSentence(string sentence)
+    {
+        isTyping = true;
+        dialogueText.text = "";
+        foreach (char letter in sentence.ToCharArray())
+        {
+            dialogueText.text += letter;
+            yield return new WaitForSeconds(0.05f); //speed of typing
+        }
+        isTyping = false;
     }
 }
