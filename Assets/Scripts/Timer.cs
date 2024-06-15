@@ -8,7 +8,7 @@ public class Timer : MonoBehaviour
     public GameManager gameManager;
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private RawImage timerImage;
-    public float CountdownTime = 180f;
+    public float CountdownTime = 181f;
     public bool stopTimer = false;
 
     private Coroutine blinkCoroutine;

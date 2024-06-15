@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject DialogueManager;
     [SerializeField] public GameObject Canvas;
 
-    [Header("Buttons")]
+    [Header("Button")]
     [SerializeField] public TextMeshProUGUI ButtonLevelContinueText;
     public static GameManager Instance { get; private set; }
     private Timer timer;
@@ -92,7 +92,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Loading next scene: " + nextSceneIndex);
             SceneManager.LoadScene(nextSceneIndex);
             winOverlay.SetActive(false);
-            timer.CountdownTime = 180f;
+            timer.CountdownTime = 181f;
             TimerBox.SetActive(true);
             timer.stopTimer = false;
         }
@@ -156,7 +156,7 @@ public class GameManager : MonoBehaviour
     public void reloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        timer.CountdownTime = 180f;
+        timer.CountdownTime = 181f;
         timer.stopTimer = false;
     }
 
@@ -164,5 +164,10 @@ public class GameManager : MonoBehaviour
     {
         if (winOverlay != null)
             winOverlay.SetActive(false);
+    }
+
+    public void OnWinOverlayButtonClicked()
+    {
+        LoadScene();
     }
 }
