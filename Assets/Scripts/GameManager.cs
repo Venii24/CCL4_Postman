@@ -16,9 +16,12 @@ public class GameManager : MonoBehaviour
     [Header("Dont Destroy On Load")]
     [SerializeField] public GameObject DialogueManager;
     [SerializeField] public GameObject Canvas;
+    [SerializeField] public GameObject LevelLoader;
 
     [Header("Button")]
     [SerializeField] public TextMeshProUGUI ButtonLevelContinueText;
+    
+    public Animator transition;
     public static GameManager Instance { get; private set; }
     private Timer timer;
     private int score = 0;
@@ -37,6 +40,7 @@ public class GameManager : MonoBehaviour
                 DontDestroyOnLoad(this.gameObject);
                 DontDestroyOnLoad(Canvas);
                 DontDestroyOnLoad(DialogueManager);
+                DontDestroyOnLoad(LevelLoader);
 
                 // Disable the WinOverlay UI element at the start
                 if (winOverlay != null)
@@ -88,7 +92,7 @@ public class GameManager : MonoBehaviour
         if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
         {
             Debug.Log("Loading next scene: " + nextSceneIndex);
-            SceneManager.LoadScene(nextSceneIndex);
+            StartCoroutine(LoadLevel(nextSceneIndex));
             winOverlay.SetActive(false);
             timer.CountdownTime = 181f;
             TimerBox.SetActive(true);
@@ -96,8 +100,8 @@ public class GameManager : MonoBehaviour
         }
         else if (nextSceneIndex == 4) // Go back to menu
         {
-            DestroyPersistentObjects();
             SceneManager.LoadScene(0);
+            DestroyPersistentObjects();
         }
         else
         {
@@ -109,6 +113,13 @@ public class GameManager : MonoBehaviour
             ButtonLevelContinueText.text = "Back to Menu";
         }
     }
+    
+    IEnumerator LoadLevel(int levelIndex)
+    {
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(levelIndex);
+    }
 
     private void DestroyPersistentObjects()
     {
@@ -118,6 +129,7 @@ public class GameManager : MonoBehaviour
         // Destroy other objects set to DontDestroyOnLoad
         Destroy(Canvas);
         Destroy(DialogueManager);
+        Destroy(LevelLoader);
 
         // Reset static instance
         Instance = null;
@@ -157,12 +169,7 @@ public class GameManager : MonoBehaviour
         timer.CountdownTime = 181f;
         timer.stopTimer = false;
     }
-
-    public void HideWinOverlay()
-    {
-        if (winOverlay != null)
-            winOverlay.SetActive(false);
-    }
+    
 
     public void OnWinOverlayButtonClicked()
     {
