@@ -20,7 +20,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float moveSpeed = 6f;
     [SerializeField] float jumpForce = 2f;
     [SerializeField] private float pushPower = 2.0f;
-        
+
+    // [SerializeField]
+    // private Animator _animator;
         
     private GameManager gameManager; 
     private Timer timer;
