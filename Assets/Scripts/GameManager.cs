@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Loading next scene: " + nextSceneIndex);
             StartCoroutine(LoadLevel(nextSceneIndex));
             winOverlay.SetActive(false);
-            timer.CountdownTime = 181f;
+            timer.CountdownTime = 182f;
             TimerBox.SetActive(true);
             timer.stopTimer = false;
         }
@@ -125,7 +125,7 @@ public class GameManager : MonoBehaviour
     IEnumerator LoadLevel(int levelIndex)
     {
         transition.SetTrigger("Start");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(levelIndex);
     }
 
