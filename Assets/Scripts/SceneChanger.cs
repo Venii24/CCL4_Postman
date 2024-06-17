@@ -47,6 +47,8 @@ public class SceneChanger : MonoBehaviour
         if (train.transform.position.x == 8f)
         {
             timer.stopTimer = false;
+            
+            
         }
 
         else
@@ -88,7 +90,7 @@ public class SceneChanger : MonoBehaviour
         StartCoroutine(AnimateCameraTransition(playerCamera.transform.position, cameraAnimationPosition, 1f));
         playerCamera.transform.position = cameraAnimationPosition;
         float duration = 5f;
-        Vector3 targetTrainPosition = new Vector3(30, train.transform.position.y, train.transform.position.z);
+        Vector3 targetTrainPosition = new Vector3(40, train.transform.position.y, train.transform.position.z);
 
         player.SetActive(false); // Make the player disappear
         yield return MoveTrain(targetTrainPosition, duration);

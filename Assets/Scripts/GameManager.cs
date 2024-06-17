@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject TimerBox;
     [SerializeField] public GameObject TimeOverOverlay;
     [SerializeField] public GameObject FKeyAlert;
+    [SerializeField] public GameObject StartCanvas;
 
     [Header("Dont Destroy On Load")]
     [SerializeField] public GameObject DialogueManager;
@@ -94,7 +95,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Loading next scene: " + nextSceneIndex);
             StartCoroutine(LoadLevel(nextSceneIndex));
             winOverlay.SetActive(false);
-            timer.CountdownTime = 182f;
+            timer.CountdownTime = 181f;
             TimerBox.SetActive(true);
             timer.stopTimer = false;
         }
@@ -112,12 +113,16 @@ public class GameManager : MonoBehaviour
         {
             ButtonLevelContinueText.text = "Back to Menu";
         }
+        if (nextSceneIndex == 1)
+        {
+            timer.CountdownTime = 183f;
+        }
     }
     
     IEnumerator LoadLevel(int levelIndex)
     {
         transition.SetTrigger("Start");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(levelIndex);
     }
 
@@ -166,7 +171,7 @@ public class GameManager : MonoBehaviour
     public void reloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        timer.CountdownTime = 182f;
+        timer.CountdownTime = 181f;
         timer.stopTimer = false;
     }
     
