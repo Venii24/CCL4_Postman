@@ -21,8 +21,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpForce = 2f;
     [SerializeField] private float pushPower = 2.0f;
 
-    // [SerializeField]
-    // private Animator _animator;
+    [SerializeField]
+    private Animator _animator;
         
     private GameManager gameManager; 
     private Timer timer;
@@ -93,6 +93,10 @@ public class PlayerMovement : MonoBehaviour
         
         // Apply movement
         rb.velocity = new Vector3(moveDirection.x * moveSpeed, rb.velocity.y, moveDirection.z * moveSpeed);
+
+        // Update animator parameter
+        bool isWalking = moveDirection.magnitude > 0.1f;
+        _animator.SetBool("isWalking", isWalking);
     }
 
     void Jump()
@@ -175,8 +179,4 @@ public class PlayerMovement : MonoBehaviour
         box2.transform.position = box2StartPos;
         camRotator.ResetRotation();
     }
-    
-    
-    
- 
 }
