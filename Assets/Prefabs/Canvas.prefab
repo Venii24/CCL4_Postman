@@ -1760,14 +1760,14 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 4184415438685159505}
   - {fileID: 7537596858822085809}
   - {fileID: 5403336057758209224}
-  - {fileID: 4184415438685159505}
   - {fileID: 6529903311400585905}
   - {fileID: 6333854090985164549}
   - {fileID: 3133689794561590094}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1851,6 +1851,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   timerText: {fileID: 1653043244558407982}
+  timerImage: {fileID: 0}
   CountdownTime: 120
   stopTimer: 0
 --- !u!1 &8260925775109662860

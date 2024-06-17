@@ -48,8 +48,9 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
+        
         if (!dialogueIsPlaying) return;
-
+        
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.F))
         {
             if (isTyping)
@@ -63,16 +64,18 @@ public class DialogueManager : MonoBehaviour
                 ContinueStory();
             }
         }
+        
     }
 
     public void EnterDialogueMode(TextAsset inkJSON, Texture characterImageTexture)
     {
+        timer.stopTimer = true;
         nameText.text = inkJSON.name;
         characterImage.texture = characterImageTexture;
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
-        timer.stopTimer = true;
+        
         ContinueStory();
     }
 

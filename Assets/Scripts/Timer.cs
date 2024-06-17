@@ -8,20 +8,27 @@ public class Timer : MonoBehaviour
     public GameManager gameManager;
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private RawImage timerImage;
-    public float CountdownTime = 181f;
+    public float CountdownTime = 182f;
     public bool stopTimer = false;
 
     private Coroutine blinkCoroutine;
+    private DialogueManager dialogueManager;
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
+        dialogueManager = FindObjectOfType<DialogueManager>();
     }
 
     // Update is called once per frame
     void Update()
-    {
+    { 
+        if (dialogueManager.dialogueIsPlaying)
+        {
+            stopTimer = true;
+        }
+        
         if (!stopTimer)
         {
             CountdownTime -= Time.deltaTime;
@@ -29,6 +36,8 @@ public class Timer : MonoBehaviour
             int seconds = Mathf.FloorToInt(CountdownTime % 60);
             timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         }
+        
+       
 
         if (CountdownTime <= 0)
         {
@@ -49,6 +58,7 @@ public class Timer : MonoBehaviour
         if (stopTimer && blinkCoroutine == null)
         {
             blinkCoroutine = StartCoroutine(BlinkTextAndImage());
+            stopTimer = true;
         }
         else if (!stopTimer && blinkCoroutine != null)
         {

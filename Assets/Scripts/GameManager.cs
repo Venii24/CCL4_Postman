@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Loading next scene: " + nextSceneIndex);
             StartCoroutine(LoadLevel(nextSceneIndex));
             winOverlay.SetActive(false);
-            timer.CountdownTime = 181f;
+            timer.CountdownTime = 182f;
             TimerBox.SetActive(true);
             timer.stopTimer = false;
         }
@@ -166,7 +166,7 @@ public class GameManager : MonoBehaviour
     public void reloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        timer.CountdownTime = 181f;
+        timer.CountdownTime = 182f;
         timer.stopTimer = false;
     }
     
