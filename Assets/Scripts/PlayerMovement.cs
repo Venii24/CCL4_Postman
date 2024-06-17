@@ -77,28 +77,49 @@ public class PlayerMovement : MonoBehaviour
     void MovePlayer()
     {
         Vector2 moveInput = moveAction.ReadValue<Vector2>();
-        
+    
         // Camera direction
         Vector3 camForward = cam.forward;
         Vector3 camRight = cam.right;
-        
+    
         camForward.y = 0;
         camRight.y = 0;
-        
+    
         // Create camera-relative directions
         Vector3 forwardRelative = camForward.normalized * moveInput.y;
         Vector3 rightRelative = camRight.normalized * moveInput.x;
-        
+    
         Vector3 moveDirection = forwardRelative + rightRelative;
-        
+    
         // Apply movement
         rb.velocity = new Vector3(moveDirection.x * moveSpeed, rb.velocity.y, moveDirection.z * moveSpeed);
 
         // Update animator parameter
         bool isWalking = moveDirection.magnitude > 0.1f;
         _animator.SetBool("isWalking", isWalking);
+
+        // Ensure player faces the direction of movement
+        if (isWalking)
+        {
+            RotatePlayer();
+        }
+    }
+    
+    void RotatePlayer()
+    {
+        Vector2 moveInput = moveAction.ReadValue<Vector2>();
+        if (moveInput.magnitude > 0.1f)
+        {
+            float targetAngle = Mathf.Atan2(moveInput.x, moveInput.y) * Mathf.Rad2Deg + cam.eulerAngles.y;
+            targetAngle -= 90f; // Rotate 90° to the left
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+        }
     }
 
+    private float turnSmoothVelocity;
+    public float turnSmoothTime = 0.1f;
+    
     void Jump()
     {
         if (jumpAction.triggered && Mathf.Abs(rb.velocity.y) < 0.01f && Physics.Raycast(transform.position, Vector3.down, 1.1f))
@@ -107,14 +128,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void RotatePlayer()
-    {
-        Vector3 direction = new Vector3(rb.velocity.x, 0, rb.velocity.z);
-        if (direction.magnitude > 0.1f)
-        {
-            transform.forward = direction;
-        }
-    }
+ 
 
     void OnCollisionEnter(Collision collision)
     {
