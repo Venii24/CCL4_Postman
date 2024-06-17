@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="12" SoundbankVersion="140">
 	<RootPaths>
-		<ProjectRoot>C:\Users\laura\UnityLocalProjects\CCL4_UnityProject\CCL4_Postman\CCL4_Postman_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>C:\Users\laura\UnityLocalProjects\CCL4_UnityProject\CCL4_Postman\CCL4_Postman_WwiseProject\.cache\Mac\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Users\laura\UnityLocalProjects\CCL4_UnityProject\CCL4_Postman\CCL4_Postman_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\stefa\OneDrive\Dokumente\FH StPoelten BCC\4. Semester\Engine Dev\Rotate Camera\CCL4\CCL4_Postman_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\stefa\OneDrive\Dokumente\FH StPoelten BCC\4. Semester\Engine Dev\Rotate Camera\CCL4\CCL4_Postman_WwiseProject\.cache\Mac\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\stefa\OneDrive\Dokumente\FH StPoelten BCC\4. Semester\Engine Dev\Rotate Camera\CCL4\CCL4_Postman_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\laura\UnityLocalProjects\CCL4_UnityProject\CCL4_Postman\CCL4_Postman_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\stefa\OneDrive\Dokumente\FH StPoelten BCC\4. Semester\Engine Dev\Rotate Camera\CCL4\CCL4_Postman_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles>
@@ -37,7 +37,7 @@
 						</File>
 					</ReferencedStreamedFiles>
 				</Event>
-				<Event Id="1710369247" Name="Stop_forest_bg" ObjectPath="\Events\Default Work Unit\Stop_forest_bg" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1710369247" Name="Stop_forest_bg" ObjectPath="\Events\Default Work Unit\Stop_forest_bg" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 			</IncludedEvents>
 		</SoundBank>
 		<SoundBank Id="1355168291" Language="SFX" Hash="2754342975">
@@ -58,7 +58,7 @@
 						</File>
 					</ReferencedStreamedFiles>
 				</Event>
-				<Event Id="985173527" Name="Stop_desert_bg" ObjectPath="\Events\Default Work Unit\Stop_desert_bg" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="985173527" Name="Stop_desert_bg" ObjectPath="\Events\Default Work Unit\Stop_desert_bg" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 			</IncludedEvents>
 		</SoundBank>
 		<SoundBank Id="1926594054" Language="SFX" Hash="3332474353">
@@ -79,7 +79,7 @@
 						</File>
 					</ReferencedStreamedFiles>
 				</Event>
-				<Event Id="1006772764" Name="Stop_coast_bg" ObjectPath="\Events\Default Work Unit\Stop_coast_bg" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1006772764" Name="Stop_coast_bg" ObjectPath="\Events\Default Work Unit\Stop_coast_bg" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 			</IncludedEvents>
 		</SoundBank>
 	</SoundBanks>

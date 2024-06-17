@@ -81,6 +81,8 @@ public class GameManager : MonoBehaviour
         {
             timer.stopTimer = false;
         }
+        
+        if (timer.CountdownTime == 60f) AkSoundEngine.PostEvent("Play_trainWhistle", gameObject);
     }
 
     public void LoadScene()
@@ -174,7 +176,8 @@ public class GameManager : MonoBehaviour
     public void reloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        timer.CountdownTime = 180f;
+       // timer.CountdownTime = 180f;
+        timer.CountdownTime = 70f;
         timer.stopTimer = false;
     }
     
