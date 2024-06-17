@@ -16,10 +16,28 @@ namespace AK
         static const AkUniqueID PLAY_COAST_BG = 3165135302U;
         static const AkUniqueID PLAY_DESERT_BG = 144265609U;
         static const AkUniqueID PLAY_FOREST_BG = 3161807649U;
+        static const AkUniqueID PLAY_STEPS_SWITCH = 1426829698U;
         static const AkUniqueID STOP_COAST_BG = 1006772764U;
         static const AkUniqueID STOP_DESERT_BG = 985173527U;
         static const AkUniqueID STOP_FOREST_BG = 1710369247U;
     } // namespace EVENTS
+
+    namespace SWITCHES
+    {
+        namespace STEPS
+        {
+            static const AkUniqueID GROUP = 1718617278U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID GRASS = 4248645337U;
+                static const AkUniqueID SAND = 803837735U;
+                static const AkUniqueID STONE = 1216965916U;
+                static const AkUniqueID WOOD = 2058049674U;
+            } // namespace SWITCH
+        } // namespace STEPS
+
+    } // namespace SWITCHES
 
     namespace BANKS
     {

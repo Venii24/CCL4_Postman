@@ -36,6 +36,8 @@ public class PlayerMovement : MonoBehaviour
  
     public bool letterDelivered = false;
     public bool inNPCArea = false;
+    
+    public string currentSurfaceType = null; // Default surface type
 
     void Start()
     {
@@ -55,13 +57,16 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        
         /*
         if (DialogueManager.GetInstance().dialogueIsPlaying)
         {
             return;
         }
         */
-        
+
+
+        DetectSurface();
         MovePlayer();
         Jump();
         RotatePlayer();
@@ -71,6 +76,40 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
+        }
+    }
+
+    void DetectSurface()
+    {
+        // Cast a ray downwards to detect the surface type
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 1f))
+        {
+            string surfaceTag = hit.collider.tag;
+
+            switch (surfaceTag)
+            {
+                case "Grass":
+                    currentSurfaceType = "grass";
+                    break;
+                case "Sand":
+                    currentSurfaceType = "sand";
+                    break;
+                case "Wood":
+                    currentSurfaceType = "wood";
+                    break;
+                case "Stone":
+                    currentSurfaceType = "stone";
+                    break;
+                // Add more cases for other surface types as needed
+                default:
+                    currentSurfaceType = null; // Handle unknown tags
+                    break;
+            }
+        }
+        else
+        {
+            currentSurfaceType = null; // Handle case when no surface is detected
         }
     }
 

@@ -130,6 +130,348 @@
 					</ChildrenList>
 					<ObjectLists/>
 				</ActorMixer>
+				<SwitchContainer Name="steps_switch" ID="{AE903D0A-78A7-414B-BF4D-B8973B093CCF}" ShortID="438211713">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-13</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4FCE439C-B699-4B62-B613-201B8E210364}"/>
+						</Reference>
+						<Reference Name="DefaultSwitchOrState">
+							<ObjectRef Name="grass" ID="{7EB94A19-6275-4EB4-BAE0-BDA9530ACDD6}" WorkUnitID="{74896AC0-B064-453F-97C9-58C043BEB3D7}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D30D6E47-BFB1-4B3B-85A5-5AE36881B2F2}"/>
+						</Reference>
+						<Reference Name="SwitchGroupOrStateGroup">
+							<ObjectRef Name="steps" ID="{70338A6C-7990-48BC-8880-1A481400F903}" WorkUnitID="{74896AC0-B064-453F-97C9-58C043BEB3D7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<RandomSequenceContainer Name="steps_grass" ID="{9B0BEF2C-61C0-44F6-A4B4-A8803FC40219}" ShortID="785247761">
+							<PropertyList>
+								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4FCE439C-B699-4B62-B613-201B8E210364}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D30D6E47-BFB1-4B3B-85A5-5AE36881B2F2}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="step_grass1" ID="{7C713471-6F8F-40B6-9D4B-57CE92F91193}" ShortID="599678016">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4FCE439C-B699-4B62-B613-201B8E210364}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D30D6E47-BFB1-4B3B-85A5-5AE36881B2F2}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="step_grass1" ID="{ED5BAEE8-2CBA-467A-9CF5-849543DA7C1B}">
+											<Language>SFX</Language>
+											<AudioFile>step_grass1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="203138148"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="step_grass1" ID="{ED5BAEE8-2CBA-467A-9CF5-849543DA7C1B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="step_grass2" ID="{7CF8168F-6632-42BC-A3F8-4A824409FF56}" ShortID="1018378889">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4FCE439C-B699-4B62-B613-201B8E210364}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D30D6E47-BFB1-4B3B-85A5-5AE36881B2F2}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="step_grass2" ID="{58BC55C1-A023-4761-8125-2C058F72ABDA}">
+											<Language>SFX</Language>
+											<AudioFile>step_grass2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="677005037"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="step_grass2" ID="{58BC55C1-A023-4761-8125-2C058F72ABDA}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+							<Playlist>
+								<ItemRef Name="step_grass1" ID="{7C713471-6F8F-40B6-9D4B-57CE92F91193}"/>
+								<ItemRef Name="step_grass2" ID="{7CF8168F-6632-42BC-A3F8-4A824409FF56}"/>
+							</Playlist>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="steps_sand" ID="{DF55B3B3-2653-4E52-9C01-BD84712D3C4E}" ShortID="342564284">
+							<PropertyList>
+								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4FCE439C-B699-4B62-B613-201B8E210364}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D30D6E47-BFB1-4B3B-85A5-5AE36881B2F2}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="step_sand1" ID="{94976A15-EF0A-4A75-AF27-DB862B3A2E91}" ShortID="857769570">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4FCE439C-B699-4B62-B613-201B8E210364}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D30D6E47-BFB1-4B3B-85A5-5AE36881B2F2}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="step_sand1" ID="{0056F6A1-8D47-4FFB-8177-24E9CABACB6C}">
+											<Language>SFX</Language>
+											<AudioFile>step_sand1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="467371453"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="step_sand1" ID="{0056F6A1-8D47-4FFB-8177-24E9CABACB6C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="step_sand2" ID="{7C061789-BB85-40AC-877D-343ABD927553}" ShortID="3813192">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4FCE439C-B699-4B62-B613-201B8E210364}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D30D6E47-BFB1-4B3B-85A5-5AE36881B2F2}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="step_sand2" ID="{45EDC64F-58CE-4C2D-9791-BFFA7432C6AB}">
+											<Language>SFX</Language>
+											<AudioFile>step_sand2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="781202042"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="step_sand2" ID="{45EDC64F-58CE-4C2D-9791-BFFA7432C6AB}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+							<Playlist>
+								<ItemRef Name="step_sand1" ID="{94976A15-EF0A-4A75-AF27-DB862B3A2E91}"/>
+								<ItemRef Name="step_sand2" ID="{7C061789-BB85-40AC-877D-343ABD927553}"/>
+							</Playlist>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="steps_stone" ID="{3F7ABE13-A558-4F48-8CCD-7C4270BFA7B7}" ShortID="896269794">
+							<PropertyList>
+								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4FCE439C-B699-4B62-B613-201B8E210364}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D30D6E47-BFB1-4B3B-85A5-5AE36881B2F2}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="step_stone1" ID="{23291979-40FB-4DF5-B774-8D56271F7DAD}" ShortID="1060283008">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4FCE439C-B699-4B62-B613-201B8E210364}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D30D6E47-BFB1-4B3B-85A5-5AE36881B2F2}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="step_stone1" ID="{9C63A13F-8708-4DA6-B01F-A3A9C994CA5C}">
+											<Language>SFX</Language>
+											<AudioFile>step_stone1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="981615836"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="step_stone1" ID="{9C63A13F-8708-4DA6-B01F-A3A9C994CA5C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="step_stone2" ID="{8D2EFC80-556B-4CAA-B81B-0318BE963B96}" ShortID="11721714">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4FCE439C-B699-4B62-B613-201B8E210364}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D30D6E47-BFB1-4B3B-85A5-5AE36881B2F2}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="step_stone2" ID="{CD347F1C-D695-4050-828A-823CD6E966DD}">
+											<Language>SFX</Language>
+											<AudioFile>step_stone2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="137083928"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="step_stone2" ID="{CD347F1C-D695-4050-828A-823CD6E966DD}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+							<Playlist>
+								<ItemRef Name="step_stone1" ID="{23291979-40FB-4DF5-B774-8D56271F7DAD}"/>
+								<ItemRef Name="step_stone2" ID="{8D2EFC80-556B-4CAA-B81B-0318BE963B96}"/>
+							</Playlist>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="steps_wood" ID="{60736112-018A-45B2-9826-723BFA168E23}" ShortID="633262470">
+							<PropertyList>
+								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-9</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4FCE439C-B699-4B62-B613-201B8E210364}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D30D6E47-BFB1-4B3B-85A5-5AE36881B2F2}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="step_wood1" ID="{C8B27827-146B-4B72-9174-29454F08526E}" ShortID="1917597">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4FCE439C-B699-4B62-B613-201B8E210364}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D30D6E47-BFB1-4B3B-85A5-5AE36881B2F2}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="step_wood2" ID="{F7328E80-E817-49CD-8104-A1D6DCA6CFB6}">
+											<Language>SFX</Language>
+											<AudioFile>step_wood2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="962754187"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="step_wood2" ID="{F7328E80-E817-49CD-8104-A1D6DCA6CFB6}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="step_wood2" ID="{D8A48BBF-ADDC-4630-AC88-C27E8BDB4673}" ShortID="586741037">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4FCE439C-B699-4B62-B613-201B8E210364}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D30D6E47-BFB1-4B3B-85A5-5AE36881B2F2}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="step_wood3" ID="{AB1C38B7-2DF9-420F-A820-BCDCF5F5B44B}">
+											<Language>SFX</Language>
+											<AudioFile>step_wood3.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="984954958"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="step_wood3" ID="{AB1C38B7-2DF9-420F-A820-BCDCF5F5B44B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+							<Playlist>
+								<ItemRef Name="step_wood1" ID="{C8B27827-146B-4B72-9174-29454F08526E}"/>
+								<ItemRef Name="step_wood2" ID="{D8A48BBF-ADDC-4630-AC88-C27E8BDB4673}"/>
+							</Playlist>
+						</RandomSequenceContainer>
+					</ChildrenList>
+					<ObjectLists/>
+					<GroupingInfo>
+						<GroupingBehaviorList>
+							<GroupingBehavior>
+								<ItemRef Name="steps_wood" ID="{60736112-018A-45B2-9826-723BFA168E23}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="steps_stone" ID="{3F7ABE13-A558-4F48-8CCD-7C4270BFA7B7}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="steps_grass" ID="{9B0BEF2C-61C0-44F6-A4B4-A8803FC40219}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="steps_sand" ID="{DF55B3B3-2653-4E52-9C01-BD84712D3C4E}"/>
+							</GroupingBehavior>
+						</GroupingBehaviorList>
+						<GroupingList>
+							<Grouping>
+								<SwitchRef Name="grass" ID="{7EB94A19-6275-4EB4-BAE0-BDA9530ACDD6}"/>
+								<ItemList>
+									<ItemRef Name="steps_grass" ID="{9B0BEF2C-61C0-44F6-A4B4-A8803FC40219}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="stone" ID="{B65AA35F-E016-4EE5-B620-60BC56686CCF}"/>
+								<ItemList>
+									<ItemRef Name="steps_stone" ID="{3F7ABE13-A558-4F48-8CCD-7C4270BFA7B7}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="wood" ID="{B3AB43AB-9314-4760-B6B6-B390316FCABE}"/>
+								<ItemList>
+									<ItemRef Name="steps_wood" ID="{60736112-018A-45B2-9826-723BFA168E23}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="sand" ID="{2EB9DAEE-CB76-44AE-945B-E00021FF4AFE}"/>
+								<ItemList>
+									<ItemRef Name="steps_sand" ID="{DF55B3B3-2653-4E52-9C01-BD84712D3C4E}"/>
+								</ItemList>
+							</Grouping>
+						</GroupingList>
+					</GroupingInfo>
+				</SwitchContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

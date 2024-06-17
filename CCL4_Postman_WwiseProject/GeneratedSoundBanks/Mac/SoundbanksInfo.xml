@@ -24,7 +24,7 @@
 	</StreamedFiles>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="491961918" Language="SFX" Hash="2971178104">
+		<SoundBank Id="491961918" Language="SFX" Hash="2433923566">
 			<ObjectPath>\SoundBanks\Default Work Unit\forest</ObjectPath>
 			<ShortName>forest</ShortName>
 			<Path>forest.bnk</Path>
@@ -40,12 +40,12 @@
 				<Event Id="1710369247" Name="Stop_forest_bg" ObjectPath="\Events\Default Work Unit\Stop_forest_bg" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 			</IncludedEvents>
 		</SoundBank>
-		<SoundBank Id="1355168291" Language="SFX" Hash="2754342975">
+		<SoundBank Id="1355168291" Language="SFX" Hash="1314761051">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="1850388778" Language="SFX" Hash="315630496">
+		<SoundBank Id="1850388778" Language="SFX" Hash="2377412232">
 			<ObjectPath>\SoundBanks\Default Work Unit\desert</ObjectPath>
 			<ShortName>desert</ShortName>
 			<Path>desert.bnk</Path>
@@ -61,12 +61,87 @@
 				<Event Id="985173527" Name="Stop_desert_bg" ObjectPath="\Events\Default Work Unit\Stop_desert_bg" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 			</IncludedEvents>
 		</SoundBank>
-		<SoundBank Id="1926594054" Language="SFX" Hash="3332474353">
+		<SoundBank Id="1926594054" Language="SFX" Hash="1819373021">
 			<ObjectPath>\SoundBanks\Default Work Unit\commonSounds</ObjectPath>
 			<ShortName>commonSounds</ShortName>
 			<Path>commonSounds.bnk</Path>
+			<IncludedEvents>
+				<Event Id="1426829698" Name="Play_steps_switch" ObjectPath="\Events\Default Work Unit\Play_steps_switch" DurationType="OneShot" DurationMin="0.56425" DurationMax="0.962271">
+					<IncludedMemoryFiles>
+						<File Id="137083928" Language="SFX">
+							<ShortName>step_stone2.wav</ShortName>
+							<Path>SFX\step_stone2_10C4C929.wem</Path>
+						</File>
+						<File Id="203138148" Language="SFX">
+							<ShortName>step_grass1.wav</ShortName>
+							<Path>SFX\step_grass1_10C4C929.wem</Path>
+						</File>
+						<File Id="467371453" Language="SFX">
+							<ShortName>step_sand1.wav</ShortName>
+							<Path>SFX\step_sand1_10C4C929.wem</Path>
+						</File>
+						<File Id="677005037" Language="SFX">
+							<ShortName>step_grass2.wav</ShortName>
+							<Path>SFX\step_grass2_10C4C929.wem</Path>
+						</File>
+						<File Id="781202042" Language="SFX">
+							<ShortName>step_sand2.wav</ShortName>
+							<Path>SFX\step_sand2_10C4C929.wem</Path>
+						</File>
+						<File Id="962754187" Language="SFX">
+							<ShortName>step_wood2.wav</ShortName>
+							<Path>SFX\step_wood2_10C4C929.wem</Path>
+						</File>
+						<File Id="981615836" Language="SFX">
+							<ShortName>step_stone1.wav</ShortName>
+							<Path>SFX\step_stone1_10C4C929.wem</Path>
+						</File>
+						<File Id="984954958" Language="SFX">
+							<ShortName>step_wood3.wav</ShortName>
+							<Path>SFX\step_wood3_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<DefaultSwitchValue>{7EB94A19-6275-4EB4-BAE0-BDA9530ACDD6}</DefaultSwitchValue>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{7EB94A19-6275-4EB4-BAE0-BDA9530ACDD6}">
+							<Media>
+								<File Id="203138148"/>
+								<File Id="677005037"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{B65AA35F-E016-4EE5-B620-60BC56686CCF}">
+							<Media>
+								<File Id="137083928"/>
+								<File Id="981615836"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{B3AB43AB-9314-4760-B6B6-B390316FCABE}">
+							<Media>
+								<File Id="962754187"/>
+								<File Id="984954958"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{2EB9DAEE-CB76-44AE-945B-E00021FF4AFE}">
+							<Media>
+								<File Id="467371453"/>
+								<File Id="781202042"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+			</IncludedEvents>
+			<SwitchGroups>
+				<SwitchGroup Id="1718617278" Name="steps" ObjectPath="\Switches\Default Work Unit\steps" GUID="{70338A6C-7990-48BC-8880-1A481400F903}">
+					<Switches>
+						<Switch Id="4248645337" Name="grass" ObjectPath="\Switches\Default Work Unit\steps\grass" GUID="{7EB94A19-6275-4EB4-BAE0-BDA9530ACDD6}"/>
+						<Switch Id="803837735" Name="sand" ObjectPath="\Switches\Default Work Unit\steps\sand" GUID="{2EB9DAEE-CB76-44AE-945B-E00021FF4AFE}"/>
+						<Switch Id="1216965916" Name="stone" ObjectPath="\Switches\Default Work Unit\steps\stone" GUID="{B65AA35F-E016-4EE5-B620-60BC56686CCF}"/>
+						<Switch Id="2058049674" Name="wood" ObjectPath="\Switches\Default Work Unit\steps\wood" GUID="{B3AB43AB-9314-4760-B6B6-B390316FCABE}"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2482423965" Language="SFX" Hash="279621967">
+		<SoundBank Id="2482423965" Language="SFX" Hash="905815377">
 			<ObjectPath>\SoundBanks\Default Work Unit\coast</ObjectPath>
 			<ShortName>coast</ShortName>
 			<Path>coast.bnk</Path>
