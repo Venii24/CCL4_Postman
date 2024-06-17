@@ -1,14 +1,14 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class SwitchCamera : MonoBehaviour
 {
-    [SerializeField] private float rotationSpeed = 1;
     [SerializeField] private float transitionDuration = 0.5f; // Duration of the transition
+    [SerializeField] private Camera Camera2;
     private Vector3 targetRot;
     private Coroutine rotationCoroutine;
+    private bool acceptInput = true;
 
     void Start()
     {
@@ -27,6 +27,8 @@ public class SwitchCamera : MonoBehaviour
 
     void OnRotate(InputValue inputValue)
     {
+        if (!acceptInput) return;
+
         Vector2 rotation = inputValue.Get<Vector2>();
 
         if (rotation.x > 0) // Right arrow key
@@ -54,8 +56,28 @@ public class SwitchCamera : MonoBehaviour
         rotationCoroutine = StartCoroutine(RotateCoroutine(targetRot));
     }
 
+    public void ChangeToCamera2()
+    {
+        Camera.main.enabled = false;
+        Camera2.enabled = true;
+    }
+    
+    public void ChangeToMainCamera()
+    {
+        Camera.main.enabled = true;
+        Camera2.enabled = false;
+    }
+
+    public void SetAcceptInput(bool accept)
+    {
+        acceptInput = accept;
+    }
+
     IEnumerator RotateCoroutine(Vector3 targetRotation)
     {
+        // Disable input during rotation
+        SetAcceptInput(false);
+
         Quaternion startRotation = transform.rotation;
         Quaternion targetRotationQuat = Quaternion.Euler(targetRotation);
 
@@ -75,5 +97,15 @@ public class SwitchCamera : MonoBehaviour
 
         // Ensure final rotation is exactly the target rotation
         transform.rotation = targetRotationQuat;
+
+        // Re-enable input after rotation is complete
+        SetAcceptInput(true);
+    }
+    
+    
+    public void ResetRotation()
+    {
+        //rotate object to 0,0,0
+        targetRot = Vector3.zero;
     }
 }

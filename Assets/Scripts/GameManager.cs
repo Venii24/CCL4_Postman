@@ -1,51 +1,178 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance {get; private set;}
-    private int _score = 0;
+    [Header("Overlays")]
+    [SerializeField] public GameObject winOverlay;
+    [SerializeField] public GameObject TimerBox;
+    [SerializeField] public GameObject TimeOverOverlay;
+    [SerializeField] public GameObject FKeyAlert;
+
+    [Header("Dont Destroy On Load")]
+    [SerializeField] public GameObject DialogueManager;
+    [SerializeField] public GameObject Canvas;
+    [SerializeField] public GameObject LevelLoader;
+
+    [Header("Button")]
+    [SerializeField] public TextMeshProUGUI ButtonLevelContinueText;
     
-    void Awake()
+    public Animator transition;
+    public static GameManager Instance { get; private set; }
+    private Timer timer;
+    private int score = 0;
+    private bool backToMenu = false;
+
+    private void Awake()
     {
+        timer = FindObjectOfType<Timer>();
+        timer.stopTimer = true;
+
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(this.gameObject); // This will make the GameManager persist between scenes
+            if (!backToMenu)
+            {
+                DontDestroyOnLoad(this.gameObject);
+                DontDestroyOnLoad(Canvas);
+                DontDestroyOnLoad(DialogueManager);
+                DontDestroyOnLoad(LevelLoader);
+
+                // Disable the WinOverlay UI element at the start
+                if (winOverlay != null)
+                    winOverlay.SetActive(false);
+
+                if (TimeOverOverlay != null)
+                    TimeOverOverlay.SetActive(false);
+            }
+            else
+            {
+                Destroy(this.gameObject);
+            }
         }
         else
         {
-            Destroy(this.gameObject); // This will destroy the GameManager if another exists
+            Destroy(this.gameObject);
+        }
+    }
+
+    private void Update()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            winOverlay.SetActive(false);
+            TimeOverOverlay.SetActive(false);
+            FKeyAlert.SetActive(false);
+            TimerBox.SetActive(false);
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            TimerBox.SetActive(true);
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 3)
+        {
+            timer.stopTimer = false;
+        }
+    }
+
+    public void LoadScene()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+
+        // Menu = 0 (By Built Index)
+        // Forest = 1
+        // Desert = 2
+        // Coast = 3
+
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            Debug.Log("Loading next scene: " + nextSceneIndex);
+            StartCoroutine(LoadLevel(nextSceneIndex));
+            winOverlay.SetActive(false);
+            timer.CountdownTime = 181f;
+            TimerBox.SetActive(true);
+            timer.stopTimer = false;
+        }
+        else if (nextSceneIndex == 4) // Go back to menu
+        {
+            SceneManager.LoadScene(0);
+            DestroyPersistentObjects();
+        }
+        else
+        {
+            Debug.Log("No more scenes to load.");
+            // Optionally, you could reset to the first scene or show an end screen here
+        }
+        if (nextSceneIndex == 3)
+        {
+            ButtonLevelContinueText.text = "Back to Menu";
         }
     }
     
-    public void LoadScene(string sceneName)
+    IEnumerator LoadLevel(int levelIndex)
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(levelIndex);
     }
-    
-    public void AddScore(int score)
+
+    private void DestroyPersistentObjects()
     {
-        _score += score;
+        // Destroy GameManager instance
+        Destroy(this.gameObject);
+        
+        // Destroy other objects set to DontDestroyOnLoad
+        Destroy(Canvas);
+        Destroy(DialogueManager);
+        Destroy(LevelLoader);
+
+        // Reset static instance
+        Instance = null;
     }
-    
+
+    public void AddScore(int scoreToAdd)
+    {
+        score += scoreToAdd;
+    }
+
     public int GetScore()
     {
-        return _score;
+        return score;
+    }
+
+    public void ShowWinOverlay()
+    {
+        if (winOverlay != null)
+            winOverlay.SetActive(true);
+    }
+
+    public void ShowTimeOverOverlay()
+    {
+        if (TimeOverOverlay != null)
+            TimeOverOverlay.SetActive(true);
+    }
+
+    public void HideTimeOverOverlay()
+    {
+        if (TimeOverOverlay != null)
+            TimeOverOverlay.SetActive(false);
+    }
+
+    public void reloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        timer.CountdownTime = 181f;
+        timer.stopTimer = false;
     }
     
 
-    
-    void Start()
+    public void OnWinOverlayButtonClicked()
     {
-        
-    }
-    
-    void Update()
-    {
-        Debug.Log("Score: " + _score);
+        LoadScene();
     }
 }

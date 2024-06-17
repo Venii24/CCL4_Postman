@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
+	<RootPaths>
+		<ProjectRoot>C:\Users\laura\UnityLocalProjects\CCL4_UnityProject\CCL4_Postman\CCL4_Postman_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\laura\UnityLocalProjects\CCL4_UnityProject\CCL4_Postman\CCL4_Postman_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\laura\UnityLocalProjects\CCL4_UnityProject\CCL4_Postman\CCL4_Postman_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>C:\Users\laura\UnityLocalProjects\CCL4_UnityProject\CCL4_Postman\CCL4_Postman_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles>
+		<File Id="326205617" Language="SFX">
+			<ShortName>forest_bg.wav</ShortName>
+			<Path>SFX\forest_bg_D79FB2B7.wem</Path>
+		</File>
+		<File Id="450426651" Language="SFX">
+			<ShortName>desert_bg.wav</ShortName>
+			<Path>SFX\desert_bg_D79FB2B7.wem</Path>
+		</File>
+		<File Id="667787863" Language="SFX">
+			<ShortName>coast_bg.wav</ShortName>
+			<Path>SFX\coast_bg_D79FB2B7.wem</Path>
+		</File>
+	</StreamedFiles>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="491961918" Language="SFX" Hash="2971178104">
+			<ObjectPath>\SoundBanks\Default Work Unit\forest</ObjectPath>
+			<ShortName>forest</ShortName>
+			<Path>forest.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3161807649" Name="Play_forest_bg" ObjectPath="\Events\Default Work Unit\Play_forest_bg" DurationType="Infinite">
+					<ReferencedStreamedFiles>
+						<File Id="326205617" Language="SFX">
+							<ShortName>forest_bg.wav</ShortName>
+							<Path>SFX\forest_bg_D79FB2B7.wem</Path>
+						</File>
+					</ReferencedStreamedFiles>
+				</Event>
+				<Event Id="1710369247" Name="Stop_forest_bg" ObjectPath="\Events\Default Work Unit\Stop_forest_bg" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+			</IncludedEvents>
+		</SoundBank>
+		<SoundBank Id="1355168291" Language="SFX" Hash="3690994985">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="1850388778" Language="SFX" Hash="315630496">
+			<ObjectPath>\SoundBanks\Default Work Unit\desert</ObjectPath>
+			<ShortName>desert</ShortName>
+			<Path>desert.bnk</Path>
+			<IncludedEvents>
+				<Event Id="144265609" Name="Play_desert_bg" ObjectPath="\Events\Default Work Unit\Play_desert_bg" DurationType="Infinite">
+					<ReferencedStreamedFiles>
+						<File Id="450426651" Language="SFX">
+							<ShortName>desert_bg.wav</ShortName>
+							<Path>SFX\desert_bg_D79FB2B7.wem</Path>
+						</File>
+					</ReferencedStreamedFiles>
+				</Event>
+				<Event Id="985173527" Name="Stop_desert_bg" ObjectPath="\Events\Default Work Unit\Stop_desert_bg" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+			</IncludedEvents>
+		</SoundBank>
+		<SoundBank Id="1926594054" Language="SFX" Hash="3332474353">
+			<ObjectPath>\SoundBanks\Default Work Unit\commonSounds</ObjectPath>
+			<ShortName>commonSounds</ShortName>
+			<Path>commonSounds.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="2482423965" Language="SFX" Hash="279621967">
+			<ObjectPath>\SoundBanks\Default Work Unit\coast</ObjectPath>
+			<ShortName>coast</ShortName>
+			<Path>coast.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3165135302" Name="Play_coast_bg" ObjectPath="\Events\Default Work Unit\Play_coast_bg" DurationType="Infinite">
+					<ReferencedStreamedFiles>
+						<File Id="667787863" Language="SFX">
+							<ShortName>coast_bg.wav</ShortName>
+							<Path>SFX\coast_bg_D79FB2B7.wem</Path>
+						</File>
+					</ReferencedStreamedFiles>
+				</Event>
+				<Event Id="1006772764" Name="Stop_coast_bg" ObjectPath="\Events\Default Work Unit\Stop_coast_bg" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+			</IncludedEvents>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>
