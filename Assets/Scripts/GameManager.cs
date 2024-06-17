@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject TimerBox;
     [SerializeField] public GameObject TimeOverOverlay;
     [SerializeField] public GameObject FKeyAlert;
+    [SerializeField] public GameObject Instructions;
 
     [Header("Dont Destroy On Load")]
     [SerializeField] public GameObject DialogueManager;
@@ -48,6 +49,9 @@ public class GameManager : MonoBehaviour
 
                 if (TimeOverOverlay != null)
                     TimeOverOverlay.SetActive(false);
+                
+                if (Instructions != null)
+                    Instructions.SetActive(false);
             }
             else
             {
@@ -94,7 +98,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Loading next scene: " + nextSceneIndex);
             StartCoroutine(LoadLevel(nextSceneIndex));
             winOverlay.SetActive(false);
-            timer.CountdownTime = 182f;
+            timer.CountdownTime = 181f;
             TimerBox.SetActive(true);
             timer.stopTimer = false;
         }
@@ -111,6 +115,10 @@ public class GameManager : MonoBehaviour
         if (nextSceneIndex == 3)
         {
             ButtonLevelContinueText.text = "Back to Menu";
+        }
+        if (nextSceneIndex == 1)
+        {
+            timer.CountdownTime = 182f;
         }
     }
     
@@ -166,7 +174,7 @@ public class GameManager : MonoBehaviour
     public void reloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        timer.CountdownTime = 182f;
+        timer.CountdownTime = 180f;
         timer.stopTimer = false;
     }
     
@@ -174,5 +182,17 @@ public class GameManager : MonoBehaviour
     public void OnWinOverlayButtonClicked()
     {
         LoadScene();
+    }
+    
+    public void ShowInstructions()
+    {
+        if (Instructions != null)
+            Instructions.SetActive(true);
+    }
+    
+    public void HideInstructions()
+    {
+        if (Instructions != null)
+            Instructions.SetActive(false);
     }
 }
