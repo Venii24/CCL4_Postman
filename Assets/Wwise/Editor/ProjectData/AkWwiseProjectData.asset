@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: 6e6ec69ce130c64da33daa5c8a902f39
     GuidInternal: 
-    m_lastTime: -8584833123091806230
+    m_lastTime: -8584829832868784470
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 476e0dd3b1bf3b4b85a55ae36881b2f2
     GuidInternal: 
-    m_lastTime: -8584833123092231281
+    m_lastTime: -8584829832871461036
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: c0befd82fcc50248b3722cf296c7bf4e
     GuidInternal: 
-    m_lastTime: -8584829584145330604
+    m_lastTime: -8584829143305940382
     List:
     - name: coast
       guid: 78c4e52298703f4c9177731b23cd3141
@@ -136,7 +136,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 7e9bdc4779b9494da955782ad6a1c180
     GuidInternal: 
-    m_lastTime: -8584829584145255835
+    m_lastTime: -8584829143306281366
     List:
     - name: Play_coast_bg
       guid: e9227d250462d54fa1bbba1f59bde5af
@@ -269,7 +269,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: b9ba61d762520349a8de5f9e5ef75b00
     GuidInternal: 
-    m_lastTime: -8584833123092152819
+    m_lastTime: -8584829832874713556
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
@@ -283,7 +283,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 073dce96a5ffde4ab87b2d8c3492b09b
     GuidInternal: 
-    m_lastTime: -8584833123091911662
+    m_lastTime: -8584829832868812085
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
@@ -297,7 +297,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: c06a897464b03f4597c958c043beb3d7
     GuidInternal: 
-    m_lastTime: -8584829584145435108
+    m_lastTime: -8584829143305940382
     List:
     - name: steps
       guid: 6c8a33709079bc4888801a481400f903
@@ -393,10 +393,10 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: 12fae49577775b4794559434d60110b6
     GuidInternal: 
-    m_lastTime: -8584833123092024214
+    m_lastTime: -8584829832868794523
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 0500000006000000
+  ExpandedWaapiItemIds: 
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0
