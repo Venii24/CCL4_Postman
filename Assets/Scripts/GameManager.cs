@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         timer = FindObjectOfType<Timer>();
+  
         timer.stopTimer = true;
 
         if (Instance == null)
@@ -75,12 +76,14 @@ public class GameManager : MonoBehaviour
         }
         else if (SceneManager.GetActiveScene().buildIndex == 1)
         {
-            TimerBox.SetActive(true);
+            StartCoroutine(ShowTimerWithDelay());
         }
         else if (SceneManager.GetActiveScene().buildIndex == 3)
         {
             timer.stopTimer = false;
         }
+        
+     
     }
 
     public void LoadScene()
@@ -98,7 +101,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Loading next scene: " + nextSceneIndex);
             StartCoroutine(LoadLevel(nextSceneIndex));
             winOverlay.SetActive(false);
-            timer.CountdownTime = 182f;
+            timer.CountdownTime = 181f;
             TimerBox.SetActive(true);
             timer.stopTimer = false;
         }
@@ -118,7 +121,7 @@ public class GameManager : MonoBehaviour
         }
         if (nextSceneIndex == 1)
         {
-            timer.CountdownTime = 182f;
+            timer.CountdownTime = 183f;
         }
     }
     
@@ -194,5 +197,14 @@ public class GameManager : MonoBehaviour
     {
         if (Instructions != null)
             Instructions.SetActive(false);
+    }
+    
+    IEnumerator ShowTimerWithDelay()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(2f);
+            TimerBox.SetActive(true);
+        }
     }
 }

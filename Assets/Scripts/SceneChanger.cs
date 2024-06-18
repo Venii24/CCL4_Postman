@@ -15,8 +15,8 @@ public class SceneChanger : MonoBehaviour
     private GameManager gameManager;
 
 
-    private Vector3 cameraGameplayPosition = new Vector3(0, 13, -24.75f);
-    private Vector3 cameraAnimationPosition = new Vector3(0, 13, -30);
+    private Vector3 cameraGameplayPosition = new Vector3(0, 13, -18f);
+    private Vector3 cameraAnimationPosition = new Vector3(0, 13, -26);
 
     private void Start()
     {
@@ -37,8 +37,7 @@ public class SceneChanger : MonoBehaviour
         }
         else
         {
-            playerCamera.transform.position =
-                cameraGameplayPosition; // Ensure the camera is in the gameplay position for other scenes
+            playerCamera.transform.position = cameraGameplayPosition; // Ensure the camera is in the gameplay position for other scenes
         }
     }
 
@@ -67,7 +66,8 @@ public class SceneChanger : MonoBehaviour
 
         player.SetActive(true); // Make the player appear
         playerMovement.enabled = true; // Allow player movement
-        player.transform.position = new Vector3(0, 1.7f, -14f);
+        player.transform.position = new Vector3(0.3f, 1.7f, -9f);
+        Debug.Log("Player to Start Position");
         StartCoroutine(AnimateCameraTransition(playerCamera.transform.position, cameraGameplayPosition,
             1f));
     }
@@ -89,9 +89,9 @@ public class SceneChanger : MonoBehaviour
         playerCamera.transform.position = cameraAnimationPosition;
         float duration = 5f;
         Vector3 targetTrainPosition = new Vector3(40, train.transform.position.y, train.transform.position.z);
-
         player.SetActive(false); // Make the player disappear
         yield return MoveTrain(targetTrainPosition, duration);
+        
         gameManager.ShowWinOverlay();
     }
 
