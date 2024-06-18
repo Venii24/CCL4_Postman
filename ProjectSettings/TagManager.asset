@@ -11,6 +11,7 @@ TagManager:
   - Sand
   - Stone
   - Wood
+  - Mark
   layers:
   - Default
   - TransparentFX

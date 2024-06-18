@@ -80,6 +80,7 @@ public class SceneChanger : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && playerMovement.letterDelivered)
         {
             playerMovement.enabled = false;
+            playerMovement.HideMark();
             //StampImage = collectableManager.ReturnStampImage(gameManager.GetScore());
             switchCamera.ChangeToCamera2();
             StartCoroutine(AnimateTrainExit());

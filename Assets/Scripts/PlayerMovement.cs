@@ -14,6 +14,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private GameObject box2;
     [SerializeField] private Transform cam;
+    [SerializeField] private GameObject Mark;
+    [SerializeField] private GameObject MarkTrigger;
+    
     
     
     [Header("Variables")] 
@@ -36,11 +39,13 @@ public class PlayerMovement : MonoBehaviour
  
     public bool letterDelivered = false;
     public bool inNPCArea = false;
+    public bool MarkStep2 = false;
     
     public string currentSurfaceType = null; // Default surface type
 
     void Start()
     {
+        MarkTrigger.SetActive(false);
         rb = GetComponent<Rigidbody>();
         playerInput = GetComponent<PlayerInput>();
         camRotator = FindObjectOfType<SwitchCamera>();
@@ -57,14 +62,21 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+     
+        if (letterDelivered && MarkStep2) Mark.transform.position = new Vector3(0.13f, 3.95f, -18f);
+        else if (letterDelivered)
+        {
+            Mark.transform.position = new Vector3(0.29f, 1.678f, -9.16f);
+            MarkTrigger.SetActive(true);
+        }
         
         
         if (DialogueManager.GetInstance().dialogueIsPlaying)
         {
             return;
         }
+        Debug.Log(letterDelivered);
         
-
         DetectSurface();
         MovePlayer();
         Jump();
@@ -78,6 +90,11 @@ public class PlayerMovement : MonoBehaviour
         {
             Application.Quit();
         }
+    }
+    
+    public void HideMark()
+    {
+        Mark.SetActive(false);
     }
 
     void DetectSurface()
@@ -201,6 +218,12 @@ public class PlayerMovement : MonoBehaviour
             inNPCArea = true;
             //Debug.Log("Entered NPC area: " + other.name);
         }
+        
+        if (other.CompareTag("Mark"))
+        {
+            MarkStep2 = true;
+        }
+      
     }
 
     private void OnTriggerExit(Collider other)
