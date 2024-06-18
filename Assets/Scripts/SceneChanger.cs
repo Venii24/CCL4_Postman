@@ -79,7 +79,6 @@ public class SceneChanger : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && playerMovement.letterDelivered)
         {
-            gameManager.SetCollectableImage();
             playerMovement.enabled = false;
             //StampImage = collectableManager.ReturnStampImage(gameManager.GetScore());
             switchCamera.ChangeToCamera2();

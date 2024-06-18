@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     [Header("UI Elements")]
     [SerializeField] public TextMeshProUGUI ButtonLevelContinueText;
     [SerializeField] public RawImage StampsImage;
+    [SerializeField] public TextMeshProUGUI PlayerTimeText;
 
     [Header("Stamp Images")]
     [SerializeField] private List<Texture> ForestStamps;
@@ -34,6 +35,14 @@ public class GameManager : MonoBehaviour
     private Timer timer;
     private int score = 0;
     private bool backToMenu = false;
+    
+    private int ForestScore = 0;
+    private int DesertScore = 0;
+    private int CoastScore = 0;
+    private int TotalScore = 0;
+    private int TimeForest = 0;
+    private int TimeDesert = 0;
+    private int TimeCoast = 0;
 
     private void Awake()
     {
@@ -88,6 +97,12 @@ public class GameManager : MonoBehaviour
         else if (SceneManager.GetActiveScene().buildIndex == 3)
         {
             timer.stopTimer = false;
+        }
+        
+        if (SceneManager.GetActiveScene().buildIndex == 1 || SceneManager.GetActiveScene().buildIndex == 2 || SceneManager.GetActiveScene().buildIndex == 3)
+        {
+            SetTimeText();
+            SetCollectableImage();
         }
     }
 
@@ -214,12 +229,18 @@ public class GameManager : MonoBehaviour
             TimerBox.SetActive(true);
         }
     }
+    
+    public void SetTimeText()
+    {
+        int timeNeeded = 180 - (int)timer.CountdownTime;
+        //format to 00:00
+        int minutes = timeNeeded / 60;
+        int seconds = timeNeeded % 60;
+        PlayerTimeText.text = $"{minutes:00}:{seconds:00}";
+    }
 
     public void SetCollectableImage()
     {
-        Debug.Log("Setting collectable image");
-        Debug.Log($"Current score: {score}");
-        Debug.Log($"Current scene index: {SceneManager.GetActiveScene().buildIndex}");
 
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         List<Texture> stampList = null;
