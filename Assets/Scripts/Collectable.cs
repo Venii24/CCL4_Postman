@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Collectable : MonoBehaviour
 {
+    
     // Rotation speed
     public float rotationSpeed = 70f;
 

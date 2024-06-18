@@ -88,6 +88,7 @@ public class GameManager : MonoBehaviour
 
     public void LoadScene()
     {
+        score = 0;
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
 
