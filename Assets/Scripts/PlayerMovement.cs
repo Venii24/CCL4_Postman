@@ -218,6 +218,7 @@ public class PlayerMovement : MonoBehaviour
         if (transform.position.y < -10)
         {
             letterDelivered = false;
+            gameManager.score = 0;
             Die();
            
         }
@@ -227,7 +228,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Debug.Log("Player died!");
         //set player to start position
-        transform.position =  new Vector3(0, 1.7f, -14f);
+        transform.position =  new Vector3(0, 1.7f, -9f);
         //reset box positions
         box1.transform.position = box1StartPos;
         box2.transform.position = box2StartPos;
