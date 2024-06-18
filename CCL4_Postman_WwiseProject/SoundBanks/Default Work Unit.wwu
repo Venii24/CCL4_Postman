@@ -12,8 +12,11 @@
 				</SoundBank>
 				<SoundBank Name="desert" ID="{F50E65B8-613E-4F34-A5E7-00BB17735E0D}">
 					<ObjectInclusionList>
+						<ObjectRef Name="Play_radioMusic" ID="{BE19E0AF-60FA-43B8-A918-0F033B5B1695}" WorkUnitID="{47DC9B7E-B979-4D49-A955-782AD6A1C180}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_desert_sounds" ID="{E6F20733-60B8-452A-8432-AA923FDCD0F1}" WorkUnitID="{47DC9B7E-B979-4D49-A955-782AD6A1C180}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_desert_bg" ID="{EDAFCCA7-B2B1-4B4D-B9D9-ED4B77139387}" WorkUnitID="{47DC9B7E-B979-4D49-A955-782AD6A1C180}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_desert_bg" ID="{468F353E-6272-4B7A-8E46-46B15C81D3E0}" WorkUnitID="{47DC9B7E-B979-4D49-A955-782AD6A1C180}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_fabric" ID="{3940B64A-8CB2-4CCA-BE14-9158B70B9B71}" WorkUnitID="{47DC9B7E-B979-4D49-A955-782AD6A1C180}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
@@ -21,6 +24,7 @@
 				<SoundBank Name="forest" ID="{1D8C1026-4E04-4903-B2D2-7D91D69238AC}">
 					<ObjectInclusionList>
 						<ObjectRef Name="Stop_forest_bg" ID="{35869AAB-EA7E-467A-B2C3-794F4880DAFC}" WorkUnitID="{47DC9B7E-B979-4D49-A955-782AD6A1C180}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_tree_sounds" ID="{3221504B-D87F-4B7A-AE7A-A56F79A2374C}" WorkUnitID="{47DC9B7E-B979-4D49-A955-782AD6A1C180}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_forest_bg" ID="{DA091AB3-E471-4C3C-BC5D-32DA4D7038D4}" WorkUnitID="{47DC9B7E-B979-4D49-A955-782AD6A1C180}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
@@ -28,6 +32,7 @@
 				</SoundBank>
 				<SoundBank Name="coast" ID="{22E5C478-7098-4C3F-9177-731B23CD3141}">
 					<ObjectInclusionList>
+						<ObjectRef Name="Play_tree_sounds" ID="{3221504B-D87F-4B7A-AE7A-A56F79A2374C}" WorkUnitID="{47DC9B7E-B979-4D49-A955-782AD6A1C180}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_coast_bg" ID="{EBD4D31E-C809-4E6E-8C9C-1406BA9A6C70}" WorkUnitID="{47DC9B7E-B979-4D49-A955-782AD6A1C180}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_coast_bg" ID="{257D22E9-6204-4FD5-A1BB-BA1F59BDE5AF}" WorkUnitID="{47DC9B7E-B979-4D49-A955-782AD6A1C180}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>

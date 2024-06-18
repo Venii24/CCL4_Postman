@@ -89,6 +89,50 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_radioMusic" ID="{BE19E0AF-60FA-43B8-A918-0F033B5B1695}">
+					<ChildrenList>
+						<Action Name="" ID="{520F2315-CDE7-44D6-A3B0-876B9C60F083}" ShortID="587801840">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="radioMusic" ID="{12C20FF7-5D44-4769-AF00-4F17A7145502}" WorkUnitID="{8915ADA6-F687-489C-912A-6EC804FA4AAB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_desert_sounds" ID="{E6F20733-60B8-452A-8432-AA923FDCD0F1}">
+					<ChildrenList>
+						<Action Name="" ID="{950C2C3C-DC6D-4C91-9BE0-541CBFCB60E3}" ShortID="697434396">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="desert_sounds" ID="{74F2721F-2954-47DF-AC4A-ECC8B086E6D9}" WorkUnitID="{8915ADA6-F687-489C-912A-6EC804FA4AAB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_tree_sounds" ID="{3221504B-D87F-4B7A-AE7A-A56F79A2374C}">
+					<ChildrenList>
+						<Action Name="" ID="{74A6C506-CDB3-4698-901B-D431F50425DA}" ShortID="570424432">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="tree_sounds" ID="{0FF380AA-9082-405F-95D0-9FDF9AD6148B}" WorkUnitID="{8915ADA6-F687-489C-912A-6EC804FA4AAB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_fabric" ID="{3940B64A-8CB2-4CCA-BE14-9158B70B9B71}">
+					<ChildrenList>
+						<Action Name="" ID="{3974C7C5-B6BA-4049-9587-39FECD8A1F1F}" ShortID="163224215">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="fabric" ID="{A8152EA9-D4E0-4E6A-AD5A-E65C875E8270}" WorkUnitID="{8915ADA6-F687-489C-912A-6EC804FA4AAB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

@@ -15,7 +15,9 @@ namespace AK
     {
         static const AkUniqueID PLAY_COAST_BG = 3165135302U;
         static const AkUniqueID PLAY_DESERT_BG = 144265609U;
+        static const AkUniqueID PLAY_DESERT_SOUNDS = 4126827972U;
         static const AkUniqueID PLAY_FOREST_BG = 3161807649U;
+        static const AkUniqueID PLAY_RADIOMUSIC = 1219454676U;
         static const AkUniqueID PLAY_STEPS_SWITCH = 1426829698U;
         static const AkUniqueID STOP_COAST_BG = 1006772764U;
         static const AkUniqueID STOP_DESERT_BG = 985173527U;

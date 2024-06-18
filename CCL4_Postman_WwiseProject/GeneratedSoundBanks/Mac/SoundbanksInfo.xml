@@ -45,7 +45,7 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="1850388778" Language="SFX" Hash="2377412232">
+		<SoundBank Id="1850388778" Language="SFX" Hash="3651958993">
 			<ObjectPath>\SoundBanks\Default Work Unit\desert</ObjectPath>
 			<ShortName>desert</ShortName>
 			<Path>desert.bnk</Path>
@@ -57,6 +57,30 @@
 							<Path>SFX\desert_bg_D79FB2B7.wem</Path>
 						</File>
 					</ReferencedStreamedFiles>
+				</Event>
+				<Event Id="4126827972" Name="Play_desert_sounds" ObjectPath="\Events\Default Work Unit\Play_desert_sounds" MaxAttenuation="100." DurationType="OneShot" DurationMin="2.743896" DurationMax="10.806875">
+					<IncludedMemoryFiles>
+						<File Id="339284128" Language="SFX">
+							<ShortName>wings1.wav</ShortName>
+							<Path>SFX\wings1_10C4C929.wem</Path>
+						</File>
+						<File Id="410617413" Language="SFX">
+							<ShortName>rattlesnake.wav</ShortName>
+							<Path>SFX\rattlesnake_10C4C929.wem</Path>
+						</File>
+						<File Id="874323644" Language="SFX">
+							<ShortName>can.wav</ShortName>
+							<Path>SFX\can_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1219454676" Name="Play_radioMusic" ObjectPath="\Events\Default Work Unit\Play_radioMusic" MaxAttenuation="100." DurationType="OneShot" DurationMin="101.467003" DurationMax="101.467003">
+					<IncludedMemoryFiles>
+						<File Id="960536284" Language="SFX">
+							<ShortName>radioMusic.wav</ShortName>
+							<Path>SFX\radioMusic_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
 				</Event>
 				<Event Id="985173527" Name="Stop_desert_bg" ObjectPath="\Events\Default Work Unit\Stop_desert_bg" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 			</IncludedEvents>

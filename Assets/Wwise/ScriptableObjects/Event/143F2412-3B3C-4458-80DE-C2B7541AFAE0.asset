@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27d49a8cb1466b44a988fc8076f56f3f, type: 3}
+  m_Name: 143F2412-3B3C-4458-80DE-C2B7541AFAE0
+  m_EditorClassIdentifier: 
+  objectName: Play_steps_switch
+  id: 1426829698
+  guid: 143F2412-3B3C-4458-80DE-C2B7541AFAE0

@@ -1,6 +1,14 @@
 Event	ID	Name			Wwise Object Path	Notes
 	144265609	Play_desert_bg			\Default Work Unit\Play_desert_bg	
 	985173527	Stop_desert_bg			\Default Work Unit\Stop_desert_bg	
+	1219454676	Play_radioMusic			\Default Work Unit\Play_radioMusic	
+	4126827972	Play_desert_sounds			\Default Work Unit\Play_desert_sounds	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	339284128	wings1	C:\Users\laura\UnityLocalProjects\CCL4_UnityProject\CCL4_Postman\CCL4_Postman_WwiseProject\.cache\Mac\SFX\wings1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\desert_sounds\wings1		526892
+	410617413	rattlesnake	C:\Users\laura\UnityLocalProjects\CCL4_UnityProject\CCL4_Postman\CCL4_Postman_WwiseProject\.cache\Mac\SFX\rattlesnake_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\desert_sounds\rattlesnake		509276
+	874323644	can	C:\Users\laura\UnityLocalProjects\CCL4_UnityProject\CCL4_Postman\CCL4_Postman_WwiseProject\.cache\Mac\SFX\can_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\desert_sounds\can		2074984
+	960536284	radioMusic	C:\Users\laura\UnityLocalProjects\CCL4_UnityProject\CCL4_Postman\CCL4_Postman_WwiseProject\.cache\Mac\SFX\radioMusic_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\radioMusic		19481728
 
 Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
 	450426651	desert_bg	C:\Users\laura\UnityLocalProjects\CCL4_UnityProject\CCL4_Postman\CCL4_Postman_WwiseProject\.cache\Mac\SFX\desert_bg_D79FB2B7.wem	450426651.wem	\Actor-Mixer Hierarchy\Default Work Unit\ambience\desert_bg	
