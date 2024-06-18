@@ -58,21 +58,22 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         
-        /*
+        
         if (DialogueManager.GetInstance().dialogueIsPlaying)
         {
             return;
         }
-        */
-
+        
 
         DetectSurface();
         MovePlayer();
         Jump();
         RotatePlayer();
         PlayerDying();
+        
         // Check for letter delivery when in NPC area
         // DeliverLetter();
+        
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
@@ -198,7 +199,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.CompareTag("NPCArea"))
         {
             inNPCArea = true;
-            Debug.Log("Entered NPC area: " + other.name);
+            //Debug.Log("Entered NPC area: " + other.name);
         }
     }
 
@@ -207,7 +208,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.CompareTag("NPCArea"))
         {
             inNPCArea = false;
-            Debug.Log("Exited NPC area: " + other.name);
+            //Debug.Log("Exited NPC area: " + other.name);
         }
     }
     

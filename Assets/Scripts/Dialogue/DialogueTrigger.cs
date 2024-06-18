@@ -42,7 +42,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Player in range");
+            //Debug.Log("Player in range");
             playerInRange = true;
         }
         DialogueManager.GetInstance().FKeyAlert.SetActive(false);
@@ -52,7 +52,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Player out of range");
+            //Debug.Log("Player out of range");
             playerInRange = false;
         }
         DialogueManager.GetInstance().FKeyAlert.SetActive(false);

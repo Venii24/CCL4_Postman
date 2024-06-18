@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,9 +20,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject Canvas;
     [SerializeField] public GameObject LevelLoader;
 
-    [Header("Button")]
+    [Header("UI Elements")]
     [SerializeField] public TextMeshProUGUI ButtonLevelContinueText;
-    
+    [SerializeField] public RawImage StampsImage;
+
+    [Header("Stamp Images")]
+    [SerializeField] private List<Texture> ForestStamps;
+    [SerializeField] private List<Texture> DesertStamps;
+    [SerializeField] private List<Texture> CoastStamps;
+
     public Animator transition;
     public static GameManager Instance { get; private set; }
     private Timer timer;
@@ -31,7 +38,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         timer = FindObjectOfType<Timer>();
-  
+        
         timer.stopTimer = true;
 
         if (Instance == null)
@@ -50,7 +57,7 @@ public class GameManager : MonoBehaviour
 
                 if (TimeOverOverlay != null)
                     TimeOverOverlay.SetActive(false);
-                
+
                 if (Instructions != null)
                     Instructions.SetActive(false);
             }
@@ -82,8 +89,6 @@ public class GameManager : MonoBehaviour
         {
             timer.stopTimer = false;
         }
-        
-     
     }
 
     public void LoadScene()
@@ -99,7 +104,6 @@ public class GameManager : MonoBehaviour
 
         if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
         {
-            Debug.Log("Loading next scene: " + nextSceneIndex);
             StartCoroutine(LoadLevel(nextSceneIndex));
             winOverlay.SetActive(false);
             timer.CountdownTime = 181f;
@@ -125,7 +129,7 @@ public class GameManager : MonoBehaviour
             timer.CountdownTime = 183f;
         }
     }
-    
+
     IEnumerator LoadLevel(int levelIndex)
     {
         transition.SetTrigger("Start");
@@ -137,7 +141,7 @@ public class GameManager : MonoBehaviour
     {
         // Destroy GameManager instance
         Destroy(this.gameObject);
-        
+
         // Destroy other objects set to DontDestroyOnLoad
         Destroy(Canvas);
         Destroy(DialogueManager);
@@ -150,6 +154,7 @@ public class GameManager : MonoBehaviour
     public void AddScore(int scoreToAdd)
     {
         score += scoreToAdd;
+        SetCollectableImage(); // Update the image whenever the score changes
     }
 
     public int GetScore()
@@ -177,35 +182,72 @@ public class GameManager : MonoBehaviour
 
     public void reloadScene()
     {
+        score = 0;
+        winOverlay.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        timer.CountdownTime = 180f;
+        timer.CountdownTime = 181f;
         timer.stopTimer = false;
     }
-    
 
     public void OnWinOverlayButtonClicked()
     {
         LoadScene();
     }
-    
+
     public void ShowInstructions()
     {
         if (Instructions != null)
             Instructions.SetActive(true);
     }
-    
+
     public void HideInstructions()
     {
         if (Instructions != null)
             Instructions.SetActive(false);
     }
-    
+
     IEnumerator ShowTimerWithDelay()
     {
         while (true)
         {
             yield return new WaitForSeconds(2f);
             TimerBox.SetActive(true);
+        }
+    }
+
+    public void SetCollectableImage()
+    {
+        Debug.Log("Setting collectable image");
+        Debug.Log($"Current score: {score}");
+        Debug.Log($"Current scene index: {SceneManager.GetActiveScene().buildIndex}");
+
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        List<Texture> stampList = null;
+
+        switch (currentSceneIndex)
+        {
+            case 1:
+                stampList = ForestStamps;
+                break;
+            case 2:
+                stampList = DesertStamps;
+                break;
+            case 3:
+                stampList = CoastStamps;
+                break;
+            default:
+                Debug.LogWarning("Scene index not recognized for collectable images.");
+                return;
+        }
+
+        if (stampList != null && score < stampList.Count)
+        {
+            StampsImage.texture = stampList[score];
+            Debug.Log($"Stamp image updated: Scene: {currentSceneIndex}, Score: {score}");
+        }
+        else
+        {
+            Debug.LogWarning($"Stamp image not found for Scene: {currentSceneIndex}, Score: {score}");
         }
     }
 }

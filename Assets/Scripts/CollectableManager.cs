@@ -11,26 +11,24 @@ public class CollectableManager : MonoBehaviour
     [SerializeField] public Texture TwoStamps;
     [SerializeField] public Texture ThreeStamps;
     
-    [SerializeField] private RawImage StampsImage;
-    
-    // Update is called once per frame
-    void Update()
+    public Texture ReturnStampImage(int score)
     {
-        if (GameManager.Instance.GetScore() == 0)
+        if (score == 0)
         {
-            StampsImage.texture = ZeroStamps;
+            return ZeroStamps;
         }
-        else if (GameManager.Instance.GetScore() == 1)
+        else if (score == 1)
         {
-            StampsImage.texture = OneStamps;
+            return OneStamps;
         }
-        else if (GameManager.Instance.GetScore() == 2)
+        else if (score == 2)
         {
-            StampsImage.texture = TwoStamps;
+            return TwoStamps;
         }
-        else if (GameManager.Instance.GetScore() == 3)
+        else if (score == 3)
         {
-            StampsImage.texture = ThreeStamps;
+            return ThreeStamps;
         }
+        return null;
     }
 }

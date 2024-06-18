@@ -13,6 +13,8 @@ public class SceneChanger : MonoBehaviour
     private PlayerMovement playerMovement;
     private SwitchCamera switchCamera;
     private GameManager gameManager;
+    private CollectableManager collectableManager;
+   // private Texture StampImage;
 
 
     private Vector3 cameraGameplayPosition = new Vector3(0, 13, -18f);
@@ -24,6 +26,7 @@ public class SceneChanger : MonoBehaviour
         GetComponent<MeshRenderer>().enabled = false;
         playerMovement = FindObjectOfType<PlayerMovement>();
         switchCamera = FindObjectOfType<SwitchCamera>();
+        collectableManager = FindObjectOfType<CollectableManager>();
         gameManager = GameManager.Instance;
         timer.stopTimer = true;
         switchCamera.ChangeToMainCamera();
@@ -76,8 +79,9 @@ public class SceneChanger : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && playerMovement.letterDelivered)
         {
+            gameManager.SetCollectableImage();
             playerMovement.enabled = false;
-            //swich camera
+            //StampImage = collectableManager.ReturnStampImage(gameManager.GetScore());
             switchCamera.ChangeToCamera2();
             StartCoroutine(AnimateTrainExit());
         }

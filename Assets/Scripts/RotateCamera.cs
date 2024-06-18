@@ -6,8 +6,6 @@ using UnityEngine.InputSystem;
 public class RotateCamera : MonoBehaviour
 {
     [SerializeField] private float rotationSpeed = 1;
-    //[SerializeField] private float orbitDamping = 10;
-    //[SerializeField] private float scrollRotationSpeed = 10; // Added field for mouse wheel rotation speed
 
     private Vector3 localRot;
 
@@ -33,20 +31,4 @@ public class RotateCamera : MonoBehaviour
         localRot = new Vector3(0, rotation.x, 0);
     }
     
-    
-    // Camera rotation with mouse
-    // void Update()
-    // {
-    //     localRot.x += Input.GetAxis("Mouse X") * rotationSpeed;
-    //     localRot.y -= Input.GetAxis("Mouse Y") * rotationSpeed;
-    //
-    //     // Clamp the y rotation to prevent flipping
-    //     localRot.y = Mathf.Clamp(localRot.y, 0f, 0f);
-    //
-    //     // Rotate around y-axis using mouse wheel
-    //     localRot.x += Input.GetAxis("Mouse ScrollWheel") * scrollRotationSpeed;
-    //
-    //     Quaternion QT = Quaternion.Euler(localRot.y, localRot.x, 0f);
-    //     transform.rotation = Quaternion.Lerp(transform.rotation, QT, Time.deltaTime * orbitDamping);
-    // }
 }
