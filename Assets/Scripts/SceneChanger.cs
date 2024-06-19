@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -20,7 +21,7 @@ public class SceneChanger : MonoBehaviour
 
     private Vector3 cameraGameplayPosition = new Vector3(0, 13, -18f);
     private Vector3 cameraAnimationPosition = new Vector3(0, 13, -26);
-
+    
     private void Start()
     {
         timer = FindObjectOfType<Timer>();
@@ -52,7 +53,8 @@ public class SceneChanger : MonoBehaviour
         if (train.transform.position.x == 8f)
         {
             timer.stopTimer = false;
-            AkSoundEngine.PostEvent("Stop_chugga", gameManager.gameObject);
+            // AkSoundEngine.PostEvent("Stop_chugga", gameManager.gameObject);
+
         }
 
         else
@@ -65,7 +67,22 @@ public class SceneChanger : MonoBehaviour
 
     private IEnumerator AnimateTrainEntry()
     {
+        int sceneIndex = SceneManager.GetActiveScene().buildIndex;
 
+        if (sceneIndex == 1)
+        {
+            AkSoundEngine.PostEvent("Play_forest_bg", gameManager.gameObject);
+            Debug.Log("Play Forest Event posted");
+        }
+        else if (sceneIndex == 2)
+        {
+            AkSoundEngine.PostEvent("Play_desert_bg", gameManager.gameObject);
+        }
+        else if (sceneIndex == 3)
+        {
+            AkSoundEngine.PostEvent("Play_coast_bg", gameManager.gameObject);
+        }
+        
         playerCamera.transform.position = cameraAnimationPosition;
         float duration = 5f;
         Vector3 targetTrainPosition = new Vector3(8, train.transform.position.y, train.transform.position.z);
@@ -88,7 +105,6 @@ public class SceneChanger : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && playerMovement.letterDelivered)
         {
-            gameManager.PlayTrainSound();
             playerMovement.enabled = false;
             playerMovement.HideMark();
             switchCamera.ChangeToCamera2();
@@ -106,6 +122,23 @@ public class SceneChanger : MonoBehaviour
         player.SetActive(false); // Make the player disappear
         yield return MoveTrain(targetTrainPosition, duration);
         gameManager.ShowWinOverlay();
+        
+        int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        AkSoundEngine.PostEvent("Play_chugga", gameManager.gameObject);
+
+        if (sceneIndex == 1)
+        {
+            AkSoundEngine.PostEvent("Stop_forest_bg", gameManager.gameObject);
+            Debug.Log("Stop Forest Event posted");
+        }
+        else if (sceneIndex == 2)
+        {
+            AkSoundEngine.PostEvent("Stop_desert_bg", gameManager.gameObject);
+        }
+        else if (sceneIndex == 3)
+        {
+            AkSoundEngine.PostEvent("Stop_coast_bg", gameManager.gameObject);
+        }
     }
 
     private IEnumerator MoveTrain(Vector3 targetPosition, float duration)

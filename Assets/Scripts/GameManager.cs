@@ -127,22 +127,14 @@ public class GameManager : MonoBehaviour
             SetCollectableImage();
         }
     }
-    
-    public void PlayTrainSound()
-    {
-        AkSoundEngine.PostEvent("Play_chugga", gameObject);
-    }
 
     public void LoadScene()
     { 
         SaveLevelStats();
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
-        
-        // if (currentSceneIndex == 0)
-        // {
-            AkSoundEngine.PostEvent("Play_chugga", gameObject);
-        // }
+
+        AkSoundEngine.PostEvent("Play_chugga", gameObject);
         
         if (showWinWinOverlay == true)
         {

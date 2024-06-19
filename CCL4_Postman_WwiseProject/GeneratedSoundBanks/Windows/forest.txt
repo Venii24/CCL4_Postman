@@ -3,5 +3,5 @@ Event	ID	Name			Wwise Object Path	Notes
 	3161807649	Play_forest_bg			\Default Work Unit\Play_forest_bg	
 
 Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
-	326205617	forest_bg	C:\Users\stefa\OneDrive\Dokumente\FH StPoelten BCC\4. Semester\Engine Dev\Rotate Camera\CCL4\CCL4_Postman_WwiseProject\.cache\Windows\SFX\forest_bg_D79FB2B7.wem	326205617.wem	\Actor-Mixer Hierarchy\Default Work Unit\ambience\forest_bg	
+	326205617	forest_bg	C:\Users\laura\UnityLocalProjects\CCL4_UnityProject\CCL4_Postman\CCL4_Postman_WwiseProject\.cache\Windows\SFX\forest_bg_D79FB2B7.wem	326205617.wem	\Actor-Mixer Hierarchy\Default Work Unit\ambience\forest_bg	
 

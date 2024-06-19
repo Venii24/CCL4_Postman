@@ -21,6 +21,11 @@
 										<Value>True</Value>
 									</ValueList>
 								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>8</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -127,6 +132,49 @@
 								<ActiveSource Name="coast_bg" ID="{7EF2B494-9846-457B-BFC8-C8E6EA2173F4}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="main_menu_bg" ID="{3178E58A-2A13-45D0-AFBD-2FB1D9383318}" ShortID="78929301">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="IsStreamingEnabled" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-22</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4FCE439C-B699-4B62-B613-201B8E210364}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D30D6E47-BFB1-4B3B-85A5-5AE36881B2F2}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="main_menu_bg" ID="{F7321113-9DAB-49CE-9FFB-3363638C41E9}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="1.91699680688602"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="1.18364903512425"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.501764264889629"/>
+										<Property Name="TrimEnd" Type="Real64" Value="15.7348127169235"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>main_menu_bg.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="196957432"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="main_menu_bg" ID="{F7321113-9DAB-49CE-9FFB-3363638C41E9}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 					<ObjectLists/>
 				</ActorMixer>
@@ -134,7 +182,7 @@
 					<PropertyList>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-13</Value>
+								<Value>-23</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -222,6 +270,11 @@
 						<RandomSequenceContainer Name="steps_sand" ID="{DF55B3B3-2653-4E52-9C01-BD84712D3C4E}" ShortID="342564284">
 							<PropertyList>
 								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -476,7 +529,7 @@
 					<PropertyList>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-3</Value>
+								<Value>-32</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -490,6 +543,11 @@
 					</ReferenceList>
 					<ChildrenList>
 						<AudioFileSource Name="trainWhistle" ID="{D4602CDC-1691-4C13-BEC9-BCC8884905FB}">
+							<PropertyList>
+								<Property Name="FadeInDuration" Type="Real64" Value="1.1696378977895"/>
+								<Property Name="FadeOutDuration" Type="Real64" Value="1.47729146806115"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+							</PropertyList>
 							<Language>SFX</Language>
 							<AudioFile>trainWhistle.wav</AudioFile>
 							<MediaIDList>
@@ -505,6 +563,16 @@
 				<Sound Name="chugga" ID="{0C199F86-99EB-443F-9BF7-42F147824468}" ShortID="237772082">
 					<PropertyList>
 						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="IsStreamingEnabled" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-19</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
@@ -516,6 +584,9 @@
 					</ReferenceList>
 					<ChildrenList>
 						<AudioFileSource Name="chugga" ID="{D55AEB07-0279-4EB9-89CE-BAD749811BFB}">
+							<PropertyList>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+							</PropertyList>
 							<Language>SFX</Language>
 							<AudioFile>chugga.wav</AudioFile>
 							<MediaIDList>
@@ -526,6 +597,66 @@
 					<ObjectLists/>
 					<ActiveSourceList>
 						<ActiveSource Name="chugga" ID="{D55AEB07-0279-4EB9-89CE-BAD749811BFB}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="pickup_stamp" ID="{C4C9656C-DF61-47CF-984B-87A8A753D516}" ShortID="403855287">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-17</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4FCE439C-B699-4B62-B613-201B8E210364}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D30D6E47-BFB1-4B3B-85A5-5AE36881B2F2}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="pickup_stamp" ID="{5D54503A-53D3-46DD-9C4B-74CA8797F79E}">
+							<Language>SFX</Language>
+							<AudioFile>pickup_stamp.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="925527735"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="pickup_stamp" ID="{5D54503A-53D3-46DD-9C4B-74CA8797F79E}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="letter_delivered" ID="{B1C83893-6C4E-48EA-954D-0108E2A555F9}" ShortID="536083127">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-31</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4FCE439C-B699-4B62-B613-201B8E210364}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D30D6E47-BFB1-4B3B-85A5-5AE36881B2F2}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="letter_delivered" ID="{76DAC95B-48A9-4B0F-A6F0-092C91835530}">
+							<Language>SFX</Language>
+							<AudioFile>letter_delivered.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="615304969"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="letter_delivered" ID="{76DAC95B-48A9-4B0F-A6F0-092C91835530}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 			</ChildrenList>

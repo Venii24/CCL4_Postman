@@ -13,13 +13,20 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID PLAY_CHUGGA = 1692289015U;
         static const AkUniqueID PLAY_COAST_BG = 3165135302U;
         static const AkUniqueID PLAY_DESERT_BG = 144265609U;
         static const AkUniqueID PLAY_FOREST_BG = 3161807649U;
+        static const AkUniqueID PLAY_LETTER_DELIVERED = 2778291791U;
+        static const AkUniqueID PLAY_MAIN_MENU_BG = 1287940793U;
+        static const AkUniqueID PLAY_PICKUP_STAMP = 1274845202U;
         static const AkUniqueID PLAY_STEPS_SWITCH = 1426829698U;
+        static const AkUniqueID PLAY_TRAINWHISTLE = 1179387570U;
+        static const AkUniqueID STOP_CHUGGA = 384769713U;
         static const AkUniqueID STOP_COAST_BG = 1006772764U;
         static const AkUniqueID STOP_DESERT_BG = 985173527U;
         static const AkUniqueID STOP_FOREST_BG = 1710369247U;
+        static const AkUniqueID STOP_MAIN_MENU_BG = 3871809007U;
     } // namespace EVENTS
 
     namespace SWITCHES

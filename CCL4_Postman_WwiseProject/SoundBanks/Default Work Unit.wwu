@@ -5,7 +5,13 @@
 			<ChildrenList>
 				<SoundBank Name="commonSounds" ID="{B98B812A-5826-4CB1-B202-8A5743F55879}">
 					<ObjectInclusionList>
+						<ObjectRef Name="Play_pickup_stamp" ID="{D7680CB1-2532-409B-92CF-6310BAEAA795}" WorkUnitID="{47DC9B7E-B979-4D49-A955-782AD6A1C180}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_letter_delivered" ID="{6635103E-0B41-4121-AA76-57A80BEE6230}" WorkUnitID="{47DC9B7E-B979-4D49-A955-782AD6A1C180}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_chugga" ID="{7D37CED1-435C-43B2-B57E-489A0CFC802A}" WorkUnitID="{47DC9B7E-B979-4D49-A955-782AD6A1C180}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_steps_switch" ID="{143F2412-3B3C-4458-80DE-C2B7541AFAE0}" WorkUnitID="{47DC9B7E-B979-4D49-A955-782AD6A1C180}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_chugga" ID="{F9534DB2-2668-477C-B196-B1A444AE25A1}" WorkUnitID="{47DC9B7E-B979-4D49-A955-782AD6A1C180}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_main_menu_bg" ID="{B5E6620F-8128-4C32-B344-1BE2EA9AC04E}" WorkUnitID="{47DC9B7E-B979-4D49-A955-782AD6A1C180}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_main_menu_bg" ID="{EEE4E9EE-EA13-4DDE-8B04-7FADADF58880}" WorkUnitID="{47DC9B7E-B979-4D49-A955-782AD6A1C180}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_trainWhistle" ID="{5B1BE91A-881B-4F3B-992D-8730359B00D1}" WorkUnitID="{47DC9B7E-B979-4D49-A955-782AD6A1C180}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>

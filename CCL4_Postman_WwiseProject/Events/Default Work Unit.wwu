@@ -100,6 +100,78 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_main_menu_bg" ID="{EEE4E9EE-EA13-4DDE-8B04-7FADADF58880}">
+					<ChildrenList>
+						<Action Name="" ID="{C11E1226-EA4B-4028-85D7-2001E61DE248}" ShortID="829813002">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="main_menu_bg" ID="{3178E58A-2A13-45D0-AFBD-2FB1D9383318}" WorkUnitID="{8915ADA6-F687-489C-912A-6EC804FA4AAB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_main_menu_bg" ID="{B5E6620F-8128-4C32-B344-1BE2EA9AC04E}">
+					<ChildrenList>
+						<Action Name="" ID="{3D0394CB-2CA8-45D1-9925-86D237F160F1}" ShortID="1072279075">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="main_menu_bg" ID="{3178E58A-2A13-45D0-AFBD-2FB1D9383318}" WorkUnitID="{8915ADA6-F687-489C-912A-6EC804FA4AAB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_chugga" ID="{7D37CED1-435C-43B2-B57E-489A0CFC802A}">
+					<ChildrenList>
+						<Action Name="" ID="{8D68EAA9-D6B5-4E5B-88AF-DAF3FB99E485}" ShortID="822345583">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="chugga" ID="{0C199F86-99EB-443F-9BF7-42F147824468}" WorkUnitID="{8915ADA6-F687-489C-912A-6EC804FA4AAB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_chugga" ID="{F9534DB2-2668-477C-B196-B1A444AE25A1}">
+					<ChildrenList>
+						<Action Name="" ID="{D1DEA341-B33B-4FAC-9C31-D5E750B995EE}" ShortID="671507777">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="chugga" ID="{0C199F86-99EB-443F-9BF7-42F147824468}" WorkUnitID="{8915ADA6-F687-489C-912A-6EC804FA4AAB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_pickup_stamp" ID="{D7680CB1-2532-409B-92CF-6310BAEAA795}">
+					<ChildrenList>
+						<Action Name="" ID="{83E3CFB8-6ED9-4AC2-B87F-10F03602CF38}" ShortID="1067747462">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="pickup_stamp" ID="{C4C9656C-DF61-47CF-984B-87A8A753D516}" WorkUnitID="{8915ADA6-F687-489C-912A-6EC804FA4AAB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_letter_delivered" ID="{6635103E-0B41-4121-AA76-57A80BEE6230}">
+					<ChildrenList>
+						<Action Name="" ID="{925A4276-B294-40A9-BADB-B709EC356AE7}" ShortID="148832132">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="letter_delivered" ID="{B1C83893-6C4E-48EA-954D-0108E2A555F9}" WorkUnitID="{8915ADA6-F687-489C-912A-6EC804FA4AAB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

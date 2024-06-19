@@ -35,6 +35,7 @@ public class Collectable : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            AkSoundEngine.PostEvent("Play_pickup_stamp", gameObject);
             GameManager.Instance.AddScore(1);
             Destroy(gameObject);
         }

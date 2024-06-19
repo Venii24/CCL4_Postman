@@ -89,6 +89,7 @@ public class DialogueManager : MonoBehaviour
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
+        AkSoundEngine.PostEvent("Play_letter_delivered", gameObject);
 
         StartCoroutine(ResetLetterAnimation());
   
