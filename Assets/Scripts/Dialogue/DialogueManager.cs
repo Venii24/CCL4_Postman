@@ -14,6 +14,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private TextMeshProUGUI nameText;
     [SerializeField] private RawImage characterImage;
+
+    private Animator playerAnimator;
     
     private Story currentStory;
     public bool dialogueIsPlaying { get; private set; }
@@ -67,15 +69,30 @@ public class DialogueManager : MonoBehaviour
         
     }
 
+    private void FindPlayerAnimator()
+    {
+        GameObject player = GameObject.FindWithTag("playerAnimatorObject");
+        if (player != null)
+        {
+            Debug.Log("Debug Log");
+            playerAnimator = player.GetComponent<Animator>();
+        }
+    }
+
     public void EnterDialogueMode(TextAsset inkJSON, Texture characterImageTexture)
     {
+        FindPlayerAnimator();
+        playerAnimator.SetBool("giveLetter", true); 
         timer.stopTimer = true;
         nameText.text = inkJSON.name;
         characterImage.texture = characterImageTexture;
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
-        
+
+        StartCoroutine(ResetLetterAnimation());
+  
+     
         ContinueStory();
     }
 
@@ -86,7 +103,15 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
         timer.stopTimer = false;
+
     }
+
+    IEnumerator ResetLetterAnimation()
+    {
+        yield return new WaitForSeconds(3f);
+        playerAnimator.SetBool("giveLetter", false);
+    }
+       
 
     private void ContinueStory()
     {

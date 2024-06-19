@@ -26,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField]
     private Animator _animator;
+
+    [SerializeField] private float jumpAnimationDuration = 0.5f; // Duration of the jump animation
         
     private GameManager gameManager; 
     private Timer timer;
@@ -181,11 +183,17 @@ public class PlayerMovement : MonoBehaviour
     {
         if (jumpAction.triggered && Mathf.Abs(rb.velocity.y) < 0.01f && Physics.Raycast(transform.position, Vector3.down, 1.1f))
         {
+            _animator.SetBool("isJumping", true); 
             rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
+            StartCoroutine(ResetJumpAnimation());
         }
     }
 
- 
+    IEnumerator ResetJumpAnimation()
+    {
+        yield return new WaitForSeconds(jumpAnimationDuration);
+        _animator.SetBool("isJumping", false);
+    }
 
     void OnCollisionEnter(Collision collision)
     {
@@ -216,7 +224,6 @@ public class PlayerMovement : MonoBehaviour
         if (other.CompareTag("NPCArea"))
         {
             inNPCArea = true;
-            //Debug.Log("Entered NPC area: " + other.name);
         }
         
         if (other.CompareTag("Mark"))

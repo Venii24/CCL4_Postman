@@ -12,6 +12,7 @@ TagManager:
   - Stone
   - Wood
   - Mark
+  - playerAnimatorObject
   layers:
   - Default
   - TransparentFX

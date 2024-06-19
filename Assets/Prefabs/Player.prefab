@@ -30,8 +30,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 591774234433187645}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.019, y: 1.781, z: -14.015}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6407263861371911243}
@@ -108,8 +108,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.61021346, y: 1.5005329, z: 0.622035}
-  m_Center: {x: 0.037896007, y: 0.26156712, z: -0.04274988}
+  m_Size: {x: 0.67, y: 1.5005329, z: 0.622035}
+  m_Center: {x: 0, y: 0.75, z: -0.042749867}
 --- !u!114 &8907332312429100397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,12 +155,16 @@ MonoBehaviour:
   box1: {fileID: 0}
   box2: {fileID: 0}
   cam: {fileID: 0}
+  Mark: {fileID: 0}
+  MarkTrigger: {fileID: 0}
   moveSpeed: 6
   jumpForce: 5
   pushPower: 2
   _animator: {fileID: 2213213185933384302}
+  jumpAnimationDuration: 0.5
   letterDelivered: 1
   inNPCArea: 0
+  MarkStep2: 0
   currentSurfaceType: 
   turnSmoothTime: 0.1
 --- !u!54 &1901352644887001756
@@ -322,15 +326,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9c86dc49138a449239f4866bdc787ec7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.040164
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9c86dc49138a449239f4866bdc787ec7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.53286
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9c86dc49138a449239f4866bdc787ec7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.10623
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9c86dc49138a449239f4866bdc787ec7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -403,6 +407,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9c86dc49138a449239f4866bdc787ec7, type: 3}
       propertyPath: m_Name
       value: ccl4_character_postman_rigged_idle4
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9c86dc49138a449239f4866bdc787ec7, type: 3}
+      propertyPath: m_TagString
+      value: playerAnimatorObject
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
