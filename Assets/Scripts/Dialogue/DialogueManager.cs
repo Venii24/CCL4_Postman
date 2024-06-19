@@ -91,7 +91,7 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(true);
         AkSoundEngine.PostEvent("Play_letter_delivered", gameObject);
 
-        StartCoroutine(ResetLetterAnimation());
+       // StartCoroutine(ResetLetterAnimation());
   
      
         ContinueStory();
@@ -104,13 +104,15 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
         timer.stopTimer = false;
-
+        playerAnimator.SetBool("giveLetter", false);
+        Debug.Log("Letter animation reset at last");
     }
 
     IEnumerator ResetLetterAnimation()
     {
         yield return new WaitForSeconds(3f);
         playerAnimator.SetBool("giveLetter", false);
+        Debug.Log("Letter animation reset");
     }
        
 

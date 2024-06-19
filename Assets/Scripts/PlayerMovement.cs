@@ -38,7 +38,8 @@ public class PlayerMovement : MonoBehaviour
     private InputAction jumpAction;
     private Vector3 box1StartPos;
     private Vector3 box2StartPos;
- 
+    private float originalSpeed;
+
     public bool letterDelivered = false;
     public bool inNPCArea = false;
     public bool MarkStep2 = false;
@@ -56,7 +57,8 @@ public class PlayerMovement : MonoBehaviour
         letterDelivered = false;
         box1StartPos = box1.transform.position;
         box2StartPos = box2.transform.position;
-        
+        originalSpeed = moveSpeed;
+
         // Find the GameManager instance in the scene
         gameManager = GameManager.Instance;
         timer = FindObjectOfType<Timer>();
@@ -77,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
-        Debug.Log(letterDelivered);
+       // Debug.Log(letterDelivered);
         
         DetectSurface();
         MovePlayer();
@@ -170,7 +172,7 @@ public class PlayerMovement : MonoBehaviour
         if (moveInput.magnitude > 0.1f)
         {
             float targetAngle = Mathf.Atan2(moveInput.x, moveInput.y) * Mathf.Rad2Deg + cam.eulerAngles.y;
-            targetAngle -= 90f; // Rotate 90° to the left
+            //targetAngle += 0; // Rotate 90° to the right - had to change it with the new import
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
         }
@@ -214,10 +216,33 @@ public class PlayerMovement : MonoBehaviour
                     forceDirection = new Vector3(0, 0, Mathf.Sign(forceDirection.z));
                 }
 
-                boxRigidbody.AddForce(forceDirection * pushPower, ForceMode.Impulse);
+                // Check for player input
+                bool isPushing = Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0;
+
+                if (isPushing)
+                {
+                    _animator.SetBool("isPushing", true);
+                    moveSpeed = originalSpeed / 1.5f;
+                    boxRigidbody.AddForce(forceDirection * pushPower, ForceMode.Impulse);
+                }
+                else
+                {
+                    moveSpeed = originalSpeed;
+                    _animator.SetBool("isPushing", false);
+                }
             }
         }
     }
+
+    void OnCollisionExit(Collision collision)
+    {
+        if (collision.collider.CompareTag("Box"))
+        {
+            moveSpeed = originalSpeed;
+            _animator.SetBool("isPushing", false);
+        }
+    }
+    
 
     private void OnTriggerEnter(Collider other)
     {
