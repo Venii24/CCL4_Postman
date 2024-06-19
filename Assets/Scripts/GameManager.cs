@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
 
     public Animator transition;
     public static GameManager Instance { get; private set; }
+    private SceneChanger SceneChanger;
     private Timer timer;
     public int score = 0;
     private bool backToMenu = false;
@@ -54,6 +55,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         timer = FindObjectOfType<Timer>();
+        SceneChanger = FindObjectOfType<SceneChanger>();
 
         timer.stopTimer = true;
 
@@ -90,6 +92,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             winOverlay.SetActive(false);
@@ -124,12 +127,23 @@ public class GameManager : MonoBehaviour
             SetCollectableImage();
         }
     }
+    
+    public void PlayTrainSound()
+    {
+        AkSoundEngine.PostEvent("Play_chugga", gameObject);
+    }
 
     public void LoadScene()
-    {
+    { 
         SaveLevelStats();
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
+        
+        // if (currentSceneIndex == 0)
+        // {
+            AkSoundEngine.PostEvent("Play_chugga", gameObject);
+        // }
+        
         if (showWinWinOverlay == true)
         {
             WinWinOverlay.SetActive(true);
@@ -172,6 +186,7 @@ public class GameManager : MonoBehaviour
             if (nextSceneIndex == 1)
             {
                 timer.CountdownTime = 183f;
+                
             }
 
             

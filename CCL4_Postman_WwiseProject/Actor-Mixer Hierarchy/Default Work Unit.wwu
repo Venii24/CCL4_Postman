@@ -472,6 +472,62 @@
 						</GroupingList>
 					</GroupingInfo>
 				</SwitchContainer>
+				<Sound Name="trainWhistle" ID="{CEE2493D-B980-43A2-9552-16F66E4FF956}" ShortID="419906004">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-3</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4FCE439C-B699-4B62-B613-201B8E210364}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D30D6E47-BFB1-4B3B-85A5-5AE36881B2F2}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="trainWhistle" ID="{D4602CDC-1691-4C13-BEC9-BCC8884905FB}">
+							<Language>SFX</Language>
+							<AudioFile>trainWhistle.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="773221336"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="trainWhistle" ID="{D4602CDC-1691-4C13-BEC9-BCC8884905FB}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="chugga" ID="{0C199F86-99EB-443F-9BF7-42F147824468}" ShortID="237772082">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4FCE439C-B699-4B62-B613-201B8E210364}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D30D6E47-BFB1-4B3B-85A5-5AE36881B2F2}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="chugga" ID="{D55AEB07-0279-4EB9-89CE-BAD749811BFB}">
+							<Language>SFX</Language>
+							<AudioFile>chugga.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="958934137"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="chugga" ID="{D55AEB07-0279-4EB9-89CE-BAD749811BFB}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

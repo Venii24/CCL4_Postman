@@ -1,5 +1,8 @@
 Event	ID	Name			Wwise Object Path	Notes
+	384769713	Stop_chugga			\Default Work Unit\Stop_chugga	
+	1179387570	Play_trainWhistle			\Default Work Unit\Play_trainWhistle	
 	1426829698	Play_steps_switch			\Default Work Unit\Play_steps_switch	
+	1692289015	Play_chugga			\Default Work Unit\Play_chugga	
 
 Switch Group	ID	Name			Wwise Object Path	Notes
 	1718617278	steps			\Default Work Unit\steps	
@@ -11,12 +14,14 @@ Switch	ID	Name	Switch Group			Notes
 	4248645337	grass	steps			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	137083928	step_stone2	C:\Users\laura\UnityLocalProjects\CCL4_UnityProject\CCL4_Postman\CCL4_Postman_WwiseProject\.cache\Mac\SFX\step_stone2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\steps_switch\steps_stone\step_stone2		61574
-	203138148	step_grass1	C:\Users\laura\UnityLocalProjects\CCL4_UnityProject\CCL4_Postman\CCL4_Postman_WwiseProject\.cache\Mac\SFX\step_grass1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\steps_switch\steps_grass\step_grass1		134744
-	467371453	step_sand1	C:\Users\laura\UnityLocalProjects\CCL4_UnityProject\CCL4_Postman\CCL4_Postman_WwiseProject\.cache\Mac\SFX\step_sand1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\steps_switch\steps_sand\step_sand1		148040
-	677005037	step_grass2	C:\Users\laura\UnityLocalProjects\CCL4_UnityProject\CCL4_Postman\CCL4_Postman_WwiseProject\.cache\Mac\SFX\step_grass2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\steps_switch\steps_grass\step_grass2		108400
-	781202042	step_sand2	C:\Users\laura\UnityLocalProjects\CCL4_UnityProject\CCL4_Postman\CCL4_Postman_WwiseProject\.cache\Mac\SFX\step_sand2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\steps_switch\steps_sand\step_sand2		139256
-	962754187	step_wood1	C:\Users\laura\UnityLocalProjects\CCL4_UnityProject\CCL4_Postman\CCL4_Postman_WwiseProject\.cache\Mac\SFX\step_wood2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\steps_switch\steps_wood\step_wood1		90748
-	981615836	step_stone1	C:\Users\laura\UnityLocalProjects\CCL4_UnityProject\CCL4_Postman\CCL4_Postman_WwiseProject\.cache\Mac\SFX\step_stone1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\steps_switch\steps_stone\step_stone1		72298
-	984954958	step_wood2	C:\Users\laura\UnityLocalProjects\CCL4_UnityProject\CCL4_Postman\CCL4_Postman_WwiseProject\.cache\Mac\SFX\step_wood3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\steps_switch\steps_wood\step_wood2		92442
+	137083928	step_stone2	C:\Users\stefa\OneDrive\Dokumente\FH StPoelten BCC\4. Semester\Engine Dev\Rotate Camera\CCL4\CCL4_Postman_WwiseProject\.cache\Mac\SFX\step_stone2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\steps_switch\steps_stone\step_stone2		61574
+	203138148	step_grass1	C:\Users\stefa\OneDrive\Dokumente\FH StPoelten BCC\4. Semester\Engine Dev\Rotate Camera\CCL4\CCL4_Postman_WwiseProject\.cache\Mac\SFX\step_grass1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\steps_switch\steps_grass\step_grass1		134744
+	467371453	step_sand1	C:\Users\stefa\OneDrive\Dokumente\FH StPoelten BCC\4. Semester\Engine Dev\Rotate Camera\CCL4\CCL4_Postman_WwiseProject\.cache\Mac\SFX\step_sand1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\steps_switch\steps_sand\step_sand1		148040
+	677005037	step_grass2	C:\Users\stefa\OneDrive\Dokumente\FH StPoelten BCC\4. Semester\Engine Dev\Rotate Camera\CCL4\CCL4_Postman_WwiseProject\.cache\Mac\SFX\step_grass2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\steps_switch\steps_grass\step_grass2		108400
+	773221336	trainWhistle	C:\Users\stefa\OneDrive\Dokumente\FH StPoelten BCC\4. Semester\Engine Dev\Rotate Camera\CCL4\CCL4_Postman_WwiseProject\.cache\Mac\SFX\trainWhistle_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\trainWhistle		718776
+	781202042	step_sand2	C:\Users\stefa\OneDrive\Dokumente\FH StPoelten BCC\4. Semester\Engine Dev\Rotate Camera\CCL4\CCL4_Postman_WwiseProject\.cache\Mac\SFX\step_sand2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\steps_switch\steps_sand\step_sand2		139256
+	958934137	chugga	C:\Users\stefa\OneDrive\Dokumente\FH StPoelten BCC\4. Semester\Engine Dev\Rotate Camera\CCL4\CCL4_Postman_WwiseProject\.cache\Mac\SFX\chugga_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\chugga		529512
+	962754187	step_wood1	C:\Users\stefa\OneDrive\Dokumente\FH StPoelten BCC\4. Semester\Engine Dev\Rotate Camera\CCL4\CCL4_Postman_WwiseProject\.cache\Mac\SFX\step_wood2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\steps_switch\steps_wood\step_wood1		90748
+	981615836	step_stone1	C:\Users\stefa\OneDrive\Dokumente\FH StPoelten BCC\4. Semester\Engine Dev\Rotate Camera\CCL4\CCL4_Postman_WwiseProject\.cache\Mac\SFX\step_stone1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\steps_switch\steps_stone\step_stone1		72298
+	984954958	step_wood2	C:\Users\stefa\OneDrive\Dokumente\FH StPoelten BCC\4. Semester\Engine Dev\Rotate Camera\CCL4\CCL4_Postman_WwiseProject\.cache\Mac\SFX\step_wood3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\steps_switch\steps_wood\step_wood2		92442
 

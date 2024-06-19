@@ -89,6 +89,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_trainWhistle" ID="{5B1BE91A-881B-4F3B-992D-8730359B00D1}">
+					<ChildrenList>
+						<Action Name="" ID="{62F15448-030F-454C-87CC-0CD0A2C15516}" ShortID="1020117835">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="trainWhistle" ID="{CEE2493D-B980-43A2-9552-16F66E4FF956}" WorkUnitID="{8915ADA6-F687-489C-912A-6EC804FA4AAB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

@@ -13,6 +13,7 @@ public class Timer : MonoBehaviour
 
     private Coroutine blinkCoroutine;
     private DialogueManager dialogueManager;
+    private bool oneMinuteWarningGiven = false; // Add a flag to ensure the warning is given once
 
     // Start is called before the first frame update
     void Start()
@@ -36,8 +37,13 @@ public class Timer : MonoBehaviour
             int seconds = Mathf.FloorToInt(CountdownTime % 60);
             timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         }
-        
-       
+
+        if (!oneMinuteWarningGiven && CountdownTime <= 62 && CountdownTime > 61)
+        {
+           // Debug.Log("One minute left!");
+            AkSoundEngine.PostEvent("Play_trainWhistle", gameObject);
+            oneMinuteWarningGiven = true; // Ensure the warning is given only once
+        }
 
         if (CountdownTime <= 0)
         {

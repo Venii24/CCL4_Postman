@@ -14,8 +14,7 @@ public class SceneChanger : MonoBehaviour
     private SwitchCamera switchCamera;
     private GameManager gameManager;
     private CollectableManager collectableManager;
-   // private Texture StampImage;
-
+    
 
     private Vector3 cameraGameplayPosition = new Vector3(0, 13, -18f);
     private Vector3 cameraAnimationPosition = new Vector3(0, 13, -26);
@@ -49,6 +48,7 @@ public class SceneChanger : MonoBehaviour
         if (train.transform.position.x == 8f)
         {
             timer.stopTimer = false;
+            AkSoundEngine.PostEvent("Stop_chugga", gameManager.gameObject);
         }
 
         else
@@ -79,9 +79,9 @@ public class SceneChanger : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && playerMovement.letterDelivered)
         {
+            gameManager.PlayTrainSound();
             playerMovement.enabled = false;
             playerMovement.HideMark();
-            //StampImage = collectableManager.ReturnStampImage(gameManager.GetScore());
             switchCamera.ChangeToCamera2();
             StartCoroutine(AnimateTrainExit());
         }
@@ -89,13 +89,13 @@ public class SceneChanger : MonoBehaviour
 
     private IEnumerator AnimateTrainExit()
     {
+        
         StartCoroutine(AnimateCameraTransition(playerCamera.transform.position, cameraAnimationPosition, 1f));
         playerCamera.transform.position = cameraAnimationPosition;
         float duration = 5f;
         Vector3 targetTrainPosition = new Vector3(40, train.transform.position.y, train.transform.position.z);
         player.SetActive(false); // Make the player disappear
         yield return MoveTrain(targetTrainPosition, duration);
-        
         gameManager.ShowWinOverlay();
     }
 

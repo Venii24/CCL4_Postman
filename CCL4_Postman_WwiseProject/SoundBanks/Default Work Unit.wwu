@@ -6,6 +6,7 @@
 				<SoundBank Name="commonSounds" ID="{B98B812A-5826-4CB1-B202-8A5743F55879}">
 					<ObjectInclusionList>
 						<ObjectRef Name="Play_steps_switch" ID="{143F2412-3B3C-4458-80DE-C2B7541AFAE0}" WorkUnitID="{47DC9B7E-B979-4D49-A955-782AD6A1C180}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_trainWhistle" ID="{5B1BE91A-881B-4F3B-992D-8730359B00D1}" WorkUnitID="{47DC9B7E-B979-4D49-A955-782AD6A1C180}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
