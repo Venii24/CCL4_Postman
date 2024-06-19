@@ -6,6 +6,7 @@ public class SceneChanger : MonoBehaviour
 {
     [SerializeField] private string sceneToEnter;
     [SerializeField] public GameObject train;
+    [SerializeField] public GameObject trainObject;
     [SerializeField] public GameObject player;
     [SerializeField] public GameObject playerCamera;
 
@@ -15,6 +16,7 @@ public class SceneChanger : MonoBehaviour
     private GameManager gameManager;
     private CollectableManager collectableManager;
     
+    private Animator trainAnimator;
 
     private Vector3 cameraGameplayPosition = new Vector3(0, 13, -18f);
     private Vector3 cameraAnimationPosition = new Vector3(0, 13, -26);
@@ -29,6 +31,8 @@ public class SceneChanger : MonoBehaviour
         gameManager = GameManager.Instance;
         timer.stopTimer = true;
         switchCamera.ChangeToMainCamera();
+
+        trainAnimator = trainObject.GetComponent<Animator>();
 
         // Initialize train position based on scene
         int sceneIndex = SceneManager.GetActiveScene().buildIndex;
@@ -61,11 +65,15 @@ public class SceneChanger : MonoBehaviour
 
     private IEnumerator AnimateTrainEntry()
     {
+
         playerCamera.transform.position = cameraAnimationPosition;
         float duration = 5f;
         Vector3 targetTrainPosition = new Vector3(8, train.transform.position.y, train.transform.position.z);
 
         yield return MoveTrain(targetTrainPosition, duration);
+
+        
+        trainAnimator.SetBool("isStanding", true);
 
         player.SetActive(true); // Make the player appear
         playerMovement.enabled = true; // Allow player movement
@@ -74,6 +82,7 @@ public class SceneChanger : MonoBehaviour
         StartCoroutine(AnimateCameraTransition(playerCamera.transform.position, cameraGameplayPosition,
             1f));
     }
+   
 
     private void OnTriggerEnter(Collider other)
     {
@@ -89,7 +98,7 @@ public class SceneChanger : MonoBehaviour
 
     private IEnumerator AnimateTrainExit()
     {
-        
+        trainAnimator.SetBool("isStanding", false);
         StartCoroutine(AnimateCameraTransition(playerCamera.transform.position, cameraAnimationPosition, 1f));
         playerCamera.transform.position = cameraAnimationPosition;
         float duration = 5f;
@@ -101,6 +110,8 @@ public class SceneChanger : MonoBehaviour
 
     private IEnumerator MoveTrain(Vector3 targetPosition, float duration)
     {
+        
+
         Vector3 startPosition = train.transform.position;
         float elapsedTime = 0;
 
