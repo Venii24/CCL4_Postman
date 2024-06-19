@@ -123,7 +123,7 @@ public class PlayerMovement : MonoBehaviour
                 case "Stone":
                     currentSurfaceType = "stone";
                     break;
-                // Add more cases for other surface types as needed
+               
                 default:
                     currentSurfaceType = null; // Handle unknown tags
                     break;

@@ -25,7 +25,7 @@ public class FootstepComponent : MonoBehaviour
 
             // Post the footstep event
             AkSoundEngine.PostEvent("Play_steps_switch", gameObject);
-            //Debug.Log("Played steps on " + _playerMovement.currentSurfaceType);
+     //Debug.Log("Played steps on " + _playerMovement.currentSurfaceType);
         }
         else
         {
