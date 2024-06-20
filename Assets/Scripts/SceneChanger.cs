@@ -21,7 +21,10 @@ public class SceneChanger : MonoBehaviour
     private Animator trainAnimator;
 
     private Vector3 cameraGameplayPosition = new Vector3(0, 13, -19f);
-    private Vector3 cameraAnimationPosition = new Vector3(0, 13, -28);
+    private Vector3 cameraAnimationPosition = new Vector3(0, 13, -28f);
+    private Vector3 cameraAnimationPosition3 = new Vector3(0, 13, -30f);
+    
+    private int sceneIndex = SceneManager.GetActiveScene().buildIndex;
     
     private void Start()
     {
@@ -93,8 +96,16 @@ public class SceneChanger : MonoBehaviour
         {
             AkSoundEngine.PostEvent("Play_coast_bg", gameManager.gameObject);
         }
+
+        if (sceneIndex == 3)
+        {
+            playerCamera.transform.position = cameraAnimationPosition3;
+        }
+        else 
+        {
+           playerCamera.transform.position = cameraAnimationPosition;
+        }
         
-        playerCamera.transform.position = cameraAnimationPosition;
         float duration = 5f;
         Vector3 targetTrainPosition = new Vector3(8, train.transform.position.y, train.transform.position.z);
 
