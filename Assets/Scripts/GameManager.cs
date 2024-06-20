@@ -178,6 +178,7 @@ public class GameManager : MonoBehaviour
             else if (nextSceneIndex == 4) // Go back to menu
             {
                 SceneManager.LoadScene(0);
+                AkSoundEngine.PostEvent("Stop_chugga", gameObject);
                 DestroyPersistentObjects();
             }
             else
