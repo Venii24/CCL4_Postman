@@ -166,7 +166,7 @@ public class GameManager : MonoBehaviour
             {
                 StartCoroutine(LoadLevel(nextSceneIndex));
                 winOverlay.SetActive(false);
-                timer.CountdownTime = 181f;
+                timer.CountdownTime = 301f;
                 // TimerBox.SetActive(true);
                 timer.stopTimer = false;
             }
@@ -189,7 +189,7 @@ public class GameManager : MonoBehaviour
 
             if (nextSceneIndex == 1)
             {
-                timer.CountdownTime = 183f;
+                timer.CountdownTime = 303f;
                 
             }
 
@@ -252,7 +252,7 @@ public class GameManager : MonoBehaviour
         score = 0;
         winOverlay.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        timer.CountdownTime = 181f;
+        timer.CountdownTime = 301f;
         timer.stopTimer = false;
     }
 
@@ -284,7 +284,7 @@ public class GameManager : MonoBehaviour
 
     public void SetText()
     {
-        int timeNeeded = 180 - (int)timer.CountdownTime;
+        int timeNeeded = 300 - (int)timer.CountdownTime;
         //format to 00:00
         int minutes = timeNeeded / 60;
         int seconds = timeNeeded % 60;
@@ -331,7 +331,7 @@ public class GameManager : MonoBehaviour
 
     private void SaveLevelStats()
     {
-        int timeNeeded = 180 - (int)timer.CountdownTime;
+        int timeNeeded = 300 - (int)timer.CountdownTime;
 
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         if (currentSceneIndex == 0)
