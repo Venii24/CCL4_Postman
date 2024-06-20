@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="12" SoundbankVersion="140">
 	<RootPaths>
-		<ProjectRoot>C:\Users\laura\UnityLocalProjects\CCL4_UnityProject\CCL4_Postman\CCL4_Postman_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>C:\Users\laura\UnityLocalProjects\CCL4_UnityProject\CCL4_Postman\CCL4_Postman_WwiseProject\.cache\Mac\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Users\laura\UnityLocalProjects\CCL4_UnityProject\CCL4_Postman\CCL4_Postman_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\stefa\OneDrive\Dokumente\FH StPoelten BCC\4. Semester\Engine Dev\Rotate Camera\CCL4\CCL4_Postman_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\stefa\OneDrive\Dokumente\FH StPoelten BCC\4. Semester\Engine Dev\Rotate Camera\CCL4\CCL4_Postman_WwiseProject\.cache\Mac\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\stefa\OneDrive\Dokumente\FH StPoelten BCC\4. Semester\Engine Dev\Rotate Camera\CCL4\CCL4_Postman_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\laura\UnityLocalProjects\CCL4_UnityProject\CCL4_Postman\CCL4_Postman_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\stefa\OneDrive\Dokumente\FH StPoelten BCC\4. Semester\Engine Dev\Rotate Camera\CCL4\CCL4_Postman_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles>
 		<File Id="196957432" Language="SFX">
 			<ShortName>main_menu_bg.wav</ShortName>
-			<Path>SFX\main_menu_bg_AEC79AFD.wem</Path>
+			<Path>SFX\main_menu_bg_15170BAE.wem</Path>
 		</File>
 		<File Id="326205617" Language="SFX">
 			<ShortName>forest_bg.wav</ShortName>
@@ -45,7 +45,7 @@
 						</File>
 					</ReferencedStreamedFiles>
 				</Event>
-				<Event Id="1710369247" Name="Stop_forest_bg" ObjectPath="\Events\Default Work Unit\Stop_forest_bg" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1710369247" Name="Stop_forest_bg" ObjectPath="\Events\Default Work Unit\Stop_forest_bg" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 			</IncludedEvents>
 		</SoundBank>
 		<SoundBank Id="1355168291" Language="SFX" Hash="1314761051">
@@ -66,10 +66,10 @@
 						</File>
 					</ReferencedStreamedFiles>
 				</Event>
-				<Event Id="985173527" Name="Stop_desert_bg" ObjectPath="\Events\Default Work Unit\Stop_desert_bg" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="985173527" Name="Stop_desert_bg" ObjectPath="\Events\Default Work Unit\Stop_desert_bg" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 			</IncludedEvents>
 		</SoundBank>
-		<SoundBank Id="1926594054" Language="SFX" Hash="3581917699">
+		<SoundBank Id="1926594054" Language="SFX" Hash="2605586893">
 			<ObjectPath>\SoundBanks\Default Work Unit\commonSounds</ObjectPath>
 			<ShortName>commonSounds</ShortName>
 			<Path>commonSounds.bnk</Path>
@@ -82,7 +82,7 @@
 						</File>
 					</ReferencedStreamedFiles>
 				</Event>
-				<Event Id="2778291791" Name="Play_letter_delivered" ObjectPath="\Events\Default Work Unit\Play_letter_delivered" DurationType="OneShot" DurationMin="2.232" DurationMax="2.232">
+				<Event Id="2778291791" Name="Play_letter_delivered" ObjectPath="\Events\Default Work Unit\Play_letter_delivered" DurationType="OneShot" DurationMin="2.232000" DurationMax="2.232000">
 					<IncludedMemoryFiles>
 						<File Id="615304969" Language="SFX">
 							<ShortName>letter_delivered.wav</ShortName>
@@ -94,11 +94,11 @@
 					<ReferencedStreamedFiles>
 						<File Id="196957432" Language="SFX">
 							<ShortName>main_menu_bg.wav</ShortName>
-							<Path>SFX\main_menu_bg_AEC79AFD.wem</Path>
+							<Path>SFX\main_menu_bg_15170BAE.wem</Path>
 						</File>
 					</ReferencedStreamedFiles>
 				</Event>
-				<Event Id="1274845202" Name="Play_pickup_stamp" ObjectPath="\Events\Default Work Unit\Play_pickup_stamp" DurationType="OneShot" DurationMin="0.456" DurationMax="0.456">
+				<Event Id="1274845202" Name="Play_pickup_stamp" ObjectPath="\Events\Default Work Unit\Play_pickup_stamp" DurationType="OneShot" DurationMin="0.456000" DurationMax="0.456000">
 					<IncludedMemoryFiles>
 						<File Id="925527735" Language="SFX">
 							<ShortName>pickup_stamp.wav</ShortName>
@@ -106,7 +106,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1426829698" Name="Play_steps_switch" ObjectPath="\Events\Default Work Unit\Play_steps_switch" DurationType="OneShot" DurationMin="0.56425" DurationMax="0.962271">
+				<Event Id="1426829698" Name="Play_steps_switch" ObjectPath="\Events\Default Work Unit\Play_steps_switch" DurationType="OneShot" DurationMin="0.564250" DurationMax="0.962271">
 					<IncludedMemoryFiles>
 						<File Id="137083928" Language="SFX">
 							<ShortName>step_stone2.wav</ShortName>
@@ -149,6 +149,12 @@
 								<File Id="677005037"/>
 							</Media>
 						</SwitchContainer>
+						<SwitchContainer SwitchValue="{2EB9DAEE-CB76-44AE-945B-E00021FF4AFE}">
+							<Media>
+								<File Id="467371453"/>
+								<File Id="781202042"/>
+							</Media>
+						</SwitchContainer>
 						<SwitchContainer SwitchValue="{B65AA35F-E016-4EE5-B620-60BC56686CCF}">
 							<Media>
 								<File Id="137083928"/>
@@ -161,32 +167,26 @@
 								<File Id="984954958"/>
 							</Media>
 						</SwitchContainer>
-						<SwitchContainer SwitchValue="{2EB9DAEE-CB76-44AE-945B-E00021FF4AFE}">
-							<Media>
-								<File Id="467371453"/>
-								<File Id="781202042"/>
-							</Media>
-						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
 				<Event Id="1179387570" Name="Play_trainWhistle" ObjectPath="\Events\Default Work Unit\Play_trainWhistle" DurationType="OneShot" DurationMin="4.074331" DurationMax="4.074331">
 					<IncludedMemoryFiles>
 						<File Id="773221336" Language="SFX">
 							<ShortName>trainWhistle.wav</ShortName>
-							<Path>SFX\trainWhistle_15A2139F.wem</Path>
+							<Path>SFX\trainWhistle_BC6E9617.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="384769713" Name="Stop_chugga" ObjectPath="\Events\Default Work Unit\Stop_chugga" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="3871809007" Name="Stop_main_menu_bg" ObjectPath="\Events\Default Work Unit\Stop_main_menu_bg" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="384769713" Name="Stop_chugga" ObjectPath="\Events\Default Work Unit\Stop_chugga" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3871809007" Name="Stop_main_menu_bg" ObjectPath="\Events\Default Work Unit\Stop_main_menu_bg" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 			</IncludedEvents>
 			<SwitchGroups>
-				<SwitchGroup Id="1718617278" Name="steps" ObjectPath="\Switches\Default Work Unit\steps" GUID="{70338A6C-7990-48BC-8880-1A481400F903}">
+				<SwitchGroup Id="1718617278" Name="steps" ObjectPath="\Switches\Default Work Unit\steps">
 					<Switches>
-						<Switch Id="4248645337" Name="grass" ObjectPath="\Switches\Default Work Unit\steps\grass" GUID="{7EB94A19-6275-4EB4-BAE0-BDA9530ACDD6}"/>
-						<Switch Id="803837735" Name="sand" ObjectPath="\Switches\Default Work Unit\steps\sand" GUID="{2EB9DAEE-CB76-44AE-945B-E00021FF4AFE}"/>
-						<Switch Id="1216965916" Name="stone" ObjectPath="\Switches\Default Work Unit\steps\stone" GUID="{B65AA35F-E016-4EE5-B620-60BC56686CCF}"/>
-						<Switch Id="2058049674" Name="wood" ObjectPath="\Switches\Default Work Unit\steps\wood" GUID="{B3AB43AB-9314-4760-B6B6-B390316FCABE}"/>
+						<Switch Id="4248645337" Name="grass" ObjectPath="\Switches\Default Work Unit\steps\grass"/>
+						<Switch Id="803837735" Name="sand" ObjectPath="\Switches\Default Work Unit\steps\sand"/>
+						<Switch Id="1216965916" Name="stone" ObjectPath="\Switches\Default Work Unit\steps\stone"/>
+						<Switch Id="2058049674" Name="wood" ObjectPath="\Switches\Default Work Unit\steps\wood"/>
 					</Switches>
 				</SwitchGroup>
 			</SwitchGroups>
@@ -204,7 +204,7 @@
 						</File>
 					</ReferencedStreamedFiles>
 				</Event>
-				<Event Id="1006772764" Name="Stop_coast_bg" ObjectPath="\Events\Default Work Unit\Stop_coast_bg" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="1006772764" Name="Stop_coast_bg" ObjectPath="\Events\Default Work Unit\Stop_coast_bg" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 			</IncludedEvents>
 		</SoundBank>
 	</SoundBanks>

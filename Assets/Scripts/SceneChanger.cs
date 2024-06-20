@@ -13,6 +13,7 @@ public class SceneChanger : MonoBehaviour
 
     private Timer timer;
     private PlayerMovement playerMovement;
+    public bool TrainSoundOn = false;
     private SwitchCamera switchCamera;
     private GameManager gameManager;
     private CollectableManager collectableManager;
@@ -52,13 +53,21 @@ public class SceneChanger : MonoBehaviour
     {
         if (train.transform.position.x == 8f)
         {   
+            if (!TrainSoundOn) AkSoundEngine.PostEvent("Stop_chugga", gameManager.gameObject);
+            TrainSoundOn = false;
+            //gameManager.chuggaPlaying = false;
             timer.stopTimer = false;
             gameManager.TimerBox.SetActive(true);
-            // AkSoundEngine.PostEvent("Stop_chugga", gameManager.gameObject);
 
         }
         else
         {
+            if (gameManager.chuggaPlaying && !TrainSoundOn)
+            {
+                AkSoundEngine.PostEvent("Play_chugga", gameManager.gameObject);
+                Debug.Log("Chugga Playing scene changer");
+                TrainSoundOn = true;
+            }
             timer.stopTimer = true;
             gameManager.TimerBox.SetActive(false);
             switchCamera.SetAcceptInput(false);
@@ -106,6 +115,7 @@ public class SceneChanger : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && playerMovement.letterDelivered)
         {
+           
             playerMovement.enabled = false;
             playerMovement.HideMark();
             switchCamera.ChangeToCamera2();
@@ -114,7 +124,7 @@ public class SceneChanger : MonoBehaviour
     }
 
     private IEnumerator AnimateTrainExit()
-    {
+    { 
         trainAnimator.SetBool("isStanding", false);
         StartCoroutine(AnimateCameraTransition(playerCamera.transform.position, cameraAnimationPosition, 1f));
         playerCamera.transform.position = cameraAnimationPosition;
@@ -123,9 +133,7 @@ public class SceneChanger : MonoBehaviour
         player.SetActive(false); // Make the player disappear
         yield return MoveTrain(targetTrainPosition, duration);
         gameManager.ShowWinOverlay();
-        
         int sceneIndex = SceneManager.GetActiveScene().buildIndex;
-        AkSoundEngine.PostEvent("Play_chugga", gameManager.gameObject);
 
         if (sceneIndex == 1)
         {

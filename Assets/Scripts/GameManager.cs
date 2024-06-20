@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     public Animator transition;
     public static GameManager Instance { get; private set; }
     public PlayerMovement playerMovement;
-    public bool letterDelivered = false;
+    public bool chuggaPlaying = false;
     private SceneChanger SceneChanger;
     private Timer timer;
     public int score = 0;
@@ -142,6 +142,12 @@ public class GameManager : MonoBehaviour
 
     public void LoadScene()
     { 
+        if (SceneManager.GetActiveScene().buildIndex == 0 && !chuggaPlaying)
+        {
+            AkSoundEngine.PostEvent("Play_chugga", gameObject);
+            Debug.Log("Chugga Playing manager");
+            chuggaPlaying = true;
+        }
         SaveLevelStats();
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
@@ -164,6 +170,7 @@ public class GameManager : MonoBehaviour
 
             if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
             {
+                
                 StartCoroutine(LoadLevel(nextSceneIndex));
                 winOverlay.SetActive(false);
                 timer.CountdownTime = 301f;
