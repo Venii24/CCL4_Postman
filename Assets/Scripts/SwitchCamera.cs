@@ -12,7 +12,7 @@ public class SwitchCamera : MonoBehaviour
 
     void Start()
     {
-        targetRot = transform.rotation.eulerAngles; // Initialize target rotation with current rotation
+        targetRot = transform.rotation.eulerAngles; 
     }
 
     void Update()
@@ -43,16 +43,13 @@ public class SwitchCamera : MonoBehaviour
 
     void RotateCamera(float angle)
     {
-        // Calculate the target rotation
         targetRot.y += angle;
-
-        // If there's a previous rotation coroutine, stop it
+        
         if (rotationCoroutine != null)
         {
             StopCoroutine(rotationCoroutine);
         }
-
-        // Start a new coroutine for smooth rotation
+        
         rotationCoroutine = StartCoroutine(RotateCoroutine(targetRot));
     }
 
@@ -75,7 +72,6 @@ public class SwitchCamera : MonoBehaviour
 
     IEnumerator RotateCoroutine(Vector3 targetRotation)
     {
-        // Disable input during rotation
         SetAcceptInput(false);
 
         Quaternion startRotation = transform.rotation;
@@ -85,27 +81,24 @@ public class SwitchCamera : MonoBehaviour
 
         while (elapsedTime < transitionDuration)
         {
-            // Calculate the current rotation based on the interpolation
             float t = elapsedTime / transitionDuration;
             transform.rotation = Quaternion.Lerp(startRotation, targetRotationQuat, t);
-
-            // Increment time
+            
             elapsedTime += Time.deltaTime;
 
             yield return null;
         }
 
-        // Ensure final rotation is exactly the target rotation
+       
         transform.rotation = targetRotationQuat;
 
-        // Re-enable input after rotation is complete
+       
         SetAcceptInput(true);
     }
     
     
     public void ResetRotation()
     {
-        //rotate object to 0,0,0
         targetRot = Vector3.zero;
     }
 }

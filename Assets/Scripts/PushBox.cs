@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class PushBox : MonoBehaviour
 {
-    [SerializeField]
-    //private float pushPower = 2.0f;
-
     private void OnCollisionEnter(Collision collision)
     {
         Rigidbody rb = collision.collider.attachedRigidbody;
@@ -14,9 +11,5 @@ public class PushBox : MonoBehaviour
         {
             return;
         }
-
-        
-       
     }
-    
 }

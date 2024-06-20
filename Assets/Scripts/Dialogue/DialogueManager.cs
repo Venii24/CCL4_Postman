@@ -74,7 +74,6 @@ public class DialogueManager : MonoBehaviour
         GameObject player = GameObject.FindWithTag("playerAnimatorObject");
         if (player != null)
         {
-            Debug.Log("Debug Log");
             playerAnimator = player.GetComponent<Animator>();
         }
     }
@@ -90,10 +89,6 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
         AkSoundEngine.PostEvent("Play_letter_delivered", gameObject);
-
-       // StartCoroutine(ResetLetterAnimation());
-  
-     
         ContinueStory();
     }
 
@@ -105,14 +100,12 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = "";
         timer.stopTimer = false;
         playerAnimator.SetBool("giveLetter", false);
-        Debug.Log("Letter animation reset at last");
     }
 
     IEnumerator ResetLetterAnimation()
     {
         yield return new WaitForSeconds(3f);
         playerAnimator.SetBool("giveLetter", false);
-        Debug.Log("Letter animation reset");
     }
        
 

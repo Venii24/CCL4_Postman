@@ -13,16 +13,16 @@ public class Timer : MonoBehaviour
 
     private Coroutine blinkCoroutine;
     private DialogueManager dialogueManager;
-    private bool oneMinuteWarningGiven = false; // Add a flag to ensure the warning is given once
+    private bool oneMinuteWarningGiven = false; 
 
-    // Start is called before the first frame update
+   
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
         dialogueManager = FindObjectOfType<DialogueManager>();
     }
 
-    // Update is called once per frame
+
     void Update()
     { 
         if (dialogueManager.dialogueIsPlaying)

@@ -25,17 +25,11 @@ public class FootstepComponent : MonoBehaviour
 
             // Post the footstep event
             AkSoundEngine.PostEvent("Play_steps_switch", gameObject);
-     //Debug.Log("Played steps on " + _playerMovement.currentSurfaceType);
         }
         else
         {
             Debug.LogWarning("No valid surface detected, footstep event not played.");
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

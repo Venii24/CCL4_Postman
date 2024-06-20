@@ -24,8 +24,6 @@ public class SceneChanger : MonoBehaviour
     private Vector3 cameraAnimationPosition = new Vector3(0, 13, -28f);
     private Vector3 cameraAnimationPosition3 = new Vector3(0, 13, -30f);
     
-    private int sceneIndex = SceneManager.GetActiveScene().buildIndex;
-    
     private void Start()
     {
         timer = FindObjectOfType<Timer>();
@@ -38,8 +36,7 @@ public class SceneChanger : MonoBehaviour
         switchCamera.ChangeToMainCamera();
 
         trainAnimator = trainObject.GetComponent<Animator>();
-
-        // Initialize train position based on scene
+        
         int sceneIndex = SceneManager.GetActiveScene().buildIndex;
         if (sceneIndex == 1 || sceneIndex == 2 || sceneIndex == 3)
         {
@@ -49,7 +46,7 @@ public class SceneChanger : MonoBehaviour
         }
         else
         {
-            playerCamera.transform.position = cameraGameplayPosition; // Ensure the camera is in the gameplay position for other scenes
+            playerCamera.transform.position = cameraGameplayPosition; 
         }
     }
 
@@ -62,6 +59,7 @@ public class SceneChanger : MonoBehaviour
             gameManager.chuggaPlaying = false;
             timer.stopTimer = false;
             gameManager.TimerBox.SetActive(true);
+            switchCamera.SetAcceptInput(true);
 
         }
         else
@@ -69,7 +67,6 @@ public class SceneChanger : MonoBehaviour
             if (!gameManager.chuggaPlaying && !TrainSoundOn)
             {
                 AkSoundEngine.PostEvent("Play_chugga", gameManager.gameObject);
-                Debug.Log("Chugga Playing scene changer");
                 TrainSoundOn = true;
             }
             timer.stopTimer = true;
@@ -86,7 +83,6 @@ public class SceneChanger : MonoBehaviour
         if (sceneIndex == 1)
         {
             AkSoundEngine.PostEvent("Play_forest_bg", gameManager.gameObject);
-            Debug.Log("Play Forest Event posted");
         }
         else if (sceneIndex == 2)
         {
@@ -114,10 +110,9 @@ public class SceneChanger : MonoBehaviour
         
         trainAnimator.SetBool("isStanding", true);
 
-        player.SetActive(true); // Make the player appear
-        playerMovement.enabled = true; // Allow player movement
+        player.SetActive(true); 
+        playerMovement.enabled = true; 
         player.transform.position = new Vector3(0.3f, 1.7f, -9f);
-        Debug.Log("Player to Start Position");
         StartCoroutine(AnimateCameraTransition(playerCamera.transform.position, cameraGameplayPosition,
             1f));
     }
@@ -142,7 +137,7 @@ public class SceneChanger : MonoBehaviour
         playerCamera.transform.position = cameraAnimationPosition;
         float duration = 5f;
         Vector3 targetTrainPosition = new Vector3(40, train.transform.position.y, train.transform.position.z);
-        player.SetActive(false); // Make the player disappear
+        player.SetActive(false); 
         yield return MoveTrain(targetTrainPosition, duration);
         gameManager.ShowWinOverlay();
         int sceneIndex = SceneManager.GetActiveScene().buildIndex;
@@ -150,7 +145,6 @@ public class SceneChanger : MonoBehaviour
         if (sceneIndex == 1)
         {
             AkSoundEngine.PostEvent("Stop_forest_bg", gameManager.gameObject);
-            Debug.Log("Stop Forest Event posted");
         }
         else if (sceneIndex == 2)
         {
@@ -172,7 +166,7 @@ public class SceneChanger : MonoBehaviour
         while (elapsedTime < duration)
         {
             float t = elapsedTime / duration;
-            float smoothT = t * t * (3f - 2f * t); // Smoothstep for easing
+            float smoothT = t * t * (3f - 2f * t); 
             train.transform.position = Vector3.Lerp(startPosition, targetPosition, smoothT);
             elapsedTime += Time.deltaTime;
             yield return null;

@@ -73,8 +73,7 @@ public class GameManager : MonoBehaviour
                 DontDestroyOnLoad(Canvas);
                 DontDestroyOnLoad(DialogueManager);
                 DontDestroyOnLoad(LevelLoader);
-
-                // Disable the WinOverlay UI element at the start
+                
                 if (winOverlay != null)
                     winOverlay.SetActive(false);
 
@@ -105,6 +104,7 @@ public class GameManager : MonoBehaviour
             FKeyAlert.SetActive(false);
             TimerBox.SetActive(false);
             WinWinOverlay.SetActive(false);
+            
             //Reset all Values to 0
                 score = 0;  
                 ForestScore = 0;
@@ -145,7 +145,6 @@ public class GameManager : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex == 0 && !chuggaPlaying)
         {
             AkSoundEngine.PostEvent("Play_chugga", gameObject);
-            Debug.Log("Chugga Playing manager");
             chuggaPlaying = true;
         }
         SaveLevelStats();
@@ -181,11 +180,7 @@ public class GameManager : MonoBehaviour
                 AkSoundEngine.PostEvent("Stop_chugga", gameObject);
                 DestroyPersistentObjects();
             }
-            else
-            {
-                Debug.Log("No more scenes to load.");
-                // Optionally, you could reset to the first scene or show an end screen here
-            }
+         
 
             if (nextSceneIndex == 3)
             {
@@ -284,7 +279,6 @@ public class GameManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(2f);
-           // TimerBox.SetActive(true);
         }
     }
 
@@ -327,7 +321,6 @@ public class GameManager : MonoBehaviour
         if (stampList != null && score < stampList.Count)
         {
             StampsImage.texture = stampList[score];
-            //Debug.Log($"Stamp image updated: Scene: {currentSceneIndex}, Score: {score}");
         }
         else
         {

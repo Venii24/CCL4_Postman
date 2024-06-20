@@ -153,7 +153,6 @@ public class PlayerMovement : MonoBehaviour
                
                 default:
                     currentSurfaceType = null; // Handle unknown tags
-                    Debug.Log("unknown ground tag");
                     break;
             }
         }
@@ -258,7 +257,7 @@ public class PlayerMovement : MonoBehaviour
                     moveSpeed = originalSpeed;
                     _animator.SetBool("isPushing", false);
                     AkSoundEngine.PostEvent("Stop_box_push", gameObject);
-                    Debug.Log("Stopped box push");
+                    
                 }
             }
         }
@@ -271,7 +270,6 @@ public class PlayerMovement : MonoBehaviour
             moveSpeed = originalSpeed;
             _animator.SetBool("isPushing", false);
             AkSoundEngine.PostEvent("Stop_box_push", gameObject);
-            Debug.Log("Stopped box push");
         }
     }
     
@@ -295,7 +293,6 @@ public class PlayerMovement : MonoBehaviour
         if (other.CompareTag("NPCArea"))
         {
             inNPCArea = false;
-            //Debug.Log("Exited NPC area: " + other.name);
         }
     }
     
@@ -313,7 +310,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log("Player died!");
         //set player to start position
         transform.position =  new Vector3(0, 1.7f, -9f);
         //reset box positions

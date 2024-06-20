@@ -12,12 +12,12 @@ public class RotateCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        localRot = transform.rotation.eulerAngles; // Initialize localRot with current rotation
+        localRot = transform.rotation.eulerAngles; 
     }
     void Update()
     {
         PerformMovement();
-        //transform.Rotate(0, speed * Time.deltaTime, 0);
+       
     }
     
     void PerformMovement()
