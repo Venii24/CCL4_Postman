@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject TimeOverOverlay;
     [SerializeField] public GameObject FKeyAlert;
     [SerializeField] public GameObject Instructions;
+    
 
     [Header("Dont Destroy On Load")]
     [SerializeField] public GameObject DialogueManager;
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject LevelLoader;
 
     [Header("UI Elements")]
+    [SerializeField] public TextMeshProUGUI Objectives;
     [SerializeField] public TextMeshProUGUI ButtonLevelContinueText;
     [SerializeField] public RawImage StampsImage;
     [SerializeField] public TextMeshProUGUI PlayerTimeText;
@@ -37,6 +39,8 @@ public class GameManager : MonoBehaviour
 
     public Animator transition;
     public static GameManager Instance { get; private set; }
+    public PlayerMovement playerMovement;
+    public bool letterDelivered = false;
     private SceneChanger SceneChanger;
     private Timer timer;
     public int score = 0;
@@ -56,6 +60,7 @@ public class GameManager : MonoBehaviour
     {
         timer = FindObjectOfType<Timer>();
         SceneChanger = FindObjectOfType<SceneChanger>();
+        
 
         timer.stopTimer = true;
 
@@ -125,7 +130,14 @@ public class GameManager : MonoBehaviour
         {
             SetText();
             SetCollectableImage();
+            playerMovement = FindObjectOfType<PlayerMovement>();
         }
+
+        if (Objectives != null && playerMovement != null)
+        {
+            Objectives.text = playerMovement.getCurrentObjective();
+        }
+
     }
 
     public void LoadScene()

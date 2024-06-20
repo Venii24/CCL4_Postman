@@ -45,11 +45,13 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 stamp2StartPos;
     private Vector3 stamp3StartPos;
     private float originalSpeed;
+    private int score;
 
     public bool letterDelivered = false;
     public bool inNPCArea = false;
     public bool MarkStep2 = false;
-    
+    private float turnSmoothVelocity;
+    public float turnSmoothTime = 0.1f;
     public string currentSurfaceType = null; // Default surface type
 
     void Start()
@@ -88,7 +90,6 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
-       // Debug.Log(letterDelivered);
         
         DetectSurface();
         MovePlayer();
@@ -96,15 +97,32 @@ public class PlayerMovement : MonoBehaviour
         RotatePlayer();
         PlayerDying();
         
-        // Check for letter delivery when in NPC area
-        // DeliverLetter();
-        
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
         }
     }
     
+    public string getCurrentObjective ()
+    {
+        score = gameManager.score;
+        if ( letterDelivered && score >= 3)
+        {
+            return "- catch the train";
+        }
+        else if (letterDelivered && score < 3)
+        {
+            return "- find the collectables\n- catch the train";
+        }
+        else if (!letterDelivered && score >= 3)
+        {
+            return "- deliver the letter\n- catch the train";
+        }
+        else
+        {
+            return "- deliver the letter\n- find the collectables\n- catch the train";
+        }
+    }
     public void HideMark()
     {
         Mark.SetActive(false);
@@ -187,8 +205,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private float turnSmoothVelocity;
-    public float turnSmoothTime = 0.1f;
+   
     
     void Jump()
     {
