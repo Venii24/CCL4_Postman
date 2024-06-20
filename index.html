@@ -1,0 +1,692 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Creative Code Lab 4 (Group 2)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="6b9310f7-6305-4608-aa4b-bd3e2053a83a" class="page mono"><header><div class="page-header-icon undefined"><span class="icon">✉️</span></div><h1 class="page-title">Creative Code Lab 4 (Group 2)</h1><p class="page-description"></p></header><div class="page-body"><p id="d82a43f5-9c26-40f1-b1b9-2282ace9b8f8" class="">
+</p><p id="86de3704-e21d-471e-b4f5-6341daa627c1" class="">
+</p><p id="eba33961-f910-4b80-a28c-2b98db393ab2" class=""><strong>Deliver the mail and catch the train before time runs out!</strong></p><p id="132d9656-8901-4f39-aebc-20ff7c14c390" class="">Join Charlie on his daily journey across several unique islands to deliver mail. Meet Bruno, Daisy, and Kai, and help them stay connected! Deliver their letters, collect post stamps, and catch the Post Express before it leaves without you. Immerse yourself in a game world with charming aesthetics and a cozy ambiance.</p><p id="8fa0d313-8318-4bdd-a030-4ca4bf7df709" class=""><strong>Brought to you by CCL Group 2</strong></p><h1 id="abba7c93-d333-453a-9d39-72441da61d5a" class="">Group Members</h1><ul id="a7be9123-794c-4a75-ac4b-5eb4f970ea95" class="bulleted-list"><li style="list-style-type:disc">Laura Bobolik</li></ul><ul id="f1c47f9a-c8d1-4fd6-89dc-a463db9b202f" class="bulleted-list"><li style="list-style-type:disc">Katharina Kendlbacher</li></ul><ul id="b954b605-2ab7-4a02-bfc8-eb3aa8b16f93" class="bulleted-list"><li style="list-style-type:disc">Stefanie Plankensteiner</li></ul><ul id="5b1291af-f3ab-4d22-a7c1-cb89b38d3fdb" class="bulleted-list"><li style="list-style-type:disc">Andrea Windisch</li></ul><h1 id="4f713d9c-fc77-4934-94c6-1322d5cf1250" class="">Blender Models</h1><ul id="8dc94e6e-310e-4c38-bfd3-761a8df30768" class="bulleted-list"><li style="list-style-type:disc">Main Character (Postman)</li></ul><ul id="457b11b7-97ee-4b3a-82ce-4a2652edbe52" class="bulleted-list"><li style="list-style-type:disc">NPCs <ul id="4b5cc455-76df-4ffd-9fd8-76b1e1c8a683" class="bulleted-list"><li style="list-style-type:circle">Daisy (Cow)</li></ul><ul id="f040ca04-1b44-4f77-9946-c64328d7c6f8" class="bulleted-list"><li style="list-style-type:circle">Bruno (Bear)</li></ul><ul id="4cb2f5ed-bf96-4223-b479-af6d4b5e9441" class="bulleted-list"><li style="list-style-type:circle">Kai (Seagull)</li></ul></li></ul><ul id="c8cfc54d-729f-4b3b-be34-d9d388702489" class="bulleted-list"><li style="list-style-type:disc">Maps for each level</li></ul><ul id="b52d19a7-a65a-424e-8766-be3382c72302" class="bulleted-list"><li style="list-style-type:disc">Houses for each level</li></ul><ul id="1da1ceda-c92c-4bba-9227-b5fa76d50b12" class="bulleted-list"><li style="list-style-type:disc">Train and Trainstation</li></ul><ul id="1e9233ad-dd4f-4748-b760-852d2303e9af" class="bulleted-list"><li style="list-style-type:disc">Radio</li></ul><ul id="4fb0a902-99e1-421c-9ac5-b6b7880388ad" class="bulleted-list"><li style="list-style-type:disc">Telescope</li></ul><ul id="aec35c4a-e7f2-4682-b38c-5f7651ebf4a4" class="bulleted-list"><li style="list-style-type:disc">Tree stem</li></ul><ul id="5acbc7e9-a32f-4105-bee2-f047b4deec80" class="bulleted-list"><li style="list-style-type:disc">Trees (Imported from the Asset store)</li></ul><h1 id="32d9de72-89e8-41a0-bf24-28b0b2071f47" class="">Animation List</h1><p id="fcd8664d-75d0-4754-bbe0-4fef24e7b833" class="">Main Character</p><ul id="abdc5446-ef17-408b-9372-3fc601dfb56f" class="bulleted-list"><li style="list-style-type:disc">idle</li></ul><ul id="1ac11a4c-60ad-4558-8bb6-2f5e40f429f5" class="bulleted-list"><li style="list-style-type:disc">walk</li></ul><ul id="dbf46656-f2ea-419a-b7b5-ec4165cffdce" class="bulleted-list"><li style="list-style-type:disc">jump</li></ul><ul id="6022c57a-e226-4ffd-95e4-e53d69b3cfa3" class="bulleted-list"><li style="list-style-type:disc">push box</li></ul><ul id="dc0971f1-773a-46ef-9c77-07b1c818c624" class="bulleted-list"><li style="list-style-type:disc">give letter (action pose)</li></ul><p id="71f826b5-b7a4-40f1-a4f2-fe47f6fd95c7" class="">Bruno (NPC)</p><ul id="b01caa5e-6cda-4713-b33c-f5b22fc2471a" class="bulleted-list"><li style="list-style-type:disc">idle</li></ul><p id="9094c0a3-ee32-4ea0-82af-27438befe529" class="">Daisy (NPC)</p><ul id="68d02e0e-de6a-44e4-98b4-7464469cec13" class="bulleted-list"><li style="list-style-type:disc">idle</li></ul><p id="b7b905ea-350a-445b-b35b-bbc7005cee46" class="">Kai (NPC)</p><ul id="11185f47-9d9c-49d5-9c97-8aaf9398d1ce" class="bulleted-list"><li style="list-style-type:disc">idle</li></ul><p id="642a3160-78fd-4e1e-82a7-ffde39662f1d" class="">
+</p><h1 id="1038900b-13eb-4538-b414-ca4f3d4555a1" class="">Code Implementation</h1><h3 id="f8bce031-9d33-4e15-8f08-80032f4816d1" class="">Input</h3><p id="39c8f815-054b-49c0-b12e-4bda96a0bd07" class="">WASD for Player Movement</p><p id="4e06b2a6-c834-447e-8daf-00581321478d" class="">Left and Right Arrow Key to Rotate the Camera</p><p id="88d57c4e-5c0f-4f2a-98fe-d4caae3fb26b" class="">F to deliver letter to NPCs and start Dialog</p><p id="3388e6a4-ea51-425a-9be4-1915145cd59b" class="">
+</p><h3 id="8875a996-0618-4587-bd20-284dde463b1a" class="">GameObjects that are never destroyed:</h3><ul id="3b1ff67d-4c56-4648-9d9b-39af7d88b92b" class="bulleted-list"><li style="list-style-type:disc">GameManager (manage Overlays and Score)</li></ul><ul id="ff433691-9b7f-40de-b255-9d1017ddae8a" class="bulleted-list"><li style="list-style-type:disc">OverlayCanvas (Overlays for Winning, Dialog and Time Over)</li></ul><ul id="cc335214-b499-44b7-8d82-c75d1bcf6708" class="bulleted-list"><li style="list-style-type:disc">DialogManager (to start the Dialog)</li></ul><ul id="19f148f7-5bf5-4b41-b492-eb1664895c18" class="bulleted-list"><li style="list-style-type:disc">LevelLoader (for the Loading Screen between Scenes)</li></ul><p id="fe83fad0-5adb-41c2-ad16-dbb1aa267769" class="">
+</p><h3 id="4bf91d78-3568-4cfe-abf5-39ff745d38c6" class="">Interactable Objects:</h3><ul id="9161072a-98e0-493f-ae5c-b8cd26051eab" class="bulleted-list"><li style="list-style-type:disc">Stamp Collectables </li></ul><ul id="125f6ba9-1261-4360-814a-497ae36adb26" class="bulleted-list"><li style="list-style-type:disc">Boxes (for the player to push)</li></ul><ul id="4b4ee8d0-e118-491c-8056-d1d6e47ec1a6" class="bulleted-list"><li style="list-style-type:disc">LoadSceneTrigger (to stop the timer and start the train exit animation)</li></ul><p id="6f798d0c-ccee-40ab-9ecc-e1a83968cda7" class="">
+</p><h3 id="8ac615d6-0b51-4bc4-a404-c9eb626d11fb" class="">Additional Features</h3><ul id="0ac58372-8e9e-44e0-88b8-1175dbf6b99b" class="bulleted-list"><li style="list-style-type:disc">Dialog saved in JSON files and can be loaded in real time</li></ul><ul id="15b5358d-4182-47f9-b313-5fb2b20626f0" class="bulleted-list"><li style="list-style-type:disc">Timer (Player has 5 Minutes for each level)</li></ul><ul id="7524bd13-34b0-47ac-b81b-acc43195689d" class="bulleted-list"><li style="list-style-type:disc">move Boxes out of the way to pass or place them right to be able to jump on higher platforms</li></ul><p id="5d2c6837-819e-4096-834e-4965ee9249aa" class="">
+</p><h1 id="65368d78-401e-4373-9a85-53b3ff181725" class="">Game Audio</h1><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><span style="border-bottom:0.05em solid">Sounds list</span></summary><div class="indented"><p id="2c1a8569-59d1-4e67-a539-ee3babb7a2c6" class="">
+</p><table id="c0ae3646-e267-4f45-95b7-943144432fd8" class="simple-table"><tbody><tr id="e3fc00d2-ae5c-4e0f-a850-3af41287a76a"><td id="g~`&gt;" class="block-color-yellow_background" style="width:84px">LEVELS</td><td id="RWXK" class="block-color-red" style="width:223px">ambient</td><td id="_fQ\" class="block-color-red" style="width:286px">NPC</td></tr><tr id="d2109d0d-99f8-489e-ba84-cf1e03994e40"><td id="g~`&gt;" class="block-color-yellow_background" style="width:84px"><strong>Forest</strong></td><td id="RWXK" class="" style="width:223px">Forest + birds</td><td id="_fQ\" class="" style="width:286px">Bruno</td></tr><tr id="48f91eba-6f44-4aea-bf32-2df3bbf2e1d6"><td id="g~`&gt;" class="block-color-yellow_background" style="width:84px">Desert</td><td id="RWXK" class="" style="width:223px">Crickets + Wind</td><td id="_fQ\" class="" style="width:286px">Daisy</td></tr><tr id="983004bf-0289-4471-9932-158b1ffd0b46"><td id="g~`&gt;" class="block-color-yellow_background" style="width:84px">Coast</td><td id="RWXK" class="" style="width:223px">Seagulls + Waves </td><td id="_fQ\" class="" style="width:286px">Kai</td></tr><tr id="0851ea53-742c-4574-b442-1b40b4e8682b"><td id="g~`&gt;" class="block-color-yellow_background" style="width:84px">Others</td><td id="RWXK" class="" style="width:223px">Animations, Collectables, Train</td><td id="_fQ\" class="" style="width:286px"></td></tr></tbody></table></div></details><p id="f897d34e-7b07-4416-8c43-b8ca9c93cd3c" class="">
+</p><div id="880d09d1-59e6-4f46-be5e-a2f1d45811ac" class="collection-content"><h4 class="collection-title">TASK DISTRIBUTION</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesSelect"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM7.62402 10.6348C7.79492 10.915 8.20508 10.9287 8.37598 10.6348L10.666 6.73145C10.8574 6.41016 10.7002 6.04102 10.3652 6.04102H5.62793C5.29297 6.04102 5.14941 6.43066 5.32031 6.73145L7.62402 10.6348Z"></path></svg></span>assignment</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesSelect"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM7.62402 10.6348C7.79492 10.915 8.20508 10.9287 8.37598 10.6348L10.666 6.73145C10.8574 6.41016 10.7002 6.04102 10.3652 6.04102H5.62793C5.29297 6.04102 5.14941 6.43066 5.32031 6.73145L7.62402 10.6348Z"></path></svg></span>Priority</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesTitle"><path d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"></path></svg></span>Name</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Type</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesStatus"><path d="M8.75488 1.02344C8.75488 0.613281 8.41309 0.264648 8.00293 0.264648C7.59277 0.264648 7.25098 0.613281 7.25098 1.02344V3.11523C7.25098 3.51855 7.59277 3.86719 8.00293 3.86719C8.41309 3.86719 8.75488 3.51855 8.75488 3.11523V1.02344ZM3.91504 5.0293C4.20215 5.31641 4.69434 5.32324 4.97461 5.03613C5.26855 4.74902 5.26855 4.25684 4.98145 3.96973L3.53906 2.52051C3.25195 2.2334 2.7666 2.21973 2.47949 2.50684C2.19238 2.79395 2.18555 3.28613 2.47266 3.57324L3.91504 5.0293ZM10.9629 4.01758C10.6826 4.30469 10.6826 4.79688 10.9697 5.08398C11.2568 5.37109 11.749 5.36426 12.0361 5.07715L13.4854 3.62793C13.7725 3.34082 13.7725 2.84863 13.4785 2.55469C13.1982 2.27441 12.7061 2.27441 12.4189 2.56152L10.9629 4.01758ZM15.0234 8.78906C15.4336 8.78906 15.7822 8.44727 15.7822 8.03711C15.7822 7.62695 15.4336 7.28516 15.0234 7.28516H12.9385C12.5283 7.28516 12.1797 7.62695 12.1797 8.03711C12.1797 8.44727 12.5283 8.78906 12.9385 8.78906H15.0234ZM0.975586 7.28516C0.56543 7.28516 0.223633 7.62695 0.223633 8.03711C0.223633 8.44727 0.56543 8.78906 0.975586 8.78906H3.07422C3.48438 8.78906 3.83301 8.44727 3.83301 8.03711C3.83301 7.62695 3.48438 7.28516 3.07422 7.28516H0.975586ZM12.0361 10.9902C11.749 10.71 11.2568 10.71 10.9629 10.9971C10.6826 11.2842 10.6826 11.7764 10.9697 12.0635L12.4258 13.5127C12.7129 13.7998 13.2051 13.793 13.4922 13.5059C13.7793 13.2256 13.7725 12.7266 13.4854 12.4395L12.0361 10.9902ZM2.52051 12.4395C2.22656 12.7266 2.22656 13.2188 2.50684 13.5059C2.79395 13.793 3.28613 13.7998 3.57324 13.5127L5.02246 12.0703C5.31641 11.7832 5.31641 11.291 5.03613 11.0039C4.74902 10.7168 4.25684 10.71 3.96973 10.9971L2.52051 12.4395ZM8.75488 12.9658C8.75488 12.5557 8.41309 12.207 8.00293 12.207C7.59277 12.207 7.25098 12.5557 7.25098 12.9658V15.0576C7.25098 15.4609 7.59277 15.8096 8.00293 15.8096C8.41309 15.8096 8.75488 15.4609 8.75488 15.0576V12.9658Z"></path></svg></span>Status</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesPerson"><path d="M10.9536 7.90088C12.217 7.90088 13.2559 6.79468 13.2559 5.38525C13.2559 4.01514 12.2114 2.92017 10.9536 2.92017C9.70142 2.92017 8.65137 4.02637 8.65698 5.39087C8.6626 6.79468 9.69019 7.90088 10.9536 7.90088ZM4.4231 8.03003C5.52368 8.03003 6.42212 7.05859 6.42212 5.83447C6.42212 4.63843 5.51245 3.68945 4.4231 3.68945C3.33374 3.68945 2.41846 4.64966 2.41846 5.84009C2.42407 7.05859 3.32251 8.03003 4.4231 8.03003ZM1.37964 13.168H5.49561C4.87231 12.292 5.43384 10.6074 6.78711 9.51807C6.18628 9.14746 5.37769 8.87231 4.4231 8.87231C1.95239 8.87231 0.262207 10.6917 0.262207 12.1628C0.262207 12.7974 0.548584 13.168 1.37964 13.168ZM7.50024 13.168H14.407C15.4009 13.168 15.7322 12.8423 15.7322 12.2864C15.7322 10.8489 13.8679 8.88354 10.9536 8.88354C8.04492 8.88354 6.17505 10.8489 6.17505 12.2864C6.17505 12.8423 6.50635 13.168 7.50024 13.168Z"></path></svg></span>Person</th></tr></thead><tbody><tr id="6172c95f-6d61-4f63-a919-a2cfefac0615"><td class="cell-[srX"><span class="selected-value select-value-color-red">1</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Input-Handeling-Camera-Logic-6172c95f6d614f63a919a2cfefac0615?pvs=21">Input Handeling + Camera Logic</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-green">Dev</span><span class="selected-value select-value-color-yellow">GD</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">S</span></span>Stefanie Plankensteiner</span><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">L</span></span>Laura</span></td></tr><tr id="3c63ad5d-904c-4b0d-84b5-5db20e38b70b"><td class="cell-[srX"><span class="selected-value select-value-color-red">1</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Project-Github-Setup-3c63ad5d904c4b0d84b55db20e38b70b?pvs=21">Project Github Setup</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-green">Dev</span><span class="selected-value select-value-color-yellow">GD</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">S</span></span>Stefanie Plankensteiner</span></td></tr><tr id="e2d68fe4-dfb2-47d7-b7ed-31bc2c172bcd"><td class="cell-[srX"><span class="selected-value select-value-color-red">1</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Character-Skizzen-Animals-e2d68fe4dfb247d7b7ed31bc2c172bcd?pvs=21">Character Skizzen - Animals</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp6duze6Ib0DhbWKaevtUYukBLK2j7XWnnNwraqI=s100" class="icon user-icon"/>Andrea Windisch</span></td></tr><tr id="8eb0b41d-dc10-4726-a88f-344bf7c47344"><td class="cell-[srX"><span class="selected-value select-value-color-red">1</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Game-Idea-Presentation-PP-8eb0b41ddc104726a88f344bf7c47344?pvs=21">Game Idea Presentation - PP</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span><span class="selected-value select-value-color-green">Dev</span><span class="selected-value select-value-color-yellow">GD</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">L</span></span>Laura</span><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp6duze6Ib0DhbWKaevtUYukBLK2j7XWnnNwraqI=s100" class="icon user-icon"/>Andrea Windisch</span><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">S</span></span>Stefanie Plankensteiner</span><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">K</span></span>Kathy</span></td></tr><tr id="fb5d7c21-dd52-4f90-8c11-6a7c07027c78"><td class="cell-[srX"><span class="selected-value select-value-color-red">1</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Game-Structure-fb5d7c21dd524f908c116a7c07027c78?pvs=21">Game Structure</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-green">Dev</span><span class="selected-value select-value-color-yellow">GD</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">S</span></span>Stefanie Plankensteiner</span><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">L</span></span>Laura</span></td></tr><tr id="6874fc9b-f7fd-4140-b4c8-68d2c02bea0e"><td class="cell-[srX"><span class="selected-value select-value-color-red">1</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Character-Skizzen-Human-6874fc9bf7fd4140b4c868d2c02bea0e?pvs=21">Character Skizzen - Human</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">K</span></span>Kathy</span></td></tr><tr id="d9612002-f4f7-4b1e-8a76-07d2846661e6"><td class="cell-[srX"><span class="selected-value select-value-color-red">1</span></td><td class="cell-K{&lt;;"></td><td class="cell-title"><a href="https://www.notion.so/Version-Control-LFS-d9612002f4f74b1e8a7607d2846661e6?pvs=21">Version Control - LFS</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-green">Dev</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">S</span></span>Stefanie Plankensteiner</span></td></tr><tr id="18d41103-b5a9-4f2e-ae43-a434c5671cd5"><td class="cell-[srX"><span class="selected-value select-value-color-orange">2</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Main-Char-Model-18d41103b5a94f2eae43a434c5671cd5?pvs=21">Main Char Model</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">K</span></span>Kathy</span><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp6duze6Ib0DhbWKaevtUYukBLK2j7XWnnNwraqI=s100" class="icon user-icon"/>Andrea Windisch</span></td></tr><tr id="a3b8263d-78bc-40ad-88b1-ed3006408b7b"><td class="cell-[srX"><span class="selected-value select-value-color-orange">2</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Sample-Forest-Level-Testing-a3b8263d78bc40ad88b1ed3006408b7b?pvs=21">Sample Forest Level Testing</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-green">Dev</span><span class="selected-value select-value-color-yellow">GD</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">L</span></span>Laura</span><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">S</span></span>Stefanie Plankensteiner</span></td></tr><tr id="193ebefe-6c89-4a09-8bc9-be7398049a2f"><td class="cell-[srX"><span class="selected-value select-value-color-orange">2</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Level-logic-193ebefe6c894a098bc9be7398049a2f?pvs=21">Level logic</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-green">Dev</span><span class="selected-value select-value-color-yellow">GD</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">L</span></span>Laura</span><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">S</span></span>Stefanie Plankensteiner</span><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">K</span></span>Kathy</span></td></tr><tr id="f286a5d2-6894-43ac-a3d1-5ae9a0180e6c"><td class="cell-[srX"><span class="selected-value select-value-color-orange">2</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/box-prefabs-f286a5d2689443aca3d15ae9a0180e6c?pvs=21">box prefabs</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span><span class="selected-value select-value-color-green">Dev</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">K</span></span>Kathy</span></td></tr><tr id="e3897992-6019-44ff-856a-957884b0002d"><td class="cell-[srX"><span class="selected-value select-value-color-orange">2</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Main-Menu-e3897992601944ff856a957884b0002d?pvs=21">Main Menu</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-green">Dev</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">S</span></span>Stefanie Plankensteiner</span></td></tr><tr id="8668710d-0d0b-4537-9345-b001e4f48033"><td class="cell-[srX"><span class="selected-value select-value-color-orange">2</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Main-Map-Model-8668710d0d0b45379345b001e4f48033?pvs=21">Main Map Model</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span><span class="selected-value select-value-color-yellow">GD</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">K</span></span>Kathy</span><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">L</span></span>Laura</span></td></tr><tr id="d72040f1-519b-4ee3-95e2-24b82d75722e"><td class="cell-[srX"><span class="selected-value select-value-color-orange">2</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Unity-Scene-Structure-d72040f1519b4ee395e224b82d75722e?pvs=21">Unity Scene Structure</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-green">Dev</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">S</span></span>Stefanie Plankensteiner</span></td></tr><tr id="0b9bf18d-8784-4be5-89d6-ce431ee6018a"><td class="cell-[srX"><span class="selected-value select-value-color-orange">2</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/UI-base-structure-0b9bf18d87844be589d6ce431ee6018a?pvs=21">UI base structure</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-green">Dev</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">S</span></span>Stefanie Plankensteiner</span><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp6duze6Ib0DhbWKaevtUYukBLK2j7XWnnNwraqI=s100" class="icon user-icon"/>Andrea Windisch</span></td></tr><tr id="6f57ca16-9eab-48fe-b8c0-b211cc41371d"><td class="cell-[srX"><span class="selected-value select-value-color-orange">2</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Overlay-Setup-6f57ca169eab48feb8c0b211cc41371d?pvs=21">Overlay Setup</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-green">Dev</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">S</span></span>Stefanie Plankensteiner</span></td></tr><tr id="90fbd202-0e32-4ec1-8f12-6512fcbb4b85"><td class="cell-[srX"><span class="selected-value select-value-color-orange">2</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Character-Model-Player-90fbd2020e324ec18f126512fcbb4b85?pvs=21">Character Model - Player</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">K</span></span>Kathy</span><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp6duze6Ib0DhbWKaevtUYukBLK2j7XWnnNwraqI=s100" class="icon user-icon"/>Andrea Windisch</span></td></tr><tr id="95370832-b308-49ee-9a35-a72b4f22ecc3"><td class="cell-[srX"><span class="selected-value select-value-color-orange">2</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Color-palette-95370832b30849ee9a35a72b4f22ecc3?pvs=21">Color palette</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp6duze6Ib0DhbWKaevtUYukBLK2j7XWnnNwraqI=s100" class="icon user-icon"/>Andrea Windisch</span><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">K</span></span>Kathy</span></td></tr><tr id="be0e2e7d-7010-4677-a315-1db6c7ccfc39"><td class="cell-[srX"><span class="selected-value select-value-color-yellow">3</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Character-Model-Cow-be0e2e7d70104677a3151db6c7ccfc39?pvs=21">Character Model - Cow</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp6duze6Ib0DhbWKaevtUYukBLK2j7XWnnNwraqI=s100" class="icon user-icon"/>Andrea Windisch</span></td></tr><tr id="1ffe51b6-21a2-41a4-aea9-3c175fe01ee7"><td class="cell-[srX"><span class="selected-value select-value-color-yellow">3</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Player-movement-jump-implementation-1ffe51b621a241a4aea93c175fe01ee7?pvs=21">Player movement &amp; jump implementation </a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-green">Dev</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">S</span></span>Stefanie Plankensteiner</span></td></tr><tr id="48867645-1348-4880-9d70-5447d55fd92b"><td class="cell-[srX"><span class="selected-value select-value-color-yellow">3</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Character-Model-Bear-48867645134848809d705447d55fd92b?pvs=21">Character Model - Bear</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp6duze6Ib0DhbWKaevtUYukBLK2j7XWnnNwraqI=s100" class="icon user-icon"/>Andrea Windisch</span></td></tr><tr id="587d6d0a-9035-489f-98f5-77d770db4ce0"><td class="cell-[srX"><span class="selected-value select-value-color-yellow">3</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/MC-Mixamo-rig-587d6d0a9035489f98f577d770db4ce0?pvs=21">MC - Mixamo rig</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp6duze6Ib0DhbWKaevtUYukBLK2j7XWnnNwraqI=s100" class="icon user-icon"/>Andrea Windisch</span></td></tr><tr id="82935554-ba24-422e-849a-0f648be550d8"><td class="cell-[srX"><span class="selected-value select-value-color-yellow">3</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Character-Animations-blender-fbx-82935554ba24422e849a0f648be550d8?pvs=21">Character Animations (.blender &amp; .fbx)</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">L</span></span>Laura</span><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp6duze6Ib0DhbWKaevtUYukBLK2j7XWnnNwraqI=s100" class="icon user-icon"/>Andrea Windisch</span><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">K</span></span>Kathy</span></td></tr><tr id="42f21808-82c5-45ec-bd7f-1d7aadfedb98"><td class="cell-[srX"><span class="selected-value select-value-color-yellow">3</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Dialog-Prep-42f2180882c545ecbd7f1d7aadfedb98?pvs=21">Dialog Prep</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-green">Dev</span><span class="selected-value select-value-color-yellow">GD</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">K</span></span>Kathy</span></td></tr><tr id="a6b50e76-2352-424c-b207-a0a08d1a1eb2"><td class="cell-[srX"><span class="selected-value select-value-color-yellow">3</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/NPC-Character-Models-a6b50e762352424cb207a0a08d1a1eb2?pvs=21">NPC - Character Models </a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp6duze6Ib0DhbWKaevtUYukBLK2j7XWnnNwraqI=s100" class="icon user-icon"/>Andrea Windisch</span></td></tr><tr id="b8467f41-068a-416c-9856-54dfd54029da"><td class="cell-[srX"><span class="selected-value select-value-color-yellow">3</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Character-Model-Seagull-b8467f41068a416c985654dfd54029da?pvs=21">Character Model - Seagull</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp6duze6Ib0DhbWKaevtUYukBLK2j7XWnnNwraqI=s100" class="icon user-icon"/>Andrea Windisch</span></td></tr><tr id="da9b711c-5cb6-4adb-8bde-d4bea65c3320"><td class="cell-[srX"><span class="selected-value select-value-color-yellow">3</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Audio-Sample-Preperation-da9b711c5cb64adb8bded4bea65c3320?pvs=21">Audio Sample Preperation</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-pink">Audio</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">L</span></span>Laura</span></td></tr><tr id="2d319827-42e0-42ed-a547-d51e9f07c053"><td class="cell-[srX"><span class="selected-value select-value-color-yellow">3</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/post-delivery-completion-logic-2d31982742e042eda547d51e9f07c053?pvs=21">post delivery completion logic</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-green">Dev</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">S</span></span>Stefanie Plankensteiner</span></td></tr><tr id="2228c221-e172-4bc5-b758-1911a794f178"><td class="cell-[srX"><span class="selected-value select-value-color-yellow">3</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Train-Skizze-and-Model-2228c221e1724bc5b7581911a794f178?pvs=21">Train Skizze and Model</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp6duze6Ib0DhbWKaevtUYukBLK2j7XWnnNwraqI=s100" class="icon user-icon"/>Andrea Windisch</span></td></tr><tr id="66025a75-01cf-4a0c-92a6-00f1ebe748d7"><td class="cell-[srX"><span class="selected-value select-value-color-yellow">3</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Level-Models-Houses-66025a7501cf4a0c92a600f1ebe748d7?pvs=21">Level Models - Houses</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">K</span></span>Kathy</span></td></tr><tr id="83cdf0a0-6afe-44d5-ae58-4aac61f5875e"><td class="cell-[srX"><span class="selected-value select-value-color-yellow">3</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Box-Push-logic-83cdf0a06afe44d5ae584aac61f5875e?pvs=21">Box Push logic</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-green">Dev</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">S</span></span>Stefanie Plankensteiner</span></td></tr><tr id="678ab973-45dd-440d-8d39-69e5dd41aa00"><td class="cell-[srX"><span class="selected-value select-value-color-green">4</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Player-Dying-Logic-678ab97345dd440d8d3969e5dd41aa00?pvs=21">Player Dying Logic</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-green">Dev</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">S</span></span>Stefanie Plankensteiner</span></td></tr><tr id="5c102a11-9f9a-47ed-8c41-df68dfd33493"><td class="cell-[srX"><span class="selected-value select-value-color-green">4</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Unity-Assets-Import-Placement-5c102a119f9a47ed8c41df68dfd33493?pvs=21">Unity Assets Import + Placement </a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span><span class="selected-value select-value-color-green">Dev</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">S</span></span>Stefanie Plankensteiner</span><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">K</span></span>Kathy</span><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp6duze6Ib0DhbWKaevtUYukBLK2j7XWnnNwraqI=s100" class="icon user-icon"/>Andrea Windisch</span></td></tr><tr id="5f0ec6fa-34cf-4173-ba1a-90170ba99ae9"><td class="cell-[srX"><span class="selected-value select-value-color-green">4</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Lose-Overlay-5f0ec6fa34cf4173ba1a90170ba99ae9?pvs=21">Lose Overlay</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">K</span></span>Kathy</span></td></tr><tr id="f7f68f51-f282-492f-afdb-d9423e5e1460"><td class="cell-[srX"><span class="selected-value select-value-color-green">4</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Train-Station-Model-Unwrapping-Texture-f7f68f51f282492fafdbd9423e5e1460?pvs=21">Train +  Station Model - Unwrapping + Texture</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp6duze6Ib0DhbWKaevtUYukBLK2j7XWnnNwraqI=s100" class="icon user-icon"/>Andrea Windisch</span></td></tr><tr id="18076ce0-eee8-4a8e-b0d0-e961a1ffcb80"><td class="cell-[srX"><span class="selected-value select-value-color-green">4</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Coast-Textures-18076ce0eee84a8eb0d0e961a1ffcb80?pvs=21">Coast Textures</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp6duze6Ib0DhbWKaevtUYukBLK2j7XWnnNwraqI=s100" class="icon user-icon"/>Andrea Windisch</span><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">K</span></span>Kathy</span></td></tr><tr id="642f60a8-8f40-46f9-9bd5-7121d5d3761e"><td class="cell-[srX"><span class="selected-value select-value-color-green">4</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/MC-Model-Texture-642f60a88f4046f99bd57121d5d3761e?pvs=21">MC - Model Texture</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp6duze6Ib0DhbWKaevtUYukBLK2j7XWnnNwraqI=s100" class="icon user-icon"/>Andrea Windisch</span></td></tr><tr id="bffada88-267e-4376-86ec-1f8d2e915758"><td class="cell-[srX"><span class="selected-value select-value-color-green">4</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Game-Object-Models-Textures-bffada88267e437686ec1f8d2e915758?pvs=21">Game Object Models - Textures</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">K</span></span>Kathy</span></td></tr><tr id="02267187-61ef-4b34-b630-bf04e69129f9"><td class="cell-[srX"><span class="selected-value select-value-color-green">4</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Basic-Level-prefab-structuring-assets-0226718761ef4b34b630bf04e69129f9?pvs=21">Basic Level-prefab structuring + assets</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">K</span></span>Kathy</span></td></tr><tr id="07973b3e-e32b-4eb0-a76d-7fb7a99c5193"><td class="cell-[srX"><span class="selected-value select-value-color-green">4</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/How-to-overlay-07973b3ee32b4eb0a76d7fb7a99c5193?pvs=21">How to overlay</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span><span class="selected-value select-value-color-green">Dev</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">S</span></span>Stefanie Plankensteiner</span><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">K</span></span>Kathy</span></td></tr><tr id="1426ab0f-e140-4878-8dea-ebcf0076237d"><td class="cell-[srX"><span class="selected-value select-value-color-green">4</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Levels-Implementation-Walking-sounds-1426ab0fe14048788deaebcf0076237d?pvs=21">Levels - Implementation Walking sounds</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-pink">Audio</span><span class="selected-value select-value-color-green">Dev</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">L</span></span>Laura</span></td></tr><tr id="4aeb934e-fe39-48a3-a409-552fc6b5782a"><td class="cell-[srX"><span class="selected-value select-value-color-green">4</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Levels-Implementation-Jumping-sounds-4aeb934efe3948a3a409552fc6b5782a?pvs=21">Levels - Implementation Jumping sounds</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-pink">Audio</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">L</span></span>Laura</span></td></tr><tr id="8207581e-47c5-40f2-8d35-91d880ec3133"><td class="cell-[srX"><span class="selected-value select-value-color-green">4</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Box-Model-8207581e47c540f28d3591d880ec3133?pvs=21">Box Model</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">K</span></span>Kathy</span></td></tr><tr id="f8ca6513-dc32-4b6f-a829-af007d47f967"><td class="cell-[srX"><span class="selected-value select-value-color-green">4</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/UI-Design-f8ca6513dc324b6fa829af007d47f967?pvs=21">UI Design</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">K</span></span>Kathy</span></td></tr><tr id="1867753c-4031-4e28-97b9-27e27282f532"><td class="cell-[srX"><span class="selected-value select-value-color-green">4</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Win-Level-Overlay-1867753c40314e2897b927e27282f532?pvs=21">Win Level Overlay</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">K</span></span>Kathy</span></td></tr><tr id="49659a83-6f93-4bb4-b23e-6ed8483a16c3"><td class="cell-[srX"><span class="selected-value select-value-color-green">4</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Transition-between-Scenes-49659a836f934bb4b23e6ed8483a16c3?pvs=21">Transition between Scenes</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-green">Dev</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">S</span></span>Stefanie Plankensteiner</span></td></tr><tr id="04619e15-0b15-44e4-9c84-75c46f40f63d"><td class="cell-[srX"><span class="selected-value select-value-color-green">4</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Unity-Animation-Setup-04619e150b1544e49c8475c46f40f63d?pvs=21">Unity Animation Setup</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span><span class="selected-value select-value-color-green">Dev</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp6duze6Ib0DhbWKaevtUYukBLK2j7XWnnNwraqI=s100" class="icon user-icon"/>Andrea Windisch</span><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">S</span></span>Stefanie Plankensteiner</span><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">K</span></span>Kathy</span></td></tr><tr id="5b57d50a-9187-44cc-8ee5-e1891b24ada0"><td class="cell-[srX"><span class="selected-value select-value-color-green">4</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Dialog-Implementation-5b57d50a918744cc8ee5e1891b24ada0?pvs=21">Dialog Implementation</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-green">Dev</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">S</span></span>Stefanie Plankensteiner</span></td></tr><tr id="6595050f-7e6f-43cc-8b6e-4f26bd06ad47"><td class="cell-[srX"><span class="selected-value select-value-color-green">4</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Forest-Unwrapping-6595050f7e6f43cc8b6e4f26bd06ad47?pvs=21">Forest Unwrapping</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">K</span></span>Kathy</span></td></tr><tr id="9019eafc-03c8-463f-943e-230045c46a5e"><td class="cell-[srX"><span class="selected-value select-value-color-green">4</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Desert-Textures-9019eafc03c8463f943e230045c46a5e?pvs=21">Desert Textures</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp6duze6Ib0DhbWKaevtUYukBLK2j7XWnnNwraqI=s100" class="icon user-icon"/>Andrea Windisch</span><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">K</span></span>Kathy</span></td></tr><tr id="c7894a90-9348-4e85-8723-0778214ce564"><td class="cell-[srX"><span class="selected-value select-value-color-green">4</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/NPC-idles-c7894a9093484e8587230778214ce564?pvs=21">NPC - idles</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"></td></tr><tr id="603ce9e0-b44d-4a9d-b544-e5656683513e"><td class="cell-[srX"><span class="selected-value select-value-color-green">4</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/How-to-Overlay-603ce9e0b44d4a9db544e5656683513e?pvs=21">How to Overlay</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp6duze6Ib0DhbWKaevtUYukBLK2j7XWnnNwraqI=s100" class="icon user-icon"/>Andrea Windisch</span></td></tr><tr id="6b1ba2a1-0241-44d2-adf1-736e712765f8"><td class="cell-[srX"><span class="selected-value select-value-color-green">4</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/NPC-Model-Textures-6b1ba2a1024144d2adf1736e712765f8?pvs=21">NPC - Model Textures</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp6duze6Ib0DhbWKaevtUYukBLK2j7XWnnNwraqI=s100" class="icon user-icon"/>Andrea Windisch</span></td></tr><tr id="ae23d25d-89db-4184-8a82-456175b3d962"><td class="cell-[srX"><span class="selected-value select-value-color-green">4</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Win-Overall-Overlay-ae23d25d89db41848a82456175b3d962?pvs=21">Win Overall Overlay</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">K</span></span>Kathy</span></td></tr><tr id="b1855a5d-6ef7-41e0-b73b-8d283bfce89d"><td class="cell-[srX"><span class="selected-value select-value-color-green">4</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Main-Screen-b1855a5d6ef741e0b73b8d283bfce89d?pvs=21">Main Screen</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">K</span></span>Kathy</span></td></tr><tr id="30600d71-671b-409a-a0b2-b9567e57b4aa"><td class="cell-[srX"><span class="selected-value select-value-color-green">4</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Forest-Textures-30600d71671b409aa0b2b9567e57b4aa?pvs=21">Forest Textures</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp6duze6Ib0DhbWKaevtUYukBLK2j7XWnnNwraqI=s100" class="icon user-icon"/>Andrea Windisch</span><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">K</span></span>Kathy</span></td></tr><tr id="60f7f8d3-83af-498c-b9de-2f8de83eeb67"><td class="cell-[srX"><span class="selected-value select-value-color-green">4</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/MC-jumping-60f7f8d383af498cb9de2f8de83eeb67?pvs=21">MC - jumping</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"></td></tr><tr id="789ab0b7-4ecb-4e2d-9efc-15a551827519"><td class="cell-[srX"><span class="selected-value select-value-color-green">4</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Levels-Implementation-Ambient-sounds-789ab0b74ecb4e2d9efc15a551827519?pvs=21">Levels - Implementation Ambient sounds</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-pink">Audio</span><span class="selected-value select-value-color-green">Dev</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">L</span></span>Laura</span></td></tr><tr id="8368519f-397d-4d50-bec2-7ced3ea64dbc"><td class="cell-[srX"><span class="selected-value select-value-color-green">4</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/MC-walking-8368519f397d4d50bec27ced3ea64dbc?pvs=21">MC - walking</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"></td></tr><tr id="e7c4abb5-3964-4960-b3d0-d43fc0c4865f"><td class="cell-[srX"><span class="selected-value select-value-color-green">4</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Coast-Unwrapping-e7c4abb539644960b3d0d43fc0c4865f?pvs=21">Coast Unwrapping</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">K</span></span>Kathy</span></td></tr><tr id="f02cc99e-8b4c-4122-8757-91fd95861ec3"><td class="cell-[srX"><span class="selected-value select-value-color-green">4</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Timer-implementation-f02cc99e8b4c4122875791fd95861ec3?pvs=21">Timer implementation</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-green">Dev</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">S</span></span>Stefanie Plankensteiner</span></td></tr><tr id="45244dcf-333a-4c75-a5c7-e9d22728a989"><td class="cell-[srX"><span class="selected-value select-value-color-green">4</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Desert-Unwrapping-45244dcf333a4c75a5c7e9d22728a989?pvs=21">Desert Unwrapping</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">K</span></span>Kathy</span></td></tr><tr id="7fce3ae8-f8fe-49c0-8ad8-e309f24f32f7"><td class="cell-[srX"><span class="selected-value select-value-color-green">4</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Level-Platform-Model-7fce3ae8f8fe49c08ad8e309f24f32f7?pvs=21">Level Platform - Model</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">K</span></span>Kathy</span></td></tr><tr id="6eb2ec1b-6d7e-4ef7-9433-2b97fc96dc8f"><td class="cell-[srX"><span class="selected-value select-value-color-purple">final</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Final-Presentation-6eb2ec1b6d7e4ef794332b97fc96dc8f?pvs=21">Final Presentation</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span><span class="selected-value select-value-color-pink">Audio</span><span class="selected-value select-value-color-green">Dev</span><span class="selected-value select-value-color-yellow">GD</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">L</span></span>Laura</span><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp6duze6Ib0DhbWKaevtUYukBLK2j7XWnnNwraqI=s100" class="icon user-icon"/>Andrea Windisch</span><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">S</span></span>Stefanie Plankensteiner</span><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">K</span></span>Kathy</span></td></tr><tr id="8bdb8f1f-7c6a-4cfa-b272-d109bb820694"><td class="cell-[srX"><span class="selected-value select-value-color-purple">final</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Levels-Implementation-Collision-sounds-8bdb8f1f7c6a4cfab272d109bb820694?pvs=21">Levels - Implementation Collision sounds </a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-pink">Audio</span><span class="selected-value select-value-color-green">Dev</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">L</span></span>Laura</span></td></tr><tr id="7328fb81-a17b-4c8b-bed1-2e654de35f01"><td class="cell-[srX"><span class="selected-value select-value-color-purple">final</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Game-Executable-7328fb81a17b4c8bbed12e654de35f01?pvs=21">Game Executable</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-green">Dev</span><span class="selected-value select-value-color-yellow">GD</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">L</span></span>Laura</span><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">S</span></span>Stefanie Plankensteiner</span></td></tr><tr id="dc33b15d-46a1-4eb8-a87e-bf953ff60f58"><td class="cell-[srX"><span class="selected-value select-value-color-purple">final</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-gray">MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Promotion-Video-dc33b15d46a14eb8a87ebf953ff60f58?pvs=21">Promotion Video</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span><span class="selected-value select-value-color-pink">Audio</span><span class="selected-value select-value-color-yellow">GD</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">L</span></span>Laura</span></td></tr><tr id="5ba8d6a8-8773-4086-97d1-226ad6eb56cf"><td class="cell-[srX"><span class="selected-value select-value-color-purple">final</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-default">Not-MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Collectible-sound-5ba8d6a88773408697d1226ad6eb56cf?pvs=21">Collectible sound</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-pink">Audio</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">L</span></span>Laura</span></td></tr><tr id="2cca569f-5034-44c2-8a20-1ce3bc59d3c8"><td class="cell-[srX"><span class="selected-value select-value-color-purple">final</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-default">Not-MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Skybox-2cca569f503444c28a201ce3bc59d3c8?pvs=21">Skybox</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp6duze6Ib0DhbWKaevtUYukBLK2j7XWnnNwraqI=s100" class="icon user-icon"/>Andrea Windisch</span><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">K</span></span>Kathy</span></td></tr><tr id="5979d663-789e-43e8-8a25-b7ea8777d584"><td class="cell-[srX"><span class="selected-value select-value-color-purple">final</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-default">Not-MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Train-Animation-5979d663789e43e88a25b7ea8777d584?pvs=21">Train Animation</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span><span class="selected-value select-value-color-green">Dev</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp6duze6Ib0DhbWKaevtUYukBLK2j7XWnnNwraqI=s100" class="icon user-icon"/>Andrea Windisch</span><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">S</span></span>Stefanie Plankensteiner</span></td></tr><tr id="5ec50671-c50b-4c76-b184-d2342a4e987b"><td class="cell-[srX"><span class="selected-value select-value-color-purple">final</span></td><td class="cell-K{&lt;;"><span class="selected-value select-value-color-default">Not-MVP</span></td><td class="cell-title"><a href="https://www.notion.so/Collectibles-5ec50671c50b4c76b184d2342a4e987b?pvs=21">Collectibles</a></td><td class="cell-g=Uo"><span class="selected-value select-value-color-blue">Art</span><span class="selected-value select-value-color-green">Dev</span></td><td class="cell-gawm"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td><td class="cell-pYH&lt;"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">K</span></span>Kathy</span><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">S</span></span>Stefanie Plankensteiner</span></td></tr></tbody></table><br/><br/></div><p id="73567c44-c340-427d-b494-415ab2048211" class="">
+</p><p id="d565a6bc-0cb5-48b1-8230-b7837b6631cf" class="">
+</p><div id="186f1594-8fb3-4a03-97eb-5fcf9aa5d437" class="column-list"><div id="b3aa345d-c99a-49af-b41e-14eaeba925e9" style="width:33.33333333333333%" class="column"><p id="c3dcdf77-edfa-40c5-a67f-fdcc98458ef9" class="">
+</p></div><div id="9d4696fb-5343-42bb-b60d-c470b820e7e3" style="width:33.33333333333333%" class="column"><p id="d1a95922-e251-4850-80d5-b776b994e492" class="">
+</p></div><div id="0cfbfa92-3dc4-483d-be83-b1b6f8a3f2b0" style="width:33.33333333333333%" class="column"><p id="bb26f6f2-483f-4b50-a4f5-f8da46652ac5" class="">
+</p></div></div><p id="30d5a9c6-81d5-4c2b-b79f-0a9041d31e03" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
