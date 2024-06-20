@@ -19,7 +19,7 @@ public class SceneChanger : MonoBehaviour
     
     private Animator trainAnimator;
 
-    private Vector3 cameraGameplayPosition = new Vector3(0, 13, -18f);
+    private Vector3 cameraGameplayPosition = new Vector3(0, 13, -19f);
     private Vector3 cameraAnimationPosition = new Vector3(0, 13, -26);
     
     private void Start()
@@ -51,15 +51,16 @@ public class SceneChanger : MonoBehaviour
     private void Update()
     {
         if (train.transform.position.x == 8f)
-        {
+        {   
             timer.stopTimer = false;
+            gameManager.TimerBox.SetActive(true);
             // AkSoundEngine.PostEvent("Stop_chugga", gameManager.gameObject);
 
         }
-
         else
         {
             timer.stopTimer = true;
+            gameManager.TimerBox.SetActive(false);
             switchCamera.SetAcceptInput(false);
         }
 

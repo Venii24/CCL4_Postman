@@ -155,7 +155,7 @@ public class GameManager : MonoBehaviour
                 StartCoroutine(LoadLevel(nextSceneIndex));
                 winOverlay.SetActive(false);
                 timer.CountdownTime = 181f;
-                TimerBox.SetActive(true);
+                // TimerBox.SetActive(true);
                 timer.stopTimer = false;
             }
             else if (nextSceneIndex == 4) // Go back to menu
@@ -266,7 +266,7 @@ public class GameManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(2f);
-            TimerBox.SetActive(true);
+           // TimerBox.SetActive(true);
         }
     }
 

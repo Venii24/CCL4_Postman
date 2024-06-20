@@ -156,6 +156,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   box1: {fileID: 0}
   box2: {fileID: 0}
+  Stamp1: {fileID: 0}
+  Stamp2: {fileID: 0}
+  Stamp3: {fileID: 0}
   cam: {fileID: 0}
   Mark: {fileID: 0}
   MarkTrigger: {fileID: 0}

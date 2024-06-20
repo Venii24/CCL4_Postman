@@ -13,6 +13,9 @@ public class PlayerMovement : MonoBehaviour
     private GameObject box1;
     [SerializeField]
     private GameObject box2;
+    [SerializeField] private GameObject Stamp1;
+    [SerializeField] private GameObject Stamp2;
+    [SerializeField] private GameObject Stamp3;
     [SerializeField] private Transform cam;
     [SerializeField] private GameObject Mark;
     [SerializeField] private GameObject MarkTrigger;
@@ -38,6 +41,9 @@ public class PlayerMovement : MonoBehaviour
     private InputAction jumpAction;
     private Vector3 box1StartPos;
     private Vector3 box2StartPos;
+    private Vector3 stamp1StartPos;
+    private Vector3 stamp2StartPos;
+    private Vector3 stamp3StartPos;
     private float originalSpeed;
 
     public bool letterDelivered = false;
@@ -57,6 +63,9 @@ public class PlayerMovement : MonoBehaviour
         letterDelivered = false;
         box1StartPos = box1.transform.position;
         box2StartPos = box2.transform.position;
+        stamp1StartPos = Stamp1.transform.position;
+        stamp2StartPos = Stamp2.transform.position;
+        stamp3StartPos = Stamp3.transform.position;
         originalSpeed = moveSpeed;
 
         // Find the GameManager instance in the scene
@@ -287,6 +296,15 @@ public class PlayerMovement : MonoBehaviour
         //reset box positions
         box1.transform.position = box1StartPos;
         box2.transform.position = box2StartPos;
+        //reset stamp positions
+        Stamp1.SetActive(true);
+        Stamp2.SetActive(true);
+        Stamp3.SetActive(true);
+        Stamp1.transform.position = stamp1StartPos;
+        Stamp2.transform.position = stamp2StartPos;
+        Stamp3.transform.position = stamp3StartPos;
+        //reset score
+        gameManager.score = 0;
         camRotator.ResetRotation();
     }
 }

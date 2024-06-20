@@ -37,7 +37,7 @@ public class Collectable : MonoBehaviour
         {
             AkSoundEngine.PostEvent("Play_pickup_stamp", gameObject);
             GameManager.Instance.AddScore(1);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }
