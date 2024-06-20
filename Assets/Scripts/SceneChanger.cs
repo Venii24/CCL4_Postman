@@ -55,14 +55,14 @@ public class SceneChanger : MonoBehaviour
         {   
             if (!TrainSoundOn) AkSoundEngine.PostEvent("Stop_chugga", gameManager.gameObject);
             TrainSoundOn = false;
-            //gameManager.chuggaPlaying = false;
+            gameManager.chuggaPlaying = false;
             timer.stopTimer = false;
             gameManager.TimerBox.SetActive(true);
 
         }
         else
         {
-            if (gameManager.chuggaPlaying && !TrainSoundOn)
+            if (!gameManager.chuggaPlaying && !TrainSoundOn)
             {
                 AkSoundEngine.PostEvent("Play_chugga", gameManager.gameObject);
                 Debug.Log("Chugga Playing scene changer");

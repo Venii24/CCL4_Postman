@@ -151,8 +151,6 @@ public class GameManager : MonoBehaviour
         SaveLevelStats();
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
-
-        AkSoundEngine.PostEvent("Play_chugga", gameObject);
         
         if (showWinWinOverlay == true)
         {
