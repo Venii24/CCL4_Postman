@@ -8,9 +8,11 @@
 				<Property Name="Event Action List\{257D22E9-6204-4FD5-A1BB-BA1F59BDE5AF}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{35869AAB-EA7E-467A-B2C3-794F4880DAFC}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{468F353E-6272-4B7A-8E46-46B15C81D3E0}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{7D37CED1-435C-43B2-B57E-489A0CFC802A}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{DA091AB3-E471-4C3C-BC5D-32DA4D7038D4}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{EBD4D31E-C809-4E6E-8C9C-1406BA9A6C70}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{EDAFCCA7-B2B1-4B4D-B9D9-ED4B77139387}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{F9534DB2-2668-477C-B196-B1A444AE25A1}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="EventView\FilterMode1" Type="int32" Value="2"/>
 				<Property Name="ExternalSourcesInputPath" Type="string">
 					<ValueList>
@@ -57,12 +59,12 @@
 				<Property Name="ProjectExplorer\x64_Expanded_17_1" Type="string" Value=""/>
 				<Property Name="ProjectExplorer\x64_Expanded_18_1" Type="string" Value=""/>
 				<Property Name="ProjectExplorer\x64_Expanded_19_1" Type="string" Value=""/>
-				<Property Name="ProjectExplorer\x64_Expanded_1_1" Type="string" Value=""/>
+				<Property Name="ProjectExplorer\x64_Expanded_1_1" Type="string" Value="OxZ+Iv9U3Uya0Zwl8V3cow=="/>
 				<Property Name="ProjectExplorer\x64_Expanded_20_1" Type="string" Value=""/>
 				<Property Name="ProjectExplorer\x64_Expanded_21_1" Type="string" Value=""/>
 				<Property Name="ProjectExplorer\x64_Expanded_22_1" Type="string" Value=""/>
-				<Property Name="ProjectExplorer\x64_Expanded_2_1" Type="string" Value=""/>
-				<Property Name="ProjectExplorer\x64_Expanded_3_1" Type="string" Value=""/>
+				<Property Name="ProjectExplorer\x64_Expanded_2_1" Type="string" Value="R24N07G/O0uFpVrjaIGy8g=="/>
+				<Property Name="ProjectExplorer\x64_Expanded_3_1" Type="string" Value="pq0ViYf2nEiRKm7IBPpKqw=="/>
 				<Property Name="ProjectExplorer\x64_Expanded_4_1" Type="string" Value=""/>
 				<Property Name="ProjectExplorer\x64_Expanded_5_1" Type="string" Value=""/>
 				<Property Name="ProjectExplorer\x64_Expanded_6_1" Type="string" Value=""/>

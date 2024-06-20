@@ -69,7 +69,7 @@
 				<Event Id="985173527" Name="Stop_desert_bg" ObjectPath="\Events\Default Work Unit\Stop_desert_bg" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 			</IncludedEvents>
 		</SoundBank>
-		<SoundBank Id="1926594054" Language="SFX" Hash="2605586893">
+		<SoundBank Id="1926594054" Language="SFX" Hash="406680788">
 			<ObjectPath>\SoundBanks\Default Work Unit\commonSounds</ObjectPath>
 			<ShortName>commonSounds</ShortName>
 			<Path>commonSounds.bnk</Path>

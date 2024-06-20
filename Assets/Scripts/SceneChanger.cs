@@ -21,7 +21,7 @@ public class SceneChanger : MonoBehaviour
     private Animator trainAnimator;
 
     private Vector3 cameraGameplayPosition = new Vector3(0, 13, -19f);
-    private Vector3 cameraAnimationPosition = new Vector3(0, 13, -26);
+    private Vector3 cameraAnimationPosition = new Vector3(0, 13, -28);
     
     private void Start()
     {
@@ -42,6 +42,7 @@ public class SceneChanger : MonoBehaviour
         {
             train.transform.position = new Vector3(-13, train.transform.position.y, train.transform.position.z);
             StartCoroutine(AnimateTrainEntry());
+            TrainSoundOn = true;
         }
         else
         {
