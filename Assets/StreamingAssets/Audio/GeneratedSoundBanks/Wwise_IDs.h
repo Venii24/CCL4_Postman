@@ -13,6 +13,7 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID PLAY_BOX_PUSH = 847370384U;
         static const AkUniqueID PLAY_CHUGGA = 1692289015U;
         static const AkUniqueID PLAY_COAST_BG = 3165135302U;
         static const AkUniqueID PLAY_DESERT_BG = 144265609U;
@@ -22,6 +23,7 @@ namespace AK
         static const AkUniqueID PLAY_PICKUP_STAMP = 1274845202U;
         static const AkUniqueID PLAY_STEPS_SWITCH = 1426829698U;
         static const AkUniqueID PLAY_TRAINWHISTLE = 1179387570U;
+        static const AkUniqueID STOP_BOX_PUSH = 2210515726U;
         static const AkUniqueID STOP_CHUGGA = 384769713U;
         static const AkUniqueID STOP_COAST_BG = 1006772764U;
         static const AkUniqueID STOP_DESERT_BG = 985173527U;

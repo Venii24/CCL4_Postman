@@ -172,6 +172,31 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_box_push" ID="{2409BF90-BB10-448C-8C2A-78CEE691766B}">
+					<ChildrenList>
+						<Action Name="" ID="{821C6041-57EE-4986-94E4-5FBE30059D53}" ShortID="952377312">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="box_push" ID="{673483F2-F38E-4C4F-849D-0C4CA46ADA04}" WorkUnitID="{8915ADA6-F687-489C-912A-6EC804FA4AAB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_box_push" ID="{063D9687-E680-4A30-BBA6-976D59CC86EE}">
+					<ChildrenList>
+						<Action Name="" ID="{C6907C54-F8FA-4CBF-874D-5B10C94214E8}" ShortID="153474954">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="box_push" ID="{673483F2-F38E-4C4F-849D-0C4CA46ADA04}" WorkUnitID="{8915ADA6-F687-489C-912A-6EC804FA4AAB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

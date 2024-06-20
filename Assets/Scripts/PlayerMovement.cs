@@ -153,6 +153,7 @@ public class PlayerMovement : MonoBehaviour
                
                 default:
                     currentSurfaceType = null; // Handle unknown tags
+                    Debug.Log("unknown ground tag");
                     break;
             }
         }
@@ -250,11 +251,14 @@ public class PlayerMovement : MonoBehaviour
                     _animator.SetBool("isPushing", true);
                     moveSpeed = originalSpeed / 1.5f;
                     boxRigidbody.AddForce(forceDirection * pushPower, ForceMode.Impulse);
+                    AkSoundEngine.PostEvent("Play_box_push", gameObject);
                 }
                 else
                 {
                     moveSpeed = originalSpeed;
                     _animator.SetBool("isPushing", false);
+                    AkSoundEngine.PostEvent("Stop_box_push", gameObject);
+                    Debug.Log("Stopped box push");
                 }
             }
         }
@@ -266,6 +270,8 @@ public class PlayerMovement : MonoBehaviour
         {
             moveSpeed = originalSpeed;
             _animator.SetBool("isPushing", false);
+            AkSoundEngine.PostEvent("Stop_box_push", gameObject);
+            Debug.Log("Stopped box push");
         }
     }
     
