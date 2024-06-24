@@ -71,7 +71,7 @@ public class SceneChanger : MonoBehaviour
             }
             timer.stopTimer = true;
             gameManager.TimerBox.SetActive(false);
-            switchCamera.SetAcceptInput(false);
+        //    switchCamera.SetAcceptInput(false);
         }
 
     }
@@ -146,11 +146,11 @@ public class SceneChanger : MonoBehaviour
         {
             AkSoundEngine.PostEvent("Stop_forest_bg", gameManager.gameObject);
         }
-        else if (sceneIndex == 2)
+        else if (sceneIndex == 3)
         {
             AkSoundEngine.PostEvent("Stop_desert_bg", gameManager.gameObject);
         }
-        else if (sceneIndex == 3)
+        else if (sceneIndex == 2)
         {
             AkSoundEngine.PostEvent("Stop_coast_bg", gameManager.gameObject);
         }
