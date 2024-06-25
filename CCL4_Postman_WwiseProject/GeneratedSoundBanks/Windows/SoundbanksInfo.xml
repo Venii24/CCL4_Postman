@@ -11,7 +11,7 @@
 	<StreamedFiles>
 		<File Id="149712932" Language="SFX">
 			<ShortName>box_push.wav</ShortName>
-			<Path>SFX\box_push_B3BE4176.wem</Path>
+			<Path>SFX\box_push_7174DBB2.wem</Path>
 		</File>
 		<File Id="196957432" Language="SFX">
 			<ShortName>main_menu_bg.wav</ShortName>
@@ -36,7 +36,7 @@
 	</StreamedFiles>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="491961918" Language="SFX" Hash="3097132675">
+		<SoundBank Id="491961918" Language="SFX" Hash="1407918172">
 			<ObjectPath>\SoundBanks\Default Work Unit\forest</ObjectPath>
 			<ShortName>forest</ShortName>
 			<Path>forest.bnk</Path>
@@ -57,7 +57,7 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="1850388778" Language="SFX" Hash="1025962437">
+		<SoundBank Id="1850388778" Language="SFX" Hash="934028553">
 			<ObjectPath>\SoundBanks\Default Work Unit\desert</ObjectPath>
 			<ShortName>desert</ShortName>
 			<Path>desert.bnk</Path>
@@ -73,7 +73,7 @@
 				<Event Id="985173527" Name="Stop_desert_bg" ObjectPath="\Events\Default Work Unit\Stop_desert_bg" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 			</IncludedEvents>
 		</SoundBank>
-		<SoundBank Id="1926594054" Language="SFX" Hash="154484385">
+		<SoundBank Id="1926594054" Language="SFX" Hash="3222905338">
 			<ObjectPath>\SoundBanks\Default Work Unit\commonSounds</ObjectPath>
 			<ShortName>commonSounds</ShortName>
 			<Path>commonSounds.bnk</Path>
@@ -82,7 +82,7 @@
 					<ReferencedStreamedFiles>
 						<File Id="149712932" Language="SFX">
 							<ShortName>box_push.wav</ShortName>
-							<Path>SFX\box_push_B3BE4176.wem</Path>
+							<Path>SFX\box_push_7174DBB2.wem</Path>
 						</File>
 					</ReferencedStreamedFiles>
 				</Event>
@@ -204,7 +204,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2482423965" Language="SFX" Hash="1962741365">
+		<SoundBank Id="2482423965" Language="SFX" Hash="3316242778">
 			<ObjectPath>\SoundBanks\Default Work Unit\coast</ObjectPath>
 			<ShortName>coast</ShortName>
 			<Path>coast.bnk</Path>
