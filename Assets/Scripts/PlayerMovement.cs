@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     
     
     [Header("Variables")] 
-    [SerializeField] float moveSpeed = 6f;
+    [SerializeField] float moveSpeed = 4f;
     [SerializeField] float jumpForce = 2f;
     [SerializeField] private float pushPower = 2.0f;
 
@@ -185,6 +185,7 @@ public class PlayerMovement : MonoBehaviour
         // Update animator parameter
         bool isWalking = moveDirection.magnitude > 0.1f;
         _animator.SetBool("isWalking", isWalking);
+    
 
         // Ensure player faces the direction of movement
         if (isWalking)
