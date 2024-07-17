@@ -1,7 +1,0 @@
-Event	ID	Name			Wwise Object Path	Notes
-	1006772764	Stop_coast_bg			\Default Work Unit\Stop_coast_bg	
-	3165135302	Play_coast_bg			\Default Work Unit\Play_coast_bg	
-
-Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
-	667787863	coast_bg	C:\Users\stefa\OneDrive\Dokumente\FH StPoelten BCC\4. Semester\Engine Dev\Rotate Camera\CCL4\CCL4_Postman_WwiseProject\.cache\Windows\SFX\coast_bg_D79FB2B7.wem	667787863.wem	\Actor-Mixer Hierarchy\Default Work Unit\ambience\coast_bg	
-
